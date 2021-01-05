@@ -41,7 +41,7 @@ def main():
             snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
             snow_cover_filenames)
-        # snow_array = RasterManagement.raster_to_array(1, file, 1)
+        # write all files in lists
         date.append([sm_month, sm_year])
         snow_mm.append(snow_array)
         snow_cover.append(snow_cover_array)
