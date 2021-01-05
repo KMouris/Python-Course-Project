@@ -25,8 +25,8 @@ class RasterManagement:
             os.makedirs(path + "\\Snow_end_month")
 
     def get_date(self, filename):
-        sm_month = int((filename[-10]) + (filename[-9]))
-        sm_year = int((filename[-7]) + (filename[-6]))
+        sm_year = int((filename[-10]) + (filename[-9]))
+        sm_month = int((filename[-7]) + (filename[-6]))
         return sm_month, sm_year
 
     # not used in current version
