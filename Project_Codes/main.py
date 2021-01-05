@@ -50,7 +50,7 @@ def main():
         i += 1  # add to date (row) counter
 
     # Test Calculation
-    result = snow_mm[5] * snow_cover[5]
+    result = snow_mm[1] * snow_cover[1]
     save_path = path_results + "Test" + ".tif"  # Assign raster pth, including name and extension
     RasterManagement.save_raster(1, result, save_path, gt, proj)  # Save array as raster
     print(result)
