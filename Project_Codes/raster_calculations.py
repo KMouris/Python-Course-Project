@@ -4,21 +4,16 @@ class RasterCalculations:
         self.snow_cover
         pass
 
-    def actual_snow (self, snow_measured, snow_cover):
+    def snow_at_end (self, snow_measured, snow_cover):
         """
-        compares precipitation data with satellite data to calculate actual snow height
-        :param snow_measured: measured snow height per month
-        :param snow_cover: satellite data of snow cover per month
-        :return: actual snow at the end of the month
+        
+        :param snow_measured: 
+        :param snow_cover: 
+        :return: 
         """
-        # raster2array + masked_array?
         snow_start_of_month = snow_measured
-        for i in snow_measured:
-            snow_end_of_month = snow_start_of_month * snow_cover
-            snow_start_of_month = snow_measured + snow_end_of_month[i-1]
-
+        snow_end_of_month = snow_start_of_month * snow_cover
         return snow_end_of_month
-    pass
 
     def snowmelt(self, snow_end_of_month, snow_measured):
         """
@@ -29,5 +24,39 @@ class RasterCalculations:
         """
         snowmelt = snow_measured - snow_end_of_month
         return snowmelt
-    pass
 
+
+    def snow_at_start(self, snow_measured=[], snow_end_of_month=[]):
+        """
+
+        :param snow_measured:
+        :param snow_end_of_month:
+        :return:
+        """
+        snow_start_of_month = snow_measured + snow_end_of_month
+        return snow_start_of_month
+
+
+    # def actual_snow (self, snow_start_of_month, snow_measured, snow_cover):
+    #  """
+    #   compares precipitation data with satellite data to calculate actual snow height
+    #    :param snow_measured: measured snow height per month
+    #   :param snow_cover: satellite data of snow cover per month
+    #    :return: actual snow at the end of the month
+    #    """
+    #    # raster2array + masked_array?
+    #    snow_start_of_month = snow_measured
+    #    snow_end_of_month = snow_start_of_month * snow_cover
+    #    snow_start_of_month = snow_measured + snow_end_of_month[i-1]
+    #
+    #    return snow_end_of_month
+    # pass
+
+
+
+
+    # Design
+    # for i,j in snow_mm,snow_cover:
+    #   actual_snow(snow_mm, snow_cover)
+    # for i in snow_mm:
+    #   snowmelt(snow_end_of_month, snow_mm)
