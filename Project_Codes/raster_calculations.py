@@ -4,7 +4,7 @@ class RasterCalculations:
         self.snow_cover
         pass
 
-    def snow_at_end (self, snow_measured, snow_cover):
+    def snow_at_end(self, snow_measured, snow_cover): # remark Kilian; maybe better to use sth with start of month instead of measured
         """
         
         :param snow_measured: 
@@ -25,8 +25,7 @@ class RasterCalculations:
         snowmelt = snow_measured - snow_end_of_month
         return snowmelt
 
-
-    def snow_at_start(self, snow_measured=[], snow_end_of_month=[]):
+    def snow_at_start(self, snow_measured, snow_end_of_month):
         """
 
         :param snow_measured:
@@ -35,7 +34,6 @@ class RasterCalculations:
         """
         snow_start_of_month = snow_measured + snow_end_of_month
         return snow_start_of_month
-
 
     # def actual_snow (self, snow_start_of_month, snow_measured, snow_cover):
     #  """
@@ -51,9 +49,6 @@ class RasterCalculations:
     #
     #    return snow_end_of_month
     # pass
-
-
-
 
     # Design
     # for i,j in snow_mm,snow_cover:
