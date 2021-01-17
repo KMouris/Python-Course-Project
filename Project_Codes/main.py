@@ -17,11 +17,10 @@ start_time = time.time()
 Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
 # Folder with satellite data
 SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
+
 # Folder for the results
 # path_results = r'' + os.path.abspath('../Results/')
 path_results = r"C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\\"
-
-
 # path_results = r"C:\Users\there\Documents\Python\Python-Course-Project\Results\\"
 # ich habe den Ordner leider nicht unter Documents sonst könnte die Variante auch funktionieren
 
