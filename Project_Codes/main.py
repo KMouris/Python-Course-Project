@@ -19,10 +19,11 @@ Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
 SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 
 # Folder for the results
-# path_results = r'' + os.path.abspath('../Results/')
-path_results = r"C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\\"
+path_results = r'' + os.path.abspath('../Results')
+# path_results = r"C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\\"
 # path_results = r"C:\Users\there\Documents\Python\Python-Course-Project\Results\\"
 # ich habe den Ordner leider nicht unter Documents sonst könnte die Variante auch funktionieren
+
 
 def main():
     # define variables as global
@@ -65,14 +66,15 @@ def main():
     k = 0
     initial_snow = snow_mm[0]
     snow_start_month = [initial_snow]  # there's no already existing snow at the start of the calculation
+    calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month, snow_cover=snow_cover, snow_measured=snow_mm)  # object = instance of class is created
     for arrays in snow_mm:
         print(date[k])
-        snow_end_month_array = RasterCalculations.snow_at_end(1, snow_start_month[k], snow_cover[k])
-        snow_melt_array = RasterCalculations.snowmelt(1, snow_end_month_array, snow_mm[k])
+        snow_end_month_array = calculations_snow.snow_at_end(snow_start_month[k], snow_cover[k])
+        snow_melt_array = calculations_snow.snowmelt(snow_end_month_array, snow_mm[k])
         snow_end_month.append(snow_end_month_array)
         snowmelt.append(snow_melt_array)
         if k < len(snow_mm) - 1:  # avoid index error, no calculation for a new month without measurements
-            snow_start_of_month_array = RasterCalculations.snow_at_start(1, snow_mm[k + 1], snow_end_month[k])
+            snow_start_of_month_array = calculations_snow.snow_at_start(snow_mm[k + 1], snow_end_month[k])
             snow_start_month.append(snow_start_of_month_array)
         # lists are maybe not needed, they are useful if we want to write only one file
         save_path = r'' + os.path.abspath('../Results/Snow_end_month') + "/snow_end_month" + str(

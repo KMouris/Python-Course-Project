@@ -20,8 +20,14 @@ class RasterManagement:
         if not os.path.exists(path):
             print("Creating folder: ", path)
             os.makedirs(path)
+        if not os.path.exists(path + "\\Snowmelt"):
+            print("Creating folder: ", path + "\\Snowmelt")
             os.makedirs(path + "\\Snowmelt")
+        if not os.path.exists(path + "\\Snow_start_month"):
+            print("Creating folder: ", path + "\\Snow_start_month")
             os.makedirs(path + "\\Snow_start_month")
+        if not os.path.exists(path + "\\Snow_end_month"):
+            print("Creating folder: ", path + "\\Snow_end_month")
             os.makedirs(path + "\\Snow_end_month")
 
     def get_date(self, filename):
