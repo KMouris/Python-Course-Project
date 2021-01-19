@@ -21,9 +21,6 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 
 # Folder for the results
 path_results = r'' + os.path.abspath('../Results')
-# path_results = r"C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\\"
-# path_results = r"C:\Users\there\Documents\Python\Python-Course-Project\Results\\"
-# ich habe den Ordner leider nicht unter Documents sonst könnte die Variante auch funktionieren
 
 
 def main():
@@ -76,7 +73,8 @@ def main():
     k = 0
     initial_snow = snow_mm[0]
     snow_start_month = [initial_snow]  # there's no already existing snow at the start of the calculation
-    calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month, snow_cover=snow_cover, snow_measured=snow_mm)  # object = instance of class is created
+    calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month, snow_cover=snow_cover,
+                                           snow_measured=snow_mm)  # object = instance of class is created
     for arrays in snow_mm:
         print(date[k])
         snow_end_month_array = calculations_snow.snow_at_end(snow_start_month[k], snow_cover[k])
