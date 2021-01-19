@@ -1,6 +1,7 @@
 import os
 from raster_calculations import *
 from data_management import *
+from check_functions import *
 import glob
 import time
 import sys
@@ -61,6 +62,15 @@ def main():
         # get projection and geotransformation
         gt, proj = RasterManagement.get_raster_data(1, file)
         i += 1  # add to date (row) counter
+
+    # Check Data
+    CheckInputData.number_of_items(CheckInputData, snow_mm, snow_cover)
+    # check_data = CheckInputData(array_one=snow_mm, array_two=snow_cover)
+    # check_data.number_of_items(object_one=snow_mm, object_two=snow_cover)
+    j = 0
+    for file in snow_mm:
+        CheckInputData.compare_shape(CheckInputData, snow_mm[j], snow_cover[j])
+        j += 1
 
     # Calculations
     k = 0
