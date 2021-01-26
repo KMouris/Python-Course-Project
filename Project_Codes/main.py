@@ -30,7 +30,8 @@ def main():
     # define variables as global
     global sm_year, sm_month, gt, proj
     # Create folder if it does not already exist
-    DataManagement.folder_creation(path_results)
+    data_manager = DataManagement(path= r'' + os.path.abspath('../Results'), filename='')
+    data_manager.folder_creation()
     # Get all file paths into a list: All rasters MUST BE .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
@@ -49,7 +50,9 @@ def main():
     for file in snow_mm_paths:
         snow_mm_filenames = snow_mm_paths[i]
         snow_cover_filenames = snow_cover_paths[i]
-        sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
+        data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=snow_mm_filenames)
+        sm_month, sm_year = data_manager.get_date()
+        #sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
         print(sm_month, sm_year)
         datatype, snow_array, geotransform = gu.raster2array(
             snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
@@ -60,7 +63,8 @@ def main():
         snow_mm.append(snow_array)
         snow_cover.append(snow_cover_array)
         # get projection and geotransformation
-        gt, proj = DataManagement.get_raster_data(file)
+        print(file)
+        gt, proj = data_manager.get_raster_data()
         i += 1  # add to date (row) counter
 
     # Check Data

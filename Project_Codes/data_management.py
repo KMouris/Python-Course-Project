@@ -4,34 +4,38 @@ import numpy as np
 
 
 class DataManagement:
-    def __init__(self, path, filename, array):
+    def __init__(self, path, filename):
         self.path = path
         self.filename = filename
-        self.array = array
 
     def folder_creation(self):
-        if not os.path.exists(self):
-            print("Creating folder: ", self)
-            os.makedirs(self)
-        if not os.path.exists(self + "\\Snowmelt"):
-            print("Creating folder: ", self + "\\Snowmelt")
-            os.makedirs(self + "\\Snowmelt")
-        if not os.path.exists(self + "\\Snow_start_month"):
-            print("Creating folder: ", self + "\\Snow_start_month")
-            os.makedirs(self + "\\Snow_start_month")
-        if not os.path.exists(self + "\\Snow_end_month"):
-            print("Creating folder: ", self + "\\Snow_end_month")
-            os.makedirs(self + "\\Snow_end_month")
+        if not os.path.exists(self.path):
+            print("Creating folder: ", self.path)
+            os.makedirs(self.path)
+        if not os.path.exists(self.path + "\\Snowmelt"):
+            print("Creating folder: ", self.path + "\\Snowmelt")
+            os.makedirs(self.path + "\\Snowmelt")
+        if not os.path.exists(self.path + "\\Snow_start_month"):
+            print("Creating folder: ", self.path + "\\Snow_start_month")
+            os.makedirs(self.path + "\\Snow_start_month")
+        if not os.path.exists(self.path + "\\Snow_end_month"):
+            print("Creating folder: ", self.path + "\\Snow_end_month")
+            os.makedirs(self.path + "\\Snow_end_month")
 
-    def get_date(self):
-        sm_year = int((self[-10]) + (self[-9]))
-        sm_month = int((self[-7]) + (self[-6]))
+    # def get_date(self, filenames): # static method option
+    # sm_year = int((filenames[-10]) + (filenames[-9]))
+    # sm_month = int((filenames[-7]) + (filenames[-6]))
+    # return sm_month, sm_year
+
+    def get_date(self):  # option 2
+        sm_year = int((self.filename[-10]) + (self.filename[-9]))
+        sm_month = int((self.filename[-7]) + (self.filename[-6]))
         return sm_month, sm_year
 
     # Function receives raster file path and extracts the Geotransformation and Projection, to assign to all output
     # rasters
     def get_raster_data(self):
-        raster = gdal.Open(self)  # Extract raster from path
+        raster = gdal.Open(self.filename)  # Extract raster from path
         gt = raster.GetGeoTransform()  # Get geotransformation data
         proj = raster.GetProjection()  # Get projection of raster
         print(proj)
