@@ -55,9 +55,9 @@ def main():
         #sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
         print(sm_month, sm_year)
         datatype, snow_array, geotransform = gu.raster2array(
-            snow_mm_filenames, 1)  # geoutils is maybe the more elegant solution bot no classes
+            snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
-            snow_cover_filenames, 1)
+            snow_cover_filenames)
         # write all files in lists
         date.append([sm_month, sm_year])
         snow_mm.append(snow_array)
@@ -80,18 +80,24 @@ def main():
 
     # Calculations
     k = 0
+    m = 1
     initial_snow = snow_mm[0]
     snow_start_month = [initial_snow]  # there's no already existing snow at the start of the calculation
-    calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month, snow_cover=snow_cover,
-                                           snow_measured=snow_mm)  # object = instance of class is created
+
     for arrays in snow_mm:
+        if k == 0:
+            calculations_snow = RasterCalculations(snow_start_of_month=initial_snow, snow_cover=snow_cover[k],
+                                                   snow_measured=snow_mm[m])  # object = instance of class is created
+        else:
+            calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month[k], snow_cover=snow_cover[k],
+                                                   snow_measured=snow_mm[m])
         print(date[k])
-        snow_end_month_array = calculations_snow.snow_at_end(snow_start_month[k], snow_cover[k])
-        snow_melt_array = calculations_snow.snowmelt(snow_end_month_array, snow_mm[k])
+        snow_end_month_array = calculations_snow.snow_at_end()
+        snow_melt_array = calculations_snow.snowmelt(snow_end_of_month=snow_end_month_array)
         snow_end_month.append(snow_end_month_array)
         snowmelt.append(snow_melt_array)
         if k < len(snow_mm) - 1:  # avoid index error, no calculation for a new month without measurements
-            snow_start_of_month_array = calculations_snow.snow_at_start(snow_mm[k + 1], snow_end_month[k])
+            snow_start_of_month_array = calculations_snow.snow_at_start(snow_end_of_month=snow_end_month_array)
             snow_start_month.append(snow_start_of_month_array)
         # lists are maybe not needed, they are useful if we want to write only one file
         save_path = r'' + os.path.abspath('../Results/Snow_end_month') + "/snow_end_month" + str(
@@ -101,6 +107,8 @@ def main():
             date[k]) + ".tif"
         DataManagement.save_raster(save_path, snowmelt[k], gt, proj)
         k += 1
+        if m < len(snow_mm) - 1:
+            m += 1
 
     print('Total time: ', time.time() - start_time, 'seconds')
 
