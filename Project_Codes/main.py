@@ -55,9 +55,9 @@ def main():
         #sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
         print(sm_month, sm_year)
         datatype, snow_array, geotransform = gu.raster2array(
-            snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
+            snow_mm_filenames, 1)  # geoutils is maybe the more elegant solution bot no classes
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
-            snow_cover_filenames)
+            snow_cover_filenames, 1)
         # write all files in lists
         date.append([sm_month, sm_year])
         snow_mm.append(snow_array)
