@@ -22,10 +22,10 @@ class DataManagement:
             print("Creating folder: ", self.path + "\\Snow_end_month")
             os.makedirs(self.path + "\\Snow_end_month")
 
-    # def get_date(self, filenames): # static method option
-    # sm_year = int((filenames[-10]) + (filenames[-9]))
-    # sm_month = int((filenames[-7]) + (filenames[-6]))
-    # return sm_month, sm_year
+     #def get_date(self, filenames): # static method option
+    #sm_year = int((filenames[-10]) + (filenames[-9]))
+    #sm_month = int((filenames[-7]) + (filenames[-6]))
+    #return sm_month, sm_year
 
     def get_date(self):  # option 2
         sm_year = int((self.filename[-10]) + (self.filename[-9]))

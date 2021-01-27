@@ -30,7 +30,7 @@ def main():
     # define variables as global
     global sm_year, sm_month, gt, proj
     # Create folder if it does not already exist
-    data_manager = DataManagement(path= r'' + os.path.abspath('../Results'), filename='')
+    data_manager = DataManagement(path=path_results, filename='')
     data_manager.folder_creation()
     # Get all file paths into a list: All rasters MUST BE .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
