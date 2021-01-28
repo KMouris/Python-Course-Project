@@ -53,7 +53,6 @@ def main():
         data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=snow_mm_filenames)
         sm_month, sm_year = data_manager.get_date()
         #sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
-        print(sm_month, sm_year)
         datatype, snow_array, geotransform = gu.raster2array(
             snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
