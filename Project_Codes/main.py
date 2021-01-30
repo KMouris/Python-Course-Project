@@ -67,15 +67,17 @@ def main():
         i += 1  # add to date (row) counter
 
     # Check Data
-    check_data = CheckInputData(array_one=snow_mm, array_two=snow_cover,
-                                raster_one_path=snow_mm_paths, raster_two_path=snow_cover_paths)
-    check_data.number_of_items(snow_mm, snow_cover)
+
     j = 0
     for file in snow_mm:
-        check_data.compare_shape(snow_mm[j], snow_cover[j])
-        check_data.compare_projection(snow_mm_paths[j], snow_cover_paths[j])
-        check_data.compare_geotransform(snow_mm_paths[j], snow_cover_paths[j])
+        check_data = CheckInputData(array_one=snow_mm[j], array_two=snow_cover[j],
+                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j])
+        check_data.compare_shape()
+        check_data.compare_projection()
+        check_data.compare_geotransform()
         j += 1
+
+    check_data.number_of_items(snow_mm, snow_cover)
 
     # Calculations
     k = 0
