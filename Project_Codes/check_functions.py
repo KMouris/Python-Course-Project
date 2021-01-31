@@ -16,7 +16,7 @@ class CheckInputData:
         # else:
             # print("Arrays have the same shape.")
 
-    def number_of_items(self, object_one, object_two):
+    def number_of_items(self, object_one, object_two): # I guess there will be always the same number after the first looping, so we have to check the files in the folder not the resulting lists
         if not len(object_one) == len(object_two):
             if len(object_one) < len(object_two):
                 print("More items in object_two.")

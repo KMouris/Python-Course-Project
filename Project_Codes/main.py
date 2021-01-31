@@ -11,6 +11,7 @@ try:
             '../geo-utils/'))  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
     import geo_utils as gu
 
+
 except ModuleNotFoundError as e:
     print('ModuleNotFoundError: Missing fundamental packages (required: sys, glob, time, os, gdal, numpy).')
     print(e)
@@ -28,12 +29,10 @@ path_results = r'' + os.path.abspath('../Results')
 
 
 def main():
-    # define variables as global
-    global sm_year, sm_month, gt, proj
     # Create folder if it does not already exist
     data_manager = DataManagement(path=path_results, filename='')
     data_manager.folder_creation()
-    # Get all file paths into a list: All rasters MUST BE .tif files. if not, the type of file must also be changed.
+    # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
 
@@ -49,26 +48,28 @@ def main():
     # loop trough input data to save the arrays in nested lists
     i = 0
     for file in snow_mm_paths:
-        snow_mm_filenames = snow_mm_paths[i]
-        snow_cover_filenames = snow_cover_paths[i]
+        try:
+            snow_mm_filenames = snow_mm_paths[i]
+            snow_cover_filenames = snow_cover_paths[i]
+        except IndexError as i:  # better to do it with a check function and not in the main code
+            print('IndexError: Check the number of files in the input folders')
+            print(i)
+            sys.exit(1)  # code shouldn't run any further if this error occurs
         data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=snow_mm_filenames)
         sm_month, sm_year = data_manager.get_date()
-        # sm_month, sm_year = DataManagement.get_date(snow_mm_filenames)
         datatype, snow_array, geotransform = gu.raster2array(
             snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
             snow_cover_filenames)
         # write all files in lists
-        month_year = (str(sm_month)+'_'+str(sm_year))
-        print(month_year)
+        month_year = (str(sm_month) + '_' + str(sm_year))
         date.append([month_year])
         snow_mm.append(snow_array)
         snow_cover.append(snow_cover_array)
-        # get projection and geotransformation
-        print(file)
-        gt, proj = data_manager.get_raster_data()
         i += 1  # add to date (row) counter
-    print(date[1][0])
+
+    # get projection and geotransformation
+    gt, proj = data_manager.get_proj_data()
 
     # Check Data
     j = 0
@@ -95,7 +96,7 @@ def main():
         else:
             calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month[k], snow_cover=snow_cover[k],
                                                    snow_measured=snow_mm[m])
-        print(date[k][0]) # [0] is to avoid quotes and brackets, since it's a nested list
+        print(date[k][0])  # [0] is to avoid quotes and brackets, since it's a nested list
         snow_end_month_array = calculations_snow.snow_at_end()
         snow_melt_array = calculations_snow.snowmelt(snow_end_of_month=snow_end_month_array)
         snow_end_month.append(snow_end_month_array)

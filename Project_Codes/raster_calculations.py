@@ -4,7 +4,7 @@ class RasterCalculations:
         self.snow_cover = snow_cover
         self.snow_measured = snow_measured
 
-    def snow_at_end(self): # remark Kilian; maybe better to use sth with start of month instead of measured
+    def snow_at_end(self):
         """
 
         :return:
