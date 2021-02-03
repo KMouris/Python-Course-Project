@@ -1,20 +1,6 @@
-try:
-    from raster_calculations import *
-    from data_management import *
-    from check_functions import *
-    import sys
-    import glob
-    import time
-
-    sys.path.append(
-        r'' + os.path.abspath(
-            '../geo-utils/'))  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
-    import geo_utils as gu
-
-
-except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: sys, glob, time, os, gdal, numpy).')
-    print(e)
+from raster_calculations import *
+from data_management import *
+from check_functions import *
 
 start_time = time.time()
 

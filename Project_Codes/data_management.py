@@ -1,7 +1,4 @@
-import os
-import gdal
-import numpy as np
-import sys
+from config import *
 
 
 class DataManagement:
@@ -14,21 +11,23 @@ class DataManagement:
         Functions creates folder to instantiated path if it does not already exists
         :return: created folder if it does not already exists
         """
-        if not os.path.exists(self.path):
-            print("Creating folder: ", self.path)
-            os.makedirs(self.path)
-        if not os.path.exists(self.path + "\\Snowmelt"):
-            print("Creating folder: ", self.path + "\\Snowmelt")
-            os.makedirs(self.path + "\\Snowmelt")
-        if not os.path.exists(self.path + "\\Snow_start_month"):
-            print("Creating folder: ", self.path + "\\Snow_start_month")
-            os.makedirs(self.path + "\\Snow_start_month")
-        if not os.path.exists(self.path + "\\Snow_end_month"):
-            print("Creating folder: ", self.path + "\\Snow_end_month")
-            os.makedirs(self.path + "\\Snow_end_month")
-        else:
-            print("The folder already exists and is not created")
-        return 0
+        try:
+            if not os.path.exists(self.path):
+                print("Creating folder: ", self.path)
+                os.makedirs(self.path)
+            if not os.path.exists(self.path + "\\Snowmelt"):
+                print("Creating folder: ", self.path + "\\Snowmelt")
+                os.makedirs(self.path + "\\Snowmelt")
+            if not os.path.exists(self.path + "\\Snow_end_month"):
+                print("Creating folder: ", self.path + "\\Snow_end_month")
+                os.makedirs(self.path + "\\Snow_end_month")
+            else:
+                print("The folder already exists and is not created")
+            return 0
+        except OSError as o:
+            print('OSError: Directory could not be created')
+            print(o)
+            pass
 
     def get_date(self):
         """
@@ -97,4 +96,3 @@ class DataManagement:
 
         print("Saved raster: ", os.path.basename(path))
         return 0
-
