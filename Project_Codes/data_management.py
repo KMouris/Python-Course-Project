@@ -9,7 +9,7 @@ class DataManagement:
     def folder_creation(self):
         """
         Functions creates folder to instantiated path if it does not already exists
-        :return: created folder if it does not already exists
+        :return: None
         """
         try:
             if not os.path.exists(self.path):

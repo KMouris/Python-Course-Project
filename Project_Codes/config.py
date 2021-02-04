@@ -18,3 +18,5 @@ try:
     import geo_utils as gu
 except ModuleNotFoundError:
     print("ModuleNotFoundError: Cannot import geo_utils")
+
+# Global variables? What might make sense
