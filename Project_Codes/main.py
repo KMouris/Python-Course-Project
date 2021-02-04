@@ -21,7 +21,6 @@ def main():
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
-
     # Create Input Lists
     date = []
     snow_mm = []
@@ -44,7 +43,7 @@ def main():
         data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=snow_mm_filenames)
         sm_month, sm_year = data_manager.get_date()
         datatype, snow_array, geotransform = gu.raster2array(
-            snow_mm_filenames)  # geoutils is maybe the more elegant solution bot no classes
+            snow_mm_filenames)
         datatype2, snow_cover_array, geotransform2 = gu.raster2array(
             snow_cover_filenames)
         # write all files in lists

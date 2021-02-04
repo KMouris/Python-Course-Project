@@ -1,13 +1,14 @@
 try:
-    import os
     import gdal
-    import numpy as np
-    import sys
     import glob
-    import time
+    import numpy as np
+    import os
     import scipy
+    import sys
+    import time
+
 except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: sys, glob, time, os, gdal, numpy).')
+    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, numpy, os, scipy, sys, time).')
     print(e)
 
 try:
