@@ -2,11 +2,13 @@ from raster_calculations import *
 from data_management import *
 from check_functions import *
 from statistics import *
+from log_test import *
 
 start_time = time.time()
 
 
 # we can think about shifting the functions to a fun.py or into data management.py?
+@wrap(entering, exiting)
 def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
     """
     Functions reads an arbitrary number of raster files from 2 different folders.
@@ -60,6 +62,7 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 path_results = r'' + os.path.abspath('../Results')
 
 
+@wrap(entering, exiting)
 def main():
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))

@@ -1,6 +1,7 @@
 try:
     import gdal
     import glob
+    import logging
     import numpy as np
     import os
     import rasterstats as rs
