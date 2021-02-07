@@ -3,6 +3,7 @@ try:
     import glob
     import numpy as np
     import os
+    import rasterstats as rs
     import scipy
     import sys
     import time

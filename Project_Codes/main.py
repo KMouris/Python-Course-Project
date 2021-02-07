@@ -1,6 +1,7 @@
 from raster_calculations import *
 from data_management import *
 from check_functions import *
+from statistics import *
 
 start_time = time.time()
 
@@ -120,6 +121,11 @@ def main():
         k += 1
         if m < len(snow_mm) - 1:
             m += 1
+
+    # Calculate Statistics (first idea, we could also write a table with statistic summary)
+    raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_2.tif')
+    shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
+    get_zon_statistics(raster_file, shape_zone)
 
     print('Total time: ', time.time() - start_time, 'seconds')
 
