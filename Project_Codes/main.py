@@ -1,4 +1,3 @@
-from check_functions import *
 from statistics import *
 from fun import *
 
@@ -18,9 +17,16 @@ def main():
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
+
     # Create folder if it does not already exist
     data_manager = DataManagement(path=path_results, filename=snow_mm_paths[0])
     data_manager.folder_creation()
+
+    # Check dates
+    # i = 0
+    # for file in snow_cover_paths:
+      #   compare_date(Snow_mm_path, SnowCover_path, snow_mm_paths[i], snow_cover_paths[i])
+      #   i += 1
 
     # loop trough input rasters, write raster arrays and corresponding dates in nested lists
     date, snow_mm, snow_cover = raster2nested_list(snow_mm_paths, snow_cover_paths)
@@ -30,16 +36,9 @@ def main():
 
     # Check Data
     j = 0
-    for file in snow_mm:
-        check_data = CheckInputData(array_one=snow_mm[j], array_two=snow_cover[j],
-                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j],
-                                    datatype='float64')
-        check_data.compare_shape()
-        check_data.compare_projection()
-        check_data.compare_geotransform()
+    for file in snow_mm:  # compares number of items in every loop
+        check_input(snow_mm[j], snow_cover[j], snow_cover_paths[j], snow_cover_paths[j], snow_mm_paths, snow_cover_paths)
         j += 1
-
-    check_data.number_of_items(snow_mm, snow_cover)
 
     # Calculations
     snow_end_month, snowmelt = calculate_snowmelt(snow_mm[0], snow_mm, snow_cover)

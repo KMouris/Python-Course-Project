@@ -1,6 +1,8 @@
 from raster_calculations import *
 from data_management import *
+from check_functions import *
 from log import *
+
 
 @wrap(entering, exiting)
 def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
@@ -45,6 +47,7 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
         i += 1  # add to date (row) counter
     return date_list, array_list1, array_list2
 
+
 @wrap(entering, exiting)
 def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
     """
@@ -85,4 +88,33 @@ def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
         if m < len(list_measured_snow) - 1:
             m += 1
     return snow_end_month, snowmelt
+
+
+@wrap(entering, exiting)
+def check_input(array_one, array_two, path_raster_one, path_raster_two, object_one, object_two):
+    """
+    Compares size of arrays, geotransformation and projection of rasters and number of items in an object
+    :param array_one: ARRAY
+    :param array_two: ARRAY
+    :param path_raster_one: STR of raster path
+    :param path_raster_two: STR of raster path
+    :param object_one: object where len() can be applied, e.g. LIST, TUPLE, STR, etc.
+    :param object_two: object where len() can be applied, e.g. LIST, TUPLE, STR, etc.
+    :return:
+    """
+    check_data = CheckInputData(array_one=array_one, array_two=array_two, raster_one_path=path_raster_one,
+                                raster_two_path=path_raster_two)
+    check_data.compare_shape()
+    check_data.compare_projection()
+    check_data.compare_geotransform()
+    check_data.number_of_items(object_one, object_two)
+
+
+def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
+    manage_raster_one = DataManagement(path=path_raster_one, filename=filename_one)
+    manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
+    if not manage_raster_one.get_date() == manage_raster_two.get_date():
+        print("Different dates at same index.")
+
+
 

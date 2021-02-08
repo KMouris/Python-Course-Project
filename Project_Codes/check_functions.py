@@ -1,13 +1,13 @@
 from config import *
+from data_management import *
 
 
 class CheckInputData:
-    def __init__(self, array_one, array_two, raster_one_path, raster_two_path, datatype='float32'):
+    def __init__(self, array_one, array_two, raster_one_path, raster_two_path):
         self.array_one = array_one
         self.array_two = array_two
         self.raster_one_path = raster_one_path
         self.raster_two_path = raster_two_path
-        self.datatype = datatype
 
     def compare_shape(self):
         """
@@ -18,8 +18,6 @@ class CheckInputData:
                 print("Unequal number of rows.")
             else:
                 print("Unequal number of columns.")
-        # else:
-        # print("Arrays have the same shape.")
 
     def number_of_items(self, object_one, object_two):
         """
@@ -30,8 +28,6 @@ class CheckInputData:
                 print("More items in object_two.")
             else:
                 print("More items in object_one.")
-        else:
-            print("Same number of items.")
 
     def compare_geotransform(self):
         """
@@ -53,3 +49,6 @@ class CheckInputData:
         raster_two_proj = gdal.Open(self.raster_two_path).GetProjection()
         if not raster_one_proj == raster_two_proj:
             print("Raster have different Projections.")
+
+
+
