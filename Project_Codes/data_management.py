@@ -36,11 +36,11 @@ class DataManagement:
                     sm_year:   INT specifying the month
         """
         try:
-            sm_year = int((self.filename[-10]) + (self.filename[-9]))
-            sm_month = int((self.filename[-7]) + (self.filename[-6]))
+            sm_year = int((self.filename[-9]) + (self.filename[-8]))
+            sm_month = int((self.filename[-6]) + (self.filename[-5]))
             return sm_month, sm_year
         except ValueError as v:
-            print('ValueError: Invalid file name. Please make sure that the file name consists of 15 characters and '
+            print('ValueError: Invalid file name. Please make sure that the file name consists of 14 characters and '
                   'contains the month and year.')
             print(v)
             sys.exit(1)  # code shouldn't run any further if this error occurs
