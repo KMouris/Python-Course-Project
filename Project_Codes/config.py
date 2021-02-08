@@ -21,4 +21,11 @@ try:
 except ModuleNotFoundError:
     print("ModuleNotFoundError: Cannot import geo_utils")
 
-# Global variables? What might make sense
+# User Input
+# Folder with snow values
+Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
+# Folder with satellite data
+SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
+# Folder for the results
+path_results = r'' + os.path.abspath('../Results')
+

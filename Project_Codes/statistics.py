@@ -19,7 +19,7 @@ def get_zon_statistics(rasterpath, shape_zone):
     # maybe add function which calculates snow covered areas
 
 
-# custom statistic which calculates the snow coverage in %
+# custom statistic which calculates the (snow) coverage in %
 def coverage(raster_array):
     """
     Custom statistic to calculate the the percentage values above zero (e.g. snow coverage, or areas of snow melt)

@@ -3,14 +3,6 @@ from fun import *
 
 start_time = time.time()
 
-# User Input
-# Folder with snow values
-Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
-# Folder with satellite data
-SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
-# Folder for the results
-path_results = r'' + os.path.abspath('../Results')
-
 
 @wrap(entering, exiting)
 def main():
@@ -55,7 +47,7 @@ def main():
         k += 1
 
     # Calculate Statistics (first idea, we could also write a table with statistic summary)
-    raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_1.tif')
+    raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_3.tif')
     shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
     get_zon_statistics(raster_file, shape_zone)
 
