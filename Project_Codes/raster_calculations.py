@@ -1,41 +1,59 @@
+from config import *
+
+
 class RasterCalculations:
-    def __init__(self, snow_start_of_month, snow_cover, snow_measured):
+    def __init__(self, snow_start_of_period, snow_cover, snow_measured):
         """
-        :param snow_start_of_month: array of snow height at start of month
-        :param snow_cover: array of satellite data
-        :param snow_measured: array of measured snow height
+        :param snow_start_of_period: ARRAY of snow depth at start of period
+        :param snow_cover: ARRAY of satellite data of snow cover
+        :param snow_measured: ARRAY of measured snow depth
         """
-        self.snow_start_of_month = snow_start_of_month
+        self.snow_start_of_period = snow_start_of_period
         self.snow_cover = snow_cover
         self.snow_measured = snow_measured
 
+    def __add__(self, other):
+        try:
+            np.add(self, other)
+        except TypeError:
+            print("Arguments have to be arrays of the same type.")
+
+    def __mul__(self, other):
+        try:
+            np.multiply(self, other)
+        except TypeError:
+            print("Arguments have to be arrays of the same type.")
+
+    def __sub__(self, other):
+        try:
+            np.subtract(self, other)
+        except TypeError:
+            print("Arguments have to be arrays of the same type.")
+
     def snow_at_end(self):
         """
-        compares calculated snow height with satellite data
-        :return: actual snow height
+        Multiply snow at start of period with satellite data of snow cover
+        :return: ARRAY of actual snow depth at end of period
         """
-        try:
-            snow_end_of_month = self.snow_start_of_month * self.snow_cover
-            return snow_end_of_month
-        except TypeError:
-            print("Variables have to have same data type.")    # anstatt print könnte man logging.error benutzen
+        snow_end_of_period = self.snow_start_of_period * self.snow_cover
+        return snow_end_of_period
 
-    def snowmelt(self, snow_end_of_month):
+    def snowmelt(self, snow_end_of_period):
         """
-        Substracts actual snow height from calculated snowsum
-        :param snow_end_of_month: actual snow height
-        :return: height of snow that acts as snowmelt
+        Subtract actual snow depth from calculated snowsum
+        :param snow_end_of_period: ARRAY of actual snow depth at end of period
+        :return: ARRAY of depth of snow that acts as snowmelt
         """
-        snowmelt = self.snow_start_of_month - snow_end_of_month
+        snowmelt = self.snow_start_of_period - snow_end_of_period
         return snowmelt
 
-    def snow_at_start(self, snow_end_of_month):
+    def snow_at_start(self, snow_end_of_period):
         """
-        sum of actual snow height transferred from previous month and measured snow height
-        :param snow_end_of_month: actual snow height
-        :return: snow height at start of month
+        Add actual snow depth transferred from previous month and measured snow depth
+        :param snow_end_of_period: ARRAY of actual snow depth at end of period
+        :return: ARRAY of snow depth at start of period
         """
-        snow_start_of_month = self.snow_measured + snow_end_of_month
-        return snow_start_of_month
+        snow_start_of_period = self.snow_measured + snow_end_of_period
+        return snow_start_of_period
 
 

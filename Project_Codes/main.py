@@ -1,8 +1,7 @@
-from raster_calculations import *
-from data_management import *
 from check_functions import *
 from statistics import *
 from log_test import *
+from fun import *
 
 start_time = time.time()
 
@@ -52,12 +51,13 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
     return date_list, array_list1, array_list2
 
 
+start_time = time.time()
+
 # User Input
 # Folder with snow values
 Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
 # Folder with satellite data
 SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
-
 # Folder for the results
 path_results = r'' + os.path.abspath('../Results')
 
@@ -71,10 +71,6 @@ def main():
     data_manager = DataManagement(path=path_results, filename=snow_mm_paths[0])
     data_manager.folder_creation()
 
-    # Create lists to write calculation results
-    snow_end_month = []
-    snowmelt = []
-
     # loop trough input rasters, write raster arrays and corresponding dates in nested lists
     date, snow_mm, snow_cover = raster2nested_list(snow_mm_paths, snow_cover_paths)
 
@@ -85,7 +81,7 @@ def main():
     j = 0
     for file in snow_mm:
         check_data = CheckInputData(array_one=snow_mm[j], array_two=snow_cover[j],
-                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j])
+                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j], datatype='float64')
         check_data.compare_shape()
         check_data.compare_projection()
         check_data.compare_geotransform()
@@ -94,27 +90,11 @@ def main():
     check_data.number_of_items(snow_mm, snow_cover)
 
     # Calculations
-    k = 0
-    m = 1
-    initial_snow = snow_mm[0]
-    snow_start_month = [initial_snow]  # there's no already existing snow at the start of the calculation
+    snow_end_month, snowmelt = calculate_snowmelt(snow_mm[0], snow_mm, snow_cover)
 
-    for arrays in snow_mm:
-        if k == 0:
-            calculations_snow = RasterCalculations(snow_start_of_month=initial_snow, snow_cover=snow_cover[k],
-                                                   snow_measured=snow_mm[m])  # object = instance of class is created
-        else:
-            calculations_snow = RasterCalculations(snow_start_of_month=snow_start_month[k], snow_cover=snow_cover[k],
-                                                   snow_measured=snow_mm[m])
-        print(date[k][0])  # [0] is to avoid quotes and brackets, since it's a nested list
-        snow_end_month_array = calculations_snow.snow_at_end()
-        snow_melt_array = calculations_snow.snowmelt(snow_end_of_month=snow_end_month_array)
-        snow_end_month.append(snow_end_month_array)
-        snowmelt.append(snow_melt_array)
-        if k < len(snow_mm) - 1:  # avoid index error, no calculation for a new month without measurements
-            snow_start_of_month_array = calculations_snow.snow_at_start(snow_end_of_month=snow_end_month_array)
-            snow_start_month.append(snow_start_of_month_array)
-        # lists are maybe not needed, they are useful if we want to write only one file
+    # Saving arrays as raster
+    k = 0
+    for entry in snowmelt:
         save_path = r'' + os.path.abspath('../Results/Snow_end_month') + "/snow_end_month" + str(
             date[k][0]) + ".tif"
         DataManagement.save_raster(save_path, snow_end_month[k], gt, proj)
@@ -122,8 +102,6 @@ def main():
             date[k][0]).strip() + ".tif"
         DataManagement.save_raster(save_path, snowmelt[k], gt, proj)
         k += 1
-        if m < len(snow_mm) - 1:
-            m += 1
 
     # Calculate Statistics (first idea, we could also write a table with statistic summary)
     raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_2.tif')
