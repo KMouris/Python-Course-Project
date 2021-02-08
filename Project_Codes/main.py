@@ -42,7 +42,7 @@ def main():
             date[k][0]) + ".tif"
         DataManagement.save_raster(save_path, snow_end_month[k], gt, proj)
         save_path = r'' + os.path.abspath('../Results/Snowmelt') + "/snowmelt" + str(
-            date[k][0]).strip() + ".tif"
+            date[k][0]) + ".tif"
         DataManagement.save_raster(save_path, snowmelt[k], gt, proj)
         k += 1
 
