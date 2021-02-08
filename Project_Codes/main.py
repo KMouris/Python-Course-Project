@@ -1,55 +1,6 @@
 from check_functions import *
 from statistics import *
-from log_test import *
 from fun import *
-
-start_time = time.time()
-
-
-# we can think about shifting the functions to a fun.py or into data management.py?
-@wrap(entering, exiting)
-def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
-    """
-    Functions reads an arbitrary number of raster files from 2 different folders.
-    Extracts the date and the corresponding raster arrays and saves them into nested lists for further calculations.
-    :param list_rasterpaths1: LIST of paths to raster files
-    :param list_rasterpaths2: LIST of paths to raster files
-    :return:    date_list: LIST which contains the year and month of input raster files
-                array_list1: LIST which contains the raster arrays of list_rasterpaths1
-                array_list2: LIST which contains the raster arrays of list_rasterpaths2
-    """
-    # create empty lists
-    date_list = []
-    array_list1 = []
-    array_list2 = []
-    # loop trough every file to get the dates and raster arrays
-    i = 0
-    for file in list_rasterpaths1:
-        # get the raster path (STR) from the list_rasterpaths (LIST)
-        try:
-            filenames1 = list_rasterpaths1[i]
-            filenames2 = list_rasterpaths2[i]
-        except IndexError as i:  # better to do it with a check function and not in the main code
-            print('IndexError: Check the number of files in the input folders')
-            print(i)
-            sys.exit(1)  # code shouldn't run any further if this error occurs
-        # instantiate data management object to use get_date method
-        data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=filenames1)
-        sm_month, sm_year = data_manager.get_date()
-        # use raster2array method to get the arrays from the raster files
-        datatype, raster_arrays1, geotransform = gu.raster2array(
-            filenames1)
-        datatype2, raster_arrays2, geotransform2 = gu.raster2array(
-            filenames2)
-        # create date string (Format: YY/mm)
-        month_year = (str(sm_year) + '_' + str(sm_month))
-        # write the dates and the raster arrays into lists
-        date_list.append([month_year])
-        array_list1.append(raster_arrays1)
-        array_list2.append(raster_arrays2)
-        i += 1  # add to date (row) counter
-    return date_list, array_list1, array_list2
-
 
 start_time = time.time()
 
@@ -81,7 +32,8 @@ def main():
     j = 0
     for file in snow_mm:
         check_data = CheckInputData(array_one=snow_mm[j], array_two=snow_cover[j],
-                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j], datatype='float64')
+                                    raster_one_path=snow_mm_paths[j], raster_two_path=snow_cover_paths[j],
+                                    datatype='float64')
         check_data.compare_shape()
         check_data.compare_projection()
         check_data.compare_geotransform()
@@ -104,7 +56,7 @@ def main():
         k += 1
 
     # Calculate Statistics (first idea, we could also write a table with statistic summary)
-    raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_2.tif')
+    raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_1.tif')
     shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
     get_zon_statistics(raster_file, shape_zone)
 

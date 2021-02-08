@@ -1,7 +1,8 @@
 from raster_calculations import *
 from data_management import *
+from log import *
 
-
+@wrap(entering, exiting)
 def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
     """
     Functions reads an arbitrary number of raster files from 2 different folders.
@@ -44,7 +45,7 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
         i += 1  # add to date (row) counter
     return date_list, array_list1, array_list2
 
-
+@wrap(entering, exiting)
 def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
     """
     Calculate snow depth transferred into next month and snow depth which melts by looping through lists of snow data

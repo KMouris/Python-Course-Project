@@ -13,16 +13,16 @@ def get_zon_statistics(rasterpath, shape_zone):
 
     # calculate zonal statistics
     stats = rs.zonal_stats(zone, file, stats=['min', 'mean', 'max', 'range', 'sum'],
-                           add_stats={'snow_coverage': snow_coverage})
+                           add_stats={'coverage': coverage})
     print(stats)
 
     # maybe add function which calculates snow covered areas
 
 
 # custom statistic which calculates the snow coverage in %
-def snow_coverage(raster_array):
+def coverage(raster_array):
     """
-
+    Custom statistic to calculate the the percentage values above zero (e.g. snow coverage, or areas of snow melt)
     :param raster_array:
     :return:
     """
