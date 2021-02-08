@@ -1,4 +1,5 @@
 from config import *
+from log import *
 
 
 class RasterCalculations:
@@ -16,19 +17,22 @@ class RasterCalculations:
         try:
             np.add(self, other)
         except TypeError:
-            print("Arguments have to be arrays of the same type.")
+            logger.error("TypeError: Arguments have to be arrays of the same type.")
+            # print("Arguments have to be arrays of the same type.")
 
     def __mul__(self, other):
         try:
             np.multiply(self, other)
         except TypeError:
+            # logger.error("TypeError: Arguments have to be arrays of the same type.")
             print("Arguments have to be arrays of the same type.")
 
     def __sub__(self, other):
         try:
             np.subtract(self, other)
         except TypeError:
-            print("Arguments have to be arrays of the same type.")
+            logger.error("TypeError: Arguments have to be arrays of the same type.")
+            # print("Arguments have to be arrays of the same type.")
 
     def snow_at_end(self):
         """

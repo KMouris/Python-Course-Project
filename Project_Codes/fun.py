@@ -65,29 +65,32 @@ def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
     # loop through monthly entry of lists respecting dependency of monthly start value on values of previous month
     k = 0
     m = 1
-    for i in list_measured_snow:
-        if k == 0:
-            # for the first time step starting value of snow depth has to be set
-            calculations_snow = RasterCalculations(snow_start_of_period=initial_snow,
-                                                   snow_cover=list_satellite_data[k],
-                                                   snow_measured=list_measured_snow[m])
-        else:
-            # for following time steps snow depth at beginning of month is calculated
-            calculations_snow = RasterCalculations(snow_start_of_period=snow_start_month[k],
-                                                   snow_cover=list_satellite_data[k],
-                                                   snow_measured=list_measured_snow[m])
+    try:
+        for i in list_measured_snow:
+            if k == 0:
+                # for the first time step starting value of snow depth has to be set
+                calculations_snow = RasterCalculations(snow_start_of_period=initial_snow,
+                                                       snow_cover=list_satellite_data[k],
+                                                       snow_measured=list_measured_snow[m])
+            else:
+                # for following time steps snow depth at beginning of month is calculated
+                calculations_snow = RasterCalculations(snow_start_of_period=snow_start_month[k],
+                                                       snow_cover=list_satellite_data[k],
+                                                       snow_measured=list_measured_snow[m])
 
-        snow_end_month_array = calculations_snow.snow_at_end()
-        snow_melt_array = calculations_snow.snowmelt(snow_end_of_period=snow_end_month_array)
-        snow_end_month.append(snow_end_month_array)
-        snowmelt.append(snow_melt_array)
-        if k < len(list_measured_snow) - 1:
-            snow_start_of_month_array = calculations_snow.snow_at_start(snow_end_of_period=snow_end_month_array)
-            snow_start_month.append(snow_start_of_month_array)
-        k += 1
-        if m < len(list_measured_snow) - 1:
-            m += 1
-    return snow_end_month, snowmelt
+            snow_end_month_array = calculations_snow.snow_at_end()
+            snow_melt_array = calculations_snow.snowmelt(snow_end_of_period=snow_end_month_array)
+            snow_end_month.append(snow_end_month_array)
+            snowmelt.append(snow_melt_array)
+            if k < len(list_measured_snow) - 1:
+                snow_start_of_month_array = calculations_snow.snow_at_start(snow_end_of_period=snow_end_month_array)
+                snow_start_month.append(snow_start_of_month_array)
+            k += 1
+            if m < len(list_measured_snow) - 1:
+                m += 1
+        return snow_end_month, snowmelt
+    except IndexError:
+        logger.error("IndexError: Check number of entries in provided lists.")
 
 
 @wrap(entering, exiting)
