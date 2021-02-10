@@ -1,149 +1,149 @@
-2021-02-08 20:37:20,976 DEBUG    Entered main
-2021-02-08 20:37:20,977 DEBUG    Entered raster2nested_list
-2021-02-08 20:37:22,016 DEBUG    Exited  raster2nested_list
-2021-02-08 20:37:22,031 DEBUG    Entered check_input
-2021-02-08 20:37:22,035 DEBUG    Exited  check_input
-2021-02-08 20:37:22,035 DEBUG    Entered check_input
-2021-02-08 20:37:22,039 DEBUG    Exited  check_input
-2021-02-08 20:37:22,039 DEBUG    Entered check_input
-2021-02-08 20:37:22,042 DEBUG    Exited  check_input
-2021-02-08 20:37:22,042 DEBUG    Entered check_input
-2021-02-08 20:37:22,046 DEBUG    Exited  check_input
-2021-02-08 20:37:22,046 DEBUG    Entered check_input
-2021-02-08 20:37:22,049 DEBUG    Exited  check_input
-2021-02-08 20:37:22,050 DEBUG    Entered check_input
-2021-02-08 20:37:22,053 DEBUG    Exited  check_input
-2021-02-08 20:37:22,053 DEBUG    Entered calculate_snowmelt
-2021-02-08 20:37:22,361 DEBUG    Exited  calculate_snowmelt
-2021-02-08 20:37:23,842 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D3FE75CDC8>
-2021-02-08 20:37:23,842 DEBUG    Starting outermost env
-2021-02-08 20:37:23,842 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,842 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D3FEF80F08> created
-2021-02-08 20:37:23,843 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,843 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,844 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D3FEF80F08>.
-2021-02-08 20:37:23,844 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D3FE75CDC8>
-2021-02-08 20:37:23,844 DEBUG    Sharing flag: 0
-2021-02-08 20:37:23,846 DEBUG    Nodata success: 1, Nodata value: nan
-2021-02-08 20:37:23,846 DEBUG    Dataset <open DatasetReader name='C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\Snow_end_month\snow_end_month18_3.tif' mode='r'> is started.
-2021-02-08 20:37:23,846 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D3FE75CDC8>
-2021-02-08 20:37:23,846 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D3FEF80F08> options
-2021-02-08 20:37:23,846 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D3FEF80F08>.
-2021-02-08 20:37:23,846 DEBUG    Exiting outermost env
-2021-02-08 20:37:23,846 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D3FE75CDC8>
-2021-02-08 20:37:23,847 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,847 DEBUG    Starting outermost env
-2021-02-08 20:37:23,847 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,847 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> created
-2021-02-08 20:37:23,847 DEBUG    Logging error handler pushed.
-2021-02-08 20:37:23,848 DEBUG    All drivers registered.
-2021-02-08 20:37:23,848 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,848 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,848 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,848 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> with options {}
-2021-02-08 20:37:23,848 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,848 DEBUG    Got a copy of environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:23,848 DEBUG    Credentialized: {'CHECK_WITH_INVERT_PROJ': True, 'GTIFF_IMPLICIT_JPEG_OVR': False, 'FIONA_ENV': True, 'GDAL_DATA': 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'}
-2021-02-08 20:37:23,849 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,849 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:23,850 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,850 DEBUG    Error handler popped.
-2021-02-08 20:37:23,850 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,850 DEBUG    Exiting outermost env
-2021-02-08 20:37:23,850 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,850 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,850 DEBUG    Starting outermost env
-2021-02-08 20:37:23,850 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,850 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> created
-2021-02-08 20:37:23,850 DEBUG    Logging error handler pushed.
-2021-02-08 20:37:23,851 DEBUG    All drivers registered.
-2021-02-08 20:37:23,851 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,851 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,851 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,851 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> with options {}
-2021-02-08 20:37:23,851 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,851 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,851 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:23,851 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,851 DEBUG    Error handler popped.
-2021-02-08 20:37:23,851 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,851 DEBUG    Exiting outermost env
-2021-02-08 20:37:23,852 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,852 DEBUG    Flushed buffer
-2021-02-08 20:37:23,852 DEBUG    Stopped session
-2021-02-08 20:37:23,852 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,852 DEBUG    Starting outermost env
-2021-02-08 20:37:23,852 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,852 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> created
-2021-02-08 20:37:23,852 DEBUG    Logging error handler pushed.
-2021-02-08 20:37:23,853 DEBUG    All drivers registered.
-2021-02-08 20:37:23,853 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,853 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,853 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,853 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> with options {}
-2021-02-08 20:37:23,853 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,853 DEBUG    Got a copy of environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:23,853 DEBUG    Credentialized: {'CHECK_WITH_INVERT_PROJ': True, 'GTIFF_IMPLICIT_JPEG_OVR': False, 'FIONA_ENV': True, 'GDAL_DATA': 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'}
-2021-02-08 20:37:23,854 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,854 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:23,854 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,854 DEBUG    Error handler popped.
-2021-02-08 20:37:23,854 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,854 DEBUG    Exiting outermost env
-2021-02-08 20:37:23,854 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3FE540C08>
-2021-02-08 20:37:23,854 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,854 DEBUG    Starting outermost env
-2021-02-08 20:37:23,854 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,854 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> created
-2021-02-08 20:37:23,854 DEBUG    Logging error handler pushed.
-2021-02-08 20:37:23,855 DEBUG    All drivers registered.
-2021-02-08 20:37:23,855 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,855 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,855 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:23,855 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> with options {}
-2021-02-08 20:37:23,855 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:23,855 DEBUG    Index: 0
-2021-02-08 20:37:23,864 DEBUG    Output nodata value read from file: nan
-2021-02-08 20:37:23,864 DEBUG    Output nodata values: [nan]
-2021-02-08 20:37:23,864 DEBUG    all_valid: False
-2021-02-08 20:37:23,864 DEBUG    mask_flags: ([<MaskFlags.nodata: 8>],)
-2021-02-08 20:37:23,866 DEBUG    Sharing flag: 0
-2021-02-08 20:37:23,867 DEBUG    Nodata success: 1, Nodata value: nan
-2021-02-08 20:37:23,867 DEBUG    Dataset <open DatasetBase name='<VRTDataset rasterXSize="3589" rasterYSize="2743"><SRS>PROJCS["WGS 84 / UTM zone 34N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",21],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32634"]]</SRS><GeoTransform>438363.722651493,25.0,0.0,4525499.363685054,0.0,-25.0</GeoTransform><VRTRasterBand band="1" dataType="Float32"><NoDataValue>nan</NoDataValue><ColorInterp>Gray</ColorInterp><ComplexSource><SourceFilename relativeToVRT="1">dummy.tif</SourceFilename><SourceBand>1</SourceBand><SourceProperties BlockXSize="3588" BlockYSize="1" RasterXSize="3589" RasterYSize="2743" dataType="Float32" /><SrcRect xOff="0" xSize="1" yOff="0" ySize="1" /><DstRect xOff="0" xSize="1" yOff="0" ySize="1" /><ScaleRatio>0</ScaleRatio><ScaleOffset>nan</ScaleOffset></ComplexSource><ComplexSource><SourceFilename relativeToVRT="0">C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\Snow_end_month\snow_end_month18_3.tif</SourceFilename><SourceBand>1</SourceBand><SourceProperties BlockXSize="3588" BlockYSize="1" RasterXSize="3589" RasterYSize="2743" dataType="Float32" /><SrcRect xOff="0" xSize="3588" yOff="0" ySize="2742" /><DstRect xOff="-787.0" xSize="3588.0" yOff="-708.0" ySize="2742.0" /><NODATA>nan</NODATA></ComplexSource></VRTRasterBand></VRTDataset>' mode='r'> is started.
-2021-02-08 20:37:23,867 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D3FEA11448>
-2021-02-08 20:37:23,867 DEBUG    Starting outermost env
-2021-02-08 20:37:23,867 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,867 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D384609E88> created
-2021-02-08 20:37:23,868 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,868 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,868 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D384609E88>.
-2021-02-08 20:37:23,868 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D3FEA11448>
-2021-02-08 20:37:23,868 DEBUG    IO window xoff=0.0 yoff=0.0 width=2801.0 height=2034.0
-2021-02-08 20:37:23,973 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D3FEA11448>
-2021-02-08 20:37:23,973 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D384609E88> options
-2021-02-08 20:37:23,973 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D384609E88>.
-2021-02-08 20:37:23,973 DEBUG    Exiting outermost env
-2021-02-08 20:37:23,974 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D3FEA11448>
-2021-02-08 20:37:23,977 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D3FEF8F648>
-2021-02-08 20:37:23,977 DEBUG    Starting outermost env
-2021-02-08 20:37:23,977 DEBUG    No GDAL environment exists
-2021-02-08 20:37:23,977 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D384609DC8> created
-2021-02-08 20:37:23,978 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
-2021-02-08 20:37:23,978 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
-2021-02-08 20:37:23,978 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D384609DC8>.
-2021-02-08 20:37:23,978 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D3FEF8F648>
-2021-02-08 20:37:24,022 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D3FEF8F648>
-2021-02-08 20:37:24,023 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D384609DC8> options
-2021-02-08 20:37:24,023 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D384609DC8>.
-2021-02-08 20:37:24,023 DEBUG    Exiting outermost env
-2021-02-08 20:37:24,023 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D3FEF8F648>
-2021-02-08 20:37:24,170 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:24,170 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3FE75CDC8> options
-2021-02-08 20:37:24,170 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:24,170 DEBUG    Error handler popped.
-2021-02-08 20:37:24,170 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3FE75CDC8>.
-2021-02-08 20:37:24,170 DEBUG    Exiting outermost env
-2021-02-08 20:37:24,170 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3FC52B088>
-2021-02-08 20:37:24,170 DEBUG    Flushed buffer
-2021-02-08 20:37:24,170 DEBUG    Stopped session
-2021-02-08 20:37:24,245 DEBUG    Exited  main
+2021-02-10 09:28:02,739 DEBUG    Entered main
+2021-02-10 09:28:02,740 DEBUG    Entered raster2nested_list
+2021-02-10 09:28:03,754 DEBUG    Exited  raster2nested_list
+2021-02-10 09:28:03,769 DEBUG    Entered check_input
+2021-02-10 09:28:03,773 DEBUG    Exited  check_input
+2021-02-10 09:28:03,773 DEBUG    Entered check_input
+2021-02-10 09:28:03,777 DEBUG    Exited  check_input
+2021-02-10 09:28:03,777 DEBUG    Entered check_input
+2021-02-10 09:28:03,780 DEBUG    Exited  check_input
+2021-02-10 09:28:03,780 DEBUG    Entered check_input
+2021-02-10 09:28:03,784 DEBUG    Exited  check_input
+2021-02-10 09:28:03,784 DEBUG    Entered check_input
+2021-02-10 09:28:03,788 DEBUG    Exited  check_input
+2021-02-10 09:28:03,788 DEBUG    Entered check_input
+2021-02-10 09:28:03,791 DEBUG    Exited  check_input
+2021-02-10 09:28:03,791 DEBUG    Entered calculate_snowmelt
+2021-02-10 09:28:04,129 DEBUG    Exited  calculate_snowmelt
+2021-02-10 09:28:05,621 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D3CDD5E9C8>
+2021-02-10 09:28:05,621 DEBUG    Starting outermost env
+2021-02-10 09:28:05,621 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,622 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D3CEFD5D48> created
+2021-02-10 09:28:05,622 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,622 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,623 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D3CEFD5D48>.
+2021-02-10 09:28:05,623 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D3CDD5E9C8>
+2021-02-10 09:28:05,623 DEBUG    Sharing flag: 0
+2021-02-10 09:28:05,625 DEBUG    Nodata success: 1, Nodata value: nan
+2021-02-10 09:28:05,625 DEBUG    Dataset <open DatasetReader name='C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\Snow_end_month\snow_end_month18_3.tif' mode='r'> is started.
+2021-02-10 09:28:05,625 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D3CDD5E9C8>
+2021-02-10 09:28:05,625 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D3CEFD5D48> options
+2021-02-10 09:28:05,625 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D3CEFD5D48>.
+2021-02-10 09:28:05,625 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,625 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D3CDD5E9C8>
+2021-02-10 09:28:05,626 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,626 DEBUG    Starting outermost env
+2021-02-10 09:28:05,626 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,626 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> created
+2021-02-10 09:28:05,626 DEBUG    Logging error handler pushed.
+2021-02-10 09:28:05,627 DEBUG    All drivers registered.
+2021-02-10 09:28:05,627 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,627 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,627 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,627 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> with options {}
+2021-02-10 09:28:05,627 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,627 DEBUG    Got a copy of environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,627 DEBUG    Credentialized: {'CHECK_WITH_INVERT_PROJ': True, 'GTIFF_IMPLICIT_JPEG_OVR': False, 'FIONA_ENV': True, 'GDAL_DATA': 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'}
+2021-02-10 09:28:05,629 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,630 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,630 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,630 DEBUG    Error handler popped.
+2021-02-10 09:28:05,630 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,630 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,630 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,630 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,630 DEBUG    Starting outermost env
+2021-02-10 09:28:05,630 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,630 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> created
+2021-02-10 09:28:05,630 DEBUG    Logging error handler pushed.
+2021-02-10 09:28:05,631 DEBUG    All drivers registered.
+2021-02-10 09:28:05,631 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,631 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,631 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,631 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> with options {}
+2021-02-10 09:28:05,631 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,631 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,631 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,632 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,632 DEBUG    Error handler popped.
+2021-02-10 09:28:05,632 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,632 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,632 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,632 DEBUG    Flushed buffer
+2021-02-10 09:28:05,632 DEBUG    Stopped session
+2021-02-10 09:28:05,632 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,632 DEBUG    Starting outermost env
+2021-02-10 09:28:05,632 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,632 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> created
+2021-02-10 09:28:05,632 DEBUG    Logging error handler pushed.
+2021-02-10 09:28:05,633 DEBUG    All drivers registered.
+2021-02-10 09:28:05,633 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,633 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,633 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,633 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> with options {}
+2021-02-10 09:28:05,633 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,633 DEBUG    Got a copy of environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,633 DEBUG    Credentialized: {'CHECK_WITH_INVERT_PROJ': True, 'GTIFF_IMPLICIT_JPEG_OVR': False, 'FIONA_ENV': True, 'GDAL_DATA': 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'}
+2021-02-10 09:28:05,634 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,634 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,634 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,634 DEBUG    Error handler popped.
+2021-02-10 09:28:05,634 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,634 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,634 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3CEFD5D48>
+2021-02-10 09:28:05,634 DEBUG    Entering env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,634 DEBUG    Starting outermost env
+2021-02-10 09:28:05,635 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,635 DEBUG    New GDAL environment <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> created
+2021-02-10 09:28:05,635 DEBUG    Logging error handler pushed.
+2021-02-10 09:28:05,635 DEBUG    All drivers registered.
+2021-02-10 09:28:05,635 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,635 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,636 DEBUG    Started GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,636 DEBUG    Updated existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> with options {}
+2021-02-10 09:28:05,636 DEBUG    Entered env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,636 DEBUG    Index: 0
+2021-02-10 09:28:05,644 DEBUG    Output nodata value read from file: nan
+2021-02-10 09:28:05,644 DEBUG    Output nodata values: [nan]
+2021-02-10 09:28:05,645 DEBUG    all_valid: False
+2021-02-10 09:28:05,645 DEBUG    mask_flags: ([<MaskFlags.nodata: 8>],)
+2021-02-10 09:28:05,646 DEBUG    Sharing flag: 0
+2021-02-10 09:28:05,647 DEBUG    Nodata success: 1, Nodata value: nan
+2021-02-10 09:28:05,647 DEBUG    Dataset <open DatasetBase name='<VRTDataset rasterXSize="3589" rasterYSize="2743"><SRS>PROJCS["WGS 84 / UTM zone 34N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",21],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32634"]]</SRS><GeoTransform>438363.722651493,25.0,0.0,4525499.363685054,0.0,-25.0</GeoTransform><VRTRasterBand band="1" dataType="Float32"><NoDataValue>nan</NoDataValue><ColorInterp>Gray</ColorInterp><ComplexSource><SourceFilename relativeToVRT="1">dummy.tif</SourceFilename><SourceBand>1</SourceBand><SourceProperties BlockXSize="3588" BlockYSize="1" RasterXSize="3589" RasterYSize="2743" dataType="Float32" /><SrcRect xOff="0" xSize="1" yOff="0" ySize="1" /><DstRect xOff="0" xSize="1" yOff="0" ySize="1" /><ScaleRatio>0</ScaleRatio><ScaleOffset>nan</ScaleOffset></ComplexSource><ComplexSource><SourceFilename relativeToVRT="0">C:\Users\Mouris\Desktop\Python\Python_Sebastian\Python-Course-Project\Results\Snow_end_month\snow_end_month18_3.tif</SourceFilename><SourceBand>1</SourceBand><SourceProperties BlockXSize="3588" BlockYSize="1" RasterXSize="3589" RasterYSize="2743" dataType="Float32" /><SrcRect xOff="0" xSize="3588" yOff="0" ySize="2742" /><DstRect xOff="-787.0" xSize="3588.0" yOff="-708.0" ySize="2742.0" /><NODATA>nan</NODATA></ComplexSource></VRTRasterBand></VRTDataset>' mode='r'> is started.
+2021-02-10 09:28:05,648 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D38266BF08>
+2021-02-10 09:28:05,648 DEBUG    Starting outermost env
+2021-02-10 09:28:05,648 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,648 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D3826778C8> created
+2021-02-10 09:28:05,649 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,649 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,649 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D3826778C8>.
+2021-02-10 09:28:05,649 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D38266BF08>
+2021-02-10 09:28:05,649 DEBUG    IO window xoff=0.0 yoff=0.0 width=2801.0 height=2034.0
+2021-02-10 09:28:05,754 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D38266BF08>
+2021-02-10 09:28:05,754 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D3826778C8> options
+2021-02-10 09:28:05,755 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D3826778C8>.
+2021-02-10 09:28:05,755 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,755 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D38266BF08>
+2021-02-10 09:28:05,758 DEBUG    Entering env context: <rasterio.env.Env object at 0x000000D38266BE88>
+2021-02-10 09:28:05,758 DEBUG    Starting outermost env
+2021-02-10 09:28:05,758 DEBUG    No GDAL environment exists
+2021-02-10 09:28:05,758 DEBUG    New GDAL environment <rasterio._env.GDALEnv object at 0x000000D38266BE48> created
+2021-02-10 09:28:05,759 DEBUG    GDAL_DATA found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\gdal'.
+2021-02-10 09:28:05,759 DEBUG    PROJ_LIB found in environment: 'C:\\Users\\Mouris\\AppData\\Local\\Continuum\\anaconda3\\envs\\geo-python\\Library\\share\\proj'.
+2021-02-10 09:28:05,759 DEBUG    Started GDALEnv <rasterio._env.GDALEnv object at 0x000000D38266BE48>.
+2021-02-10 09:28:05,759 DEBUG    Entered env context: <rasterio.env.Env object at 0x000000D38266BE88>
+2021-02-10 09:28:05,804 DEBUG    Exiting env context: <rasterio.env.Env object at 0x000000D38266BE88>
+2021-02-10 09:28:05,804 DEBUG    Cleared existing <rasterio._env.GDALEnv object at 0x000000D38266BE48> options
+2021-02-10 09:28:05,804 DEBUG    Stopped GDALEnv <rasterio._env.GDALEnv object at 0x000000D38266BE48>.
+2021-02-10 09:28:05,804 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,804 DEBUG    Exited env context: <rasterio.env.Env object at 0x000000D38266BE88>
+2021-02-10 09:28:05,951 DEBUG    Exiting env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,951 DEBUG    Cleared existing <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8> options
+2021-02-10 09:28:05,951 DEBUG    Stopping GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,951 DEBUG    Error handler popped.
+2021-02-10 09:28:05,951 DEBUG    Stopped GDALEnv <fiona._env.GDALEnv object at 0x000000D3CDD5E9C8>.
+2021-02-10 09:28:05,951 DEBUG    Exiting outermost env
+2021-02-10 09:28:05,951 DEBUG    Exited env context: <fiona.env.Env object at 0x000000D3CC55E248>
+2021-02-10 09:28:05,952 DEBUG    Flushed buffer
+2021-02-10 09:28:05,952 DEBUG    Stopped session
+2021-02-10 09:28:06,016 DEBUG    Exited  main

@@ -91,8 +91,6 @@ class DataManagement:
 
         # Save raster to folder
         outband.FlushCache()
-        outband = None
-        outrs = None
 
         print("Saved raster: ", os.path.basename(path))
         return 0
