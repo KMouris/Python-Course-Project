@@ -47,6 +47,28 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
         i += 1  # add to date (row) counter
     return date_list, array_list1, array_list2
 
+@wrap(entering, exiting)
+def calc_snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
+    """
+    Calculate snow depth which melts, snow depth at the start and at the end of a period
+    :param snow_at_start: ARRAY of actual snow depth at the beginning of a period
+    :param measured_snow_next_period: ARRAY of measured snow depths
+    :param satellite_data: ARRAY of snow cover
+    :return: ARRAY of actual snow depth at the end of a period
+             ARRAY of melting snow depth
+             ARRAY of actual snow depth at the beginning of the following period
+    """
+    try:
+        calc_snow = RasterCalculations(snow_start_of_period=snow_at_start,
+                                       snow_cover=satellite_data,
+                                       snow_measured=measured_snow_next_period)
+        snow_at_end_array = calc_snow.snow_at_end()
+        snowmelt_array = calc_snow.snowmelt(snow_end_of_period=snow_at_end_array)
+        snow_start_array = calc_snow.snow_at_start(snow_end_of_period=snow_at_end_array)
+        return snow_at_end_array, snowmelt_array, snow_start_array
+    except TypeError:
+        print("Input arguments have to be ARRAYS.")
+
 
 @wrap(entering, exiting)
 def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
@@ -117,7 +139,7 @@ def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
     manage_raster_one = DataManagement(path=path_raster_one, filename=filename_one)
     manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
-        print("Different dates at same index.")
+        print("Rasters have different dates.")
 
 
 
