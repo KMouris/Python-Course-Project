@@ -32,6 +32,7 @@ def main():
         check_input(snow_mm[j], snow_cover[j], snow_cover_paths[j], snow_cover_paths[j], snow_mm_paths, snow_cover_paths)
         j += 1
 
+    logger.error("Calculation started.")
     # Calculations test
     snow_end_month = []
     snow_melt = []

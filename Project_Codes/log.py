@@ -7,6 +7,28 @@ logging.basicConfig(level=logging.DEBUG, filename=log_file, filemode="w",
 logger = logging.getLogger("logger")
 
 
+# logger = logging.getLogger(__name__)
+# logger.setLevel(logging.DEBUG)
+
+# file_handler = logging.FileHandler('./logfile.log')
+# file_handler.setLevel(logging.DEBUG)
+# file_handler.setFormatter(logging.Formatter("%(asctime)-15s %(levelname)-8s %(message)s"))
+
+# stream_handler = logging.StreamHandler()
+# stream_handler.setLevel(logging.ERROR)
+# stream_handler.setFormatter(logging.Formatter("%(asctime)-15s %(levelname)-8s %(message)s"))
+
+# logger.addHandler(file_handler)
+# logger.addHandler(stream_handler)
+    
+# def log(fun):
+#  def wrapper(*args, **kwargs):
+#         start_logging()
+#        fun(*args, **kwargs)
+#         logging.shutdown()
+#     return wrapper
+
+
 def wrap(pre, post):
     def decorator(function):
         def inner(*args, **kwargs):

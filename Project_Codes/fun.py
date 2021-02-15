@@ -47,6 +47,7 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
         i += 1  # add to date (row) counter
     return date_list, array_list1, array_list2
 
+
 @wrap(entering, exiting)
 def calc_snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
     """

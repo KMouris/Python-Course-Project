@@ -18,7 +18,7 @@ class RasterCalculations:
             np.add(self, other)
         except TypeError:
             logger.error("TypeError: Arguments have to be arrays of the same type.")
-            # print("Arguments have to be arrays of the same type.")
+            print("Arguments have to be arrays of the same type.")
 
     def __mul__(self, other):
         try:
@@ -59,5 +59,3 @@ class RasterCalculations:
         """
         snow_start_of_period = self.snow_measured + snow_end_of_period
         return snow_start_of_period
-
-
