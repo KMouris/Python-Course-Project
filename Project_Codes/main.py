@@ -20,8 +20,8 @@ def main():
         compare_date(Snow_mm_path, SnowCover_path, snow_mm_paths[i], snow_cover_paths[i])
         i += 1
 
-    # loop trough input rasters, write raster arrays and corresponding dates in nested lists
-    date, snow_mm, snow_cover = raster2nested_list(snow_mm_paths, snow_cover_paths)
+    # loop trough input rasters, write raster arrays and corresponding dates in  lists
+    date, snow_mm, snow_cover = raster2list(snow_mm_paths, snow_cover_paths)
 
     # get projection and geotransformation of input raster
     gt, proj = data_manager.get_proj_data()

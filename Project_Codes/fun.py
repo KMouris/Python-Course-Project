@@ -4,8 +4,31 @@ from check_functions import *
 from log import *
 
 
+def create_lists():
+    list1 = []
+    list2 = []
+    list3 = []
+    return list1, list2, list3
+
+
+def create_date_string(filenames):
+    # instantiate data management object to use get_date method
+    data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=filenames)
+    sm_month, sm_year = data_manager.get_date()
+    # create date string (Format: YY/mm)
+    datestring = (str(sm_year) + '_' + str(sm_month))
+    return datestring
+
+
+def append2list(list1, list2, list3, object1, object2, object3):
+    list1.append(object1)
+    list2.append(object2)
+    list3.append(object3)
+    return list1, list2, list3
+
+
 @wrap(entering, exiting)
-def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
+def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
     Functions reads an arbitrary number of raster files from 2 different folders.
     Extracts the date and the corresponding raster arrays and saves them into nested lists for further calculations.
@@ -16,10 +39,8 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
                 array_list2: LIST which contains the raster arrays of list_rasterpaths2
     """
     # create empty lists
-    date_list = []
-    array_list1 = []
-    array_list2 = []
-    # loop trough every file to get the dates and raster arrays
+    date_list, array_list1, array_list2 = create_lists()
+    # loop trough every file to get the dates and raster arrays  # maybe loop in main?
     i = 0
     for file in list_rasterpaths1:
         # get the raster path (STR) from the list_rasterpaths (LIST)
@@ -30,20 +51,16 @@ def raster2nested_list(list_rasterpaths1, list_rasterpaths2):
             print('IndexError: Check the number of files in the input folders')
             print(i)
             sys.exit(1)  # code shouldn't run any further if this error occurs
-        # instantiate data management object to use get_date method
-        data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=filenames1)
-        sm_month, sm_year = data_manager.get_date()
+        # create date string (YY/mm)
+        month_year = create_date_string(filenames1)
         # use raster2array method to get the arrays from the raster files
         datatype, raster_arrays1, geotransform = gu.raster2array(
             filenames1)
         datatype2, raster_arrays2, geotransform2 = gu.raster2array(
             filenames2)
-        # create date string (Format: YY/mm)
-        month_year = (str(sm_year) + '_' + str(sm_month))
         # write the dates and the raster arrays into lists
-        date_list.append([month_year])
-        array_list1.append(raster_arrays1)
-        array_list2.append(raster_arrays2)
+        date_list, array_list1, array_list2 = append2list(date_list, array_list1, array_list2, [month_year],
+                                                          raster_arrays1, raster_arrays2)
         i += 1  # add to date (row) counter
     return date_list, array_list1, array_list2
 
@@ -141,6 +158,3 @@ def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
     manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
         print("Rasters have different dates.")
-
-
-
