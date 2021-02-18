@@ -13,34 +13,16 @@ class RasterCalculations:
         self.snow_cover = snow_cover
         self.snow_measured = snow_measured
 
-    def __add__(self, other):
-        try:
-            np.add(self, other)
-        except TypeError:
-            logger.error("TypeError: Arguments have to be arrays of the same type.")
-            print("Arguments have to be arrays of the same type.")
-
-    def __mul__(self, other):
-        try:
-            np.multiply(self, other)
-        except TypeError:
-            # logger.error("TypeError: Arguments have to be arrays of the same type.")
-            print("Arguments have to be arrays of the same type.")
-
-    def __sub__(self, other):
-        try:
-            np.subtract(self, other)
-        except TypeError:
-            logger.error("TypeError: Arguments have to be arrays of the same type.")
-            # print("Arguments have to be arrays of the same type.")
-
     def snow_at_end(self):
         """
         Multiply snow at start of period with satellite data of snow cover
         :return: ARRAY of actual snow depth at end of period
         """
-        snow_end_of_period = self.snow_start_of_period * self.snow_cover
-        return snow_end_of_period
+        try:
+            snow_end_of_period = self.snow_start_of_period * self.snow_cover
+            return snow_end_of_period
+        except TypeError:
+            logger.error("TypeError: Arguments have to be arrays of the same type.")
 
     def snowmelt(self, snow_end_of_period):
         """
@@ -48,8 +30,11 @@ class RasterCalculations:
         :param snow_end_of_period: ARRAY of actual snow depth at end of period
         :return: ARRAY of depth of snow that acts as snowmelt
         """
-        snowmelt = self.snow_start_of_period - snow_end_of_period
-        return snowmelt
+        try:
+            snowmelt = self.snow_start_of_period - snow_end_of_period
+            return snowmelt
+        except TypeError:
+            logger.error("TypeError: Arguments have to be arrays of the same type.")
 
     def snow_at_start(self, snow_end_of_period):
         """
@@ -57,5 +42,8 @@ class RasterCalculations:
         :param snow_end_of_period: ARRAY of actual snow depth at end of period
         :return: ARRAY of snow depth at start of period
         """
-        snow_start_of_period = self.snow_measured + snow_end_of_period
-        return snow_start_of_period
+        try:
+            snow_start_of_period = self.snow_measured + snow_end_of_period
+            return snow_start_of_period
+        except TypeError:
+            logger.error("TypeError: Arguments have to be arrays of the same type.")

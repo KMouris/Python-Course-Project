@@ -158,3 +158,422 @@
 2021-02-18 09:07:52,841 DEBUG    Flushed buffer
 2021-02-18 09:07:52,842 DEBUG    Stopped session
 2021-02-18 09:07:52,912 DEBUG    Exited  main
+2021-02-18 16:30:23,136 DEBUG    Entered main
+2021-02-18 16:30:23,136 DEBUG    Entered raster2list
+2021-02-18 16:30:24,810 DEBUG    Exited  raster2list
+2021-02-18 16:30:24,862 DEBUG    Entered check_input
+2021-02-18 16:30:24,874 DEBUG    Exited  check_input
+2021-02-18 16:30:24,874 DEBUG    Entered check_input
+2021-02-18 16:30:24,882 DEBUG    Exited  check_input
+2021-02-18 16:30:24,882 DEBUG    Entered check_input
+2021-02-18 16:30:24,882 DEBUG    Exited  check_input
+2021-02-18 16:30:24,882 DEBUG    Entered check_input
+2021-02-18 16:30:24,893 DEBUG    Exited  check_input
+2021-02-18 16:30:24,893 DEBUG    Entered check_input
+2021-02-18 16:30:24,901 DEBUG    Exited  check_input
+2021-02-18 16:30:24,901 DEBUG    Entered check_input
+2021-02-18 16:30:24,901 DEBUG    Exited  check_input
+2021-02-18 16:30:24,901 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:24,964 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:24,964 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:25,032 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:25,032 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:25,102 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:25,102 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:25,183 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:25,183 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:25,267 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:25,267 DEBUG    Entered calc_snowdepth
+2021-02-18 16:30:25,355 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:30:28,464 DEBUG    Exited  main
+2021-02-18 16:54:08,153 DEBUG    Entered main
+2021-02-18 16:54:08,159 DEBUG    Entered raster2list
+2021-02-18 16:54:09,260 DEBUG    Exited  raster2list
+2021-02-18 16:54:09,290 DEBUG    Entered check_input
+2021-02-18 16:54:09,297 DEBUG    Exited  check_input
+2021-02-18 16:54:09,297 DEBUG    Entered check_input
+2021-02-18 16:54:09,300 DEBUG    Exited  check_input
+2021-02-18 16:54:09,300 DEBUG    Entered check_input
+2021-02-18 16:54:09,305 DEBUG    Exited  check_input
+2021-02-18 16:54:09,305 DEBUG    Entered check_input
+2021-02-18 16:54:09,310 DEBUG    Exited  check_input
+2021-02-18 16:54:09,310 DEBUG    Entered check_input
+2021-02-18 16:54:09,310 DEBUG    Exited  check_input
+2021-02-18 16:54:09,310 DEBUG    Entered check_input
+2021-02-18 16:54:09,317 DEBUG    Exited  check_input
+2021-02-18 16:54:09,317 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,365 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:09,365 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,423 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:09,423 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,474 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:09,474 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,530 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:09,530 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,580 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:09,580 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:09,630 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:31,231 DEBUG    Entered main
+2021-02-18 16:54:31,231 DEBUG    Entered raster2list
+2021-02-18 16:54:32,313 DEBUG    Exited  raster2list
+2021-02-18 16:54:32,343 DEBUG    Entered check_input
+2021-02-18 16:54:32,352 DEBUG    Exited  check_input
+2021-02-18 16:54:32,354 DEBUG    Entered check_input
+2021-02-18 16:54:32,354 DEBUG    Exited  check_input
+2021-02-18 16:54:32,354 DEBUG    Entered check_input
+2021-02-18 16:54:32,360 DEBUG    Exited  check_input
+2021-02-18 16:54:32,360 DEBUG    Entered check_input
+2021-02-18 16:54:32,364 DEBUG    Exited  check_input
+2021-02-18 16:54:32,364 DEBUG    Entered check_input
+2021-02-18 16:54:32,364 DEBUG    Exited  check_input
+2021-02-18 16:54:32,364 DEBUG    Entered check_input
+2021-02-18 16:54:32,372 DEBUG    Exited  check_input
+2021-02-18 16:54:32,372 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,420 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:32,420 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,467 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:32,467 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,515 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:32,515 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,560 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:32,560 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,610 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:32,610 DEBUG    Entered calc_snowdepth
+2021-02-18 16:54:32,654 DEBUG    Exited  calc_snowdepth
+2021-02-18 16:54:35,315 DEBUG    Exited  main
+2021-02-18 16:56:30,091 DEBUG Entered main
+2021-02-18 16:56:30,091 DEBUG Entered raster2list
+2021-02-18 16:56:31,242 DEBUG Exited  raster2list
+2021-02-18 16:56:31,272 DEBUG Entered check_input
+2021-02-18 16:56:31,277 DEBUG Exited  check_input
+2021-02-18 16:56:31,277 DEBUG Entered check_input
+2021-02-18 16:56:31,282 DEBUG Exited  check_input
+2021-02-18 16:56:31,282 DEBUG Entered check_input
+2021-02-18 16:56:31,287 DEBUG Exited  check_input
+2021-02-18 16:56:31,287 DEBUG Entered check_input
+2021-02-18 16:56:31,292 DEBUG Exited  check_input
+2021-02-18 16:56:31,292 DEBUG Entered check_input
+2021-02-18 16:56:31,294 DEBUG Exited  check_input
+2021-02-18 16:56:31,294 DEBUG Entered check_input
+2021-02-18 16:56:31,296 DEBUG Exited  check_input
+2021-02-18 16:56:31,296 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,345 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:31,345 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,392 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:31,392 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,439 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:31,439 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,488 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:31,488 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,539 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:31,539 DEBUG Entered calc_snowdepth
+2021-02-18 16:56:31,591 DEBUG Exited  calc_snowdepth
+2021-02-18 16:56:34,305 DEBUG Exited  main
+2021-02-18 17:17:36,401 DEBUG    Entered main
+2021-02-18 17:17:36,403 INFO     The folder already exists and is not created
+2021-02-18 17:17:36,407 DEBUG    Entered raster2list
+2021-02-18 17:17:37,551 DEBUG    Exited  raster2list
+2021-02-18 17:17:37,593 DEBUG    Entered check_data
+2021-02-18 17:17:37,595 DEBUG    Exited  check_data
+2021-02-18 17:17:37,595 DEBUG    Entered check_data
+2021-02-18 17:17:37,601 DEBUG    Exited  check_data
+2021-02-18 17:17:37,601 DEBUG    Entered check_data
+2021-02-18 17:17:37,606 DEBUG    Exited  check_data
+2021-02-18 17:17:37,606 DEBUG    Entered check_data
+2021-02-18 17:17:37,606 DEBUG    Exited  check_data
+2021-02-18 17:17:37,606 DEBUG    Entered check_data
+2021-02-18 17:17:37,614 DEBUG    Exited  check_data
+2021-02-18 17:17:37,614 DEBUG    Entered check_data
+2021-02-18 17:17:37,616 DEBUG    Exited  check_data
+2021-02-18 17:17:37,616 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,661 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:37,661 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,711 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:37,711 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,789 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:37,789 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,839 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:37,839 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,892 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:37,892 DEBUG    Entered calc_snowdepth
+2021-02-18 17:17:37,945 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:17:40,881 DEBUG    Exited  main
+2021-02-18 17:20:28,209 DEBUG    Entered main
+2021-02-18 17:20:28,209 INFO     The folder already exists and is not created
+2021-02-18 17:20:28,209 DEBUG    Entered raster2list
+2021-02-18 17:20:29,252 DEBUG    Exited  raster2list
+2021-02-18 17:20:29,282 DEBUG    Entered check_data
+2021-02-18 17:20:29,284 DEBUG    Exited  check_data
+2021-02-18 17:20:29,284 DEBUG    Entered check_data
+2021-02-18 17:20:29,288 DEBUG    Exited  check_data
+2021-02-18 17:20:29,288 DEBUG    Entered check_data
+2021-02-18 17:20:29,294 DEBUG    Exited  check_data
+2021-02-18 17:20:29,294 DEBUG    Entered check_data
+2021-02-18 17:20:29,294 DEBUG    Exited  check_data
+2021-02-18 17:20:29,294 DEBUG    Entered check_data
+2021-02-18 17:20:29,294 DEBUG    Exited  check_data
+2021-02-18 17:20:29,303 DEBUG    Entered check_data
+2021-02-18 17:20:29,305 DEBUG    Exited  check_data
+2021-02-18 17:20:29,305 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,353 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:29,353 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,397 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:29,397 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,446 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:29,446 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,494 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:29,494 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,539 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:29,539 DEBUG    Entered calc_snowdepth
+2021-02-18 17:20:29,583 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:20:32,905 DEBUG    Exited  main
+2021-02-18 17:21:27,986 DEBUG    Entered main
+2021-02-18 17:21:27,986 INFO     The folder already exists and is not created
+2021-02-18 17:21:27,986 DEBUG    Entered raster2list
+2021-02-18 17:21:29,100 DEBUG    Exited  raster2list
+2021-02-18 17:21:29,131 DEBUG    Entered check_data
+2021-02-18 17:21:29,134 DEBUG    Exited  check_data
+2021-02-18 17:21:29,134 DEBUG    Entered check_data
+2021-02-18 17:21:29,140 DEBUG    Exited  check_data
+2021-02-18 17:21:29,140 DEBUG    Entered check_data
+2021-02-18 17:21:29,144 DEBUG    Exited  check_data
+2021-02-18 17:21:29,144 DEBUG    Entered check_data
+2021-02-18 17:21:29,148 DEBUG    Exited  check_data
+2021-02-18 17:21:29,148 DEBUG    Entered check_data
+2021-02-18 17:21:29,150 DEBUG    Exited  check_data
+2021-02-18 17:21:29,150 DEBUG    Entered check_data
+2021-02-18 17:21:29,154 DEBUG    Exited  check_data
+2021-02-18 17:21:29,154 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,204 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:29,204 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,252 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:29,252 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,299 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:29,299 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,345 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:29,345 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,394 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:29,394 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:29,437 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:36,319 DEBUG    Entered main
+2021-02-18 17:21:36,319 INFO     The folder already exists and is not created
+2021-02-18 17:21:36,319 DEBUG    Entered raster2list
+2021-02-18 17:21:37,468 DEBUG    Exited  raster2list
+2021-02-18 17:21:37,498 DEBUG    Entered check_data
+2021-02-18 17:21:37,500 DEBUG    Exited  check_data
+2021-02-18 17:21:37,500 DEBUG    Entered check_data
+2021-02-18 17:21:37,504 DEBUG    Exited  check_data
+2021-02-18 17:21:37,504 DEBUG    Entered check_data
+2021-02-18 17:21:37,511 DEBUG    Exited  check_data
+2021-02-18 17:21:37,511 DEBUG    Entered check_data
+2021-02-18 17:21:37,514 DEBUG    Exited  check_data
+2021-02-18 17:21:37,514 DEBUG    Entered check_data
+2021-02-18 17:21:37,519 DEBUG    Exited  check_data
+2021-02-18 17:21:37,519 DEBUG    Entered check_data
+2021-02-18 17:21:37,521 DEBUG    Exited  check_data
+2021-02-18 17:21:37,521 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,570 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,570 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,614 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,614 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,664 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,664 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,712 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,712 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,766 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,766 DEBUG    Entered calc_snowdepth
+2021-02-18 17:21:37,824 DEBUG    Exited  calc_snowdepth
+2021-02-18 17:21:37,984 INFO     Saved raster: snow_end_month17_11.tif 
+2021-02-18 17:21:38,164 INFO     Saved raster: snowmelt17_11.tif 
+2021-02-18 17:21:38,334 INFO     Saved raster: snow_end_month17_12.tif 
+2021-02-18 17:21:38,524 INFO     Saved raster: snowmelt17_12.tif 
+2021-02-18 17:21:38,684 INFO     Saved raster: snow_end_month18_1.tif 
+2021-02-18 17:21:38,864 INFO     Saved raster: snowmelt18_1.tif 
+2021-02-18 17:21:39,054 INFO     Saved raster: snow_end_month18_2.tif 
+2021-02-18 17:21:39,214 INFO     Saved raster: snowmelt18_2.tif 
+2021-02-18 17:21:39,339 INFO     Saved raster: snow_end_month18_3.tif 
+2021-02-18 17:21:39,524 INFO     Saved raster: snowmelt18_3.tif 
+2021-02-18 17:21:39,714 INFO     Saved raster: snow_end_month18_4.tif 
+2021-02-18 17:21:39,904 INFO     Saved raster: snowmelt18_4.tif 
+2021-02-18 17:21:40,464 DEBUG    Exited  main
+2021-02-18 18:45:48,695 DEBUG    Entered main
+2021-02-18 18:45:48,695 INFO     The folder already exists and is not created
+2021-02-18 18:45:48,695 DEBUG    Entered raster2list
+2021-02-18 18:45:49,816 DEBUG    Exited  raster2list
+2021-02-18 18:45:49,858 DEBUG    Entered check_data
+2021-02-18 18:45:49,858 DEBUG    Exited  check_data
+2021-02-18 18:45:49,858 DEBUG    Entered check_data
+2021-02-18 18:45:49,866 DEBUG    Exited  check_data
+2021-02-18 18:45:49,866 DEBUG    Entered check_data
+2021-02-18 18:45:49,874 DEBUG    Exited  check_data
+2021-02-18 18:45:49,874 DEBUG    Entered check_data
+2021-02-18 18:45:49,874 DEBUG    Exited  check_data
+2021-02-18 18:45:49,874 DEBUG    Entered check_data
+2021-02-18 18:45:49,882 DEBUG    Exited  check_data
+2021-02-18 18:45:49,882 DEBUG    Entered check_data
+2021-02-18 18:45:49,882 DEBUG    Exited  check_data
+2021-02-18 18:45:49,882 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:49,926 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:49,926 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:49,974 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:49,974 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:50,031 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:50,031 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:50,082 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:50,082 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:50,131 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:50,131 DEBUG    Entered calc_snowdepth
+2021-02-18 18:45:50,174 DEBUG    Exited  calc_snowdepth
+2021-02-18 18:45:50,308 INFO     Saved raster: snow_end_month17_11.tif 
+2021-02-18 18:45:50,481 INFO     Saved raster: snowmelt17_11.tif 
+2021-02-18 18:45:50,641 INFO     Saved raster: snow_end_month17_12.tif 
+2021-02-18 18:45:50,794 INFO     Saved raster: snowmelt17_12.tif 
+2021-02-18 18:45:50,964 INFO     Saved raster: snow_end_month18_1.tif 
+2021-02-18 18:45:51,120 INFO     Saved raster: snowmelt18_1.tif 
+2021-02-18 18:45:51,277 INFO     Saved raster: snow_end_month18_2.tif 
+2021-02-18 18:45:51,434 INFO     Saved raster: snowmelt18_2.tif 
+2021-02-18 18:45:51,553 INFO     Saved raster: snow_end_month18_3.tif 
+2021-02-18 18:45:51,718 INFO     Saved raster: snowmelt18_3.tif 
+2021-02-18 18:45:51,907 INFO     Saved raster: snow_end_month18_4.tif 
+2021-02-18 18:45:52,079 INFO     Saved raster: snowmelt18_4.tif 
+2021-02-18 18:45:52,937 DEBUG    Exited  main
+2021-02-18 19:01:07,504 DEBUG    Entered main
+2021-02-18 19:01:07,504 INFO     The folder already exists and is not created
+2021-02-18 19:01:07,504 DEBUG    Entered raster2list
+2021-02-18 19:01:08,795 DEBUG    Exited  raster2list
+2021-02-18 19:01:08,828 DEBUG    Entered check_data
+2021-02-18 19:01:08,835 DEBUG    Exited  check_data
+2021-02-18 19:01:08,835 DEBUG    Entered check_data
+2021-02-18 19:01:08,837 DEBUG    Exited  check_data
+2021-02-18 19:01:08,837 DEBUG    Entered check_data
+2021-02-18 19:01:08,837 DEBUG    Exited  check_data
+2021-02-18 19:01:08,837 DEBUG    Entered check_data
+2021-02-18 19:01:08,845 DEBUG    Exited  check_data
+2021-02-18 19:01:08,845 DEBUG    Entered check_data
+2021-02-18 19:01:08,845 DEBUG    Exited  check_data
+2021-02-18 19:01:08,845 DEBUG    Entered check_data
+2021-02-18 19:01:08,853 DEBUG    Exited  check_data
+2021-02-18 19:01:08,853 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:49,556 DEBUG    Entered main
+2021-02-18 19:01:49,557 INFO     The folder already exists and is not created
+2021-02-18 19:01:49,557 DEBUG    Entered raster2list
+2021-02-18 19:01:50,623 DEBUG    Exited  raster2list
+2021-02-18 19:01:50,654 DEBUG    Entered check_data
+2021-02-18 19:01:50,654 DEBUG    Exited  check_data
+2021-02-18 19:01:50,654 DEBUG    Entered check_data
+2021-02-18 19:01:50,662 DEBUG    Exited  check_data
+2021-02-18 19:01:50,662 DEBUG    Entered check_data
+2021-02-18 19:01:50,662 DEBUG    Exited  check_data
+2021-02-18 19:01:50,662 DEBUG    Entered check_data
+2021-02-18 19:01:50,671 DEBUG    Exited  check_data
+2021-02-18 19:01:50,671 DEBUG    Entered check_data
+2021-02-18 19:01:50,671 DEBUG    Exited  check_data
+2021-02-18 19:01:50,678 DEBUG    Entered check_data
+2021-02-18 19:01:50,680 DEBUG    Exited  check_data
+2021-02-18 19:01:50,680 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:50,737 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:50,737 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:50,790 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:50,790 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:50,855 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:50,855 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:50,903 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:50,903 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:50,950 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:50,950 DEBUG    Entered calc_snowdepth
+2021-02-18 19:01:51,001 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:01:51,141 INFO     Saved raster: snow_end_month17_11.tif 
+2021-02-18 19:01:51,285 INFO     Saved raster: snowmelt17_11.tif 
+2021-02-18 19:01:51,465 INFO     Saved raster: snow_end_month17_12.tif 
+2021-02-18 19:01:51,637 INFO     Saved raster: snowmelt17_12.tif 
+2021-02-18 19:01:51,795 INFO     Saved raster: snow_end_month18_1.tif 
+2021-02-18 19:01:51,931 INFO     Saved raster: snowmelt18_1.tif 
+2021-02-18 19:01:52,065 INFO     Saved raster: snow_end_month18_2.tif 
+2021-02-18 19:01:52,205 INFO     Saved raster: snowmelt18_2.tif 
+2021-02-18 19:01:52,364 INFO     Saved raster: snow_end_month18_3.tif 
+2021-02-18 19:01:52,630 INFO     Saved raster: snowmelt18_3.tif 
+2021-02-18 19:01:52,853 INFO     Saved raster: snow_end_month18_4.tif 
+2021-02-18 19:01:53,064 INFO     Saved raster: snowmelt18_4.tif 
+2021-02-18 19:01:53,950 DEBUG    Exited  main
+2021-02-18 19:03:34,541 DEBUG    Entered main
+2021-02-18 19:03:34,542 INFO     The folder already exists and is not created
+2021-02-18 19:03:34,542 DEBUG    Entered raster2list
+2021-02-18 19:03:35,766 DEBUG    Exited  raster2list
+2021-02-18 19:03:35,790 DEBUG    Entered check_data
+2021-02-18 19:03:35,798 DEBUG    Exited  check_data
+2021-02-18 19:03:35,798 DEBUG    Entered check_data
+2021-02-18 19:03:35,798 DEBUG    Exited  check_data
+2021-02-18 19:03:35,798 DEBUG    Entered check_data
+2021-02-18 19:03:35,808 DEBUG    Exited  check_data
+2021-02-18 19:03:35,808 DEBUG    Entered check_data
+2021-02-18 19:03:35,808 DEBUG    Exited  check_data
+2021-02-18 19:03:35,808 DEBUG    Entered check_data
+2021-02-18 19:03:35,816 DEBUG    Exited  check_data
+2021-02-18 19:03:35,816 DEBUG    Entered check_data
+2021-02-18 19:03:35,816 DEBUG    Exited  check_data
+2021-02-18 19:03:35,816 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:35,864 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:35,864 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:35,912 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:35,912 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:35,962 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:35,962 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:36,021 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:36,021 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:36,074 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:36,074 DEBUG    Entered calc_snowdepth
+2021-02-18 19:03:36,128 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:03:36,329 INFO     Saved raster: snow_end_month17_11.tif 
+2021-02-18 19:03:36,486 INFO     Saved raster: snowmelt17_11.tif 
+2021-02-18 19:03:36,652 INFO     Saved raster: snow_end_month17_12.tif 
+2021-02-18 19:03:36,792 INFO     Saved raster: snowmelt17_12.tif 
+2021-02-18 19:03:36,951 INFO     Saved raster: snow_end_month18_1.tif 
+2021-02-18 19:03:37,100 INFO     Saved raster: snowmelt18_1.tif 
+2021-02-18 19:03:37,219 INFO     Saved raster: snow_end_month18_2.tif 
+2021-02-18 19:03:37,385 INFO     Saved raster: snowmelt18_2.tif 
+2021-02-18 19:03:37,523 INFO     Saved raster: snow_end_month18_3.tif 
+2021-02-18 19:03:37,694 INFO     Saved raster: snowmelt18_3.tif 
+2021-02-18 19:03:37,954 INFO     Saved raster: snow_end_month18_4.tif 
+2021-02-18 19:03:38,319 INFO     Saved raster: snowmelt18_4.tif 
+2021-02-18 19:03:40,326 DEBUG    Exited  main
+2021-02-18 19:32:31,143 DEBUG    Entered main
+2021-02-18 19:32:31,143 INFO     The folder already exists and is not created
+2021-02-18 19:32:31,143 DEBUG    Entered raster2list
+2021-02-18 19:32:33,716 DEBUG    Exited  raster2list
+2021-02-18 19:32:33,792 DEBUG    Entered check_data
+2021-02-18 19:32:33,792 DEBUG    Exited  check_data
+2021-02-18 19:32:33,792 DEBUG    Entered check_data
+2021-02-18 19:32:33,800 DEBUG    Exited  check_data
+2021-02-18 19:32:33,800 DEBUG    Entered check_data
+2021-02-18 19:32:33,808 DEBUG    Exited  check_data
+2021-02-18 19:32:33,808 DEBUG    Entered check_data
+2021-02-18 19:32:33,808 DEBUG    Exited  check_data
+2021-02-18 19:32:33,808 DEBUG    Entered check_data
+2021-02-18 19:32:33,816 DEBUG    Exited  check_data
+2021-02-18 19:32:33,816 DEBUG    Entered check_data
+2021-02-18 19:32:33,816 DEBUG    Exited  check_data
+2021-02-18 19:32:33,816 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:33,873 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:33,873 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:33,921 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:33,921 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:33,977 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:33,977 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:34,025 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:34,025 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:34,073 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:34,073 DEBUG    Entered calc_snowdepth
+2021-02-18 19:32:34,122 DEBUG    Exited  calc_snowdepth
+2021-02-18 19:32:34,315 INFO     Saved raster: snow_end_month17_11.tif 
+2021-02-18 19:32:34,497 INFO     Saved raster: snowmelt17_11.tif 
+2021-02-18 19:32:34,646 INFO     Saved raster: snow_end_month17_12.tif 
+2021-02-18 19:32:34,765 INFO     Saved raster: snowmelt17_12.tif 
+2021-02-18 19:32:34,925 INFO     Saved raster: snow_end_month18_1.tif 
+2021-02-18 19:32:35,046 INFO     Saved raster: snowmelt18_1.tif 
+2021-02-18 19:32:35,194 INFO     Saved raster: snow_end_month18_2.tif 
+2021-02-18 19:32:35,336 INFO     Saved raster: snowmelt18_2.tif 
+2021-02-18 19:32:35,505 INFO     Saved raster: snow_end_month18_3.tif 
+2021-02-18 19:32:35,705 INFO     Saved raster: snowmelt18_3.tif 
+2021-02-18 19:32:35,934 INFO     Saved raster: snow_end_month18_4.tif 
+2021-02-18 19:32:36,121 INFO     Saved raster: snowmelt18_4.tif 
+2021-02-18 19:32:36,992 DEBUG    Exited  main

@@ -1,4 +1,5 @@
 from config import *
+from log import *
 
 
 class DataManagement:
@@ -13,19 +14,19 @@ class DataManagement:
         """
         try:
             if not os.path.exists(self.path):
-                print("Creating folder: ", self.path)
+                logger.info("Creating folder: %s " % self.path)
                 os.makedirs(self.path)
             if not os.path.exists(self.path + "\\Snowmelt"):
-                print("Creating folder: ", self.path + "\\Snowmelt")
+                logger.info("Creating folder: %s " % self.path + "\\Snowmelt")
                 os.makedirs(self.path + "\\Snowmelt")
             if not os.path.exists(self.path + "\\Snow_end_month"):
-                print("Creating folder: ", self.path + "\\Snow_end_month")
+                logger.info("Creating folder: %s " % self.path + "\\Snow_end_month")
                 os.makedirs(self.path + "\\Snow_end_month")
             else:
-                print("The folder already exists and is not created")
+                logger.info("The folder already exists and is not created")
             return 0
         except OSError as o:
-            print('OSError: Directory could not be created')
+            logger.error('OSError: Directory could not be created')
             print(o)
             pass
 
@@ -40,8 +41,8 @@ class DataManagement:
             sm_month = int((self.filename[-6]) + (self.filename[-5]))
             return sm_month, sm_year
         except ValueError as v:
-            print('ValueError: Invalid file name. Please make sure that the file name consists of 14 characters and '
-                  'contains the month and year.')
+            logger.error('ValueError: Invalid file name. Please make sure that the file name consists of 14 characters '
+                         'and contains the month and year.')
             print(v)
             sys.exit(1)  # code shouldn't run any further if this error occurs
 
@@ -56,7 +57,7 @@ class DataManagement:
         try:
             raster = gdal.Open(self.filename)  # Extract raster from path
         except RuntimeError as e:
-            print("RuntimeError: Raster can't be accessed")
+            logger.error("RuntimeError: Raster can't be accessed")
             print(e)
             sys.exit(1)  # code shouldn't run any further if this error occurs
         gt = raster.GetGeoTransform()  # Get geotransformation data
@@ -92,5 +93,5 @@ class DataManagement:
         # Save raster to folder
         outband.FlushCache()
 
-        print("Saved raster: ", os.path.basename(path))
+        logger.info("Saved raster: %s " % os.path.basename(path))
         return 0
