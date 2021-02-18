@@ -5,7 +5,7 @@ start_time = time.time()
 
 
 @wrap(entering, exiting)
-def main(): # maybe we should modularize it further? shift whole loops? Then we will have no big functions anymore
+def main(): # maybe we should modularize it further? shift whole loops? Then we will have no big functions anymore and just an clear step by step code which is easy to follow
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
@@ -63,9 +63,9 @@ def main(): # maybe we should modularize it further? shift whole loops? Then we 
         DataManagement.save_raster(save_path, snow_melt[k], gt, proj)
         k += 1
 
-    # Calculate Statistics (first idea, we could also write a table with statistic summary)
-    get_zon_statistics(raster_file, shape_zone)
-
+    # Plot Snow Coverage
+    df_stat = get_statistic_df(path_results,shape_zone)
+    plot_statistics(df_stat)
     print('Total time: ', time.time() - start_time, 'seconds')
 
 

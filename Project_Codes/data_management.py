@@ -45,8 +45,16 @@ class DataManagement:
             print(v)
             sys.exit(1)  # code shouldn't run any further if this error occurs
 
-    # Function receives raster file path and extracts the Geotransformation and Projection, to assign to all output
-    # rasters
+    def create_date_string(self):
+        """
+        Returns a date string ) by calling get_date method
+        :return: datestring: STR in the format (YY_mm)
+        """
+        sm_month, sm_year = self.get_date()
+        # create date string (Format: YY/mm)
+        datestring = (str(sm_year) + '_' + str(sm_month))
+        return datestring
+
     def get_proj_data(self):
         """
         Function which get the Projection and Geotransformation from a raster file (osgeo.gdal.Dataset)

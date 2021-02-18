@@ -11,15 +11,6 @@ def create_lists():
     return list1, list2, list3
 
 
-def create_date_string(filenames):
-    # instantiate data management object to use get_date method
-    data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=filenames)
-    sm_month, sm_year = data_manager.get_date()
-    # create date string (Format: YY/mm)
-    datestring = (str(sm_year) + '_' + str(sm_month))
-    return datestring
-
-
 def append2list(list1, list2, list3, object1, object2, object3):
     list1.append(object1)
     list2.append(object2)
@@ -43,6 +34,7 @@ def get_path_from_list(list1_object, list2_object):
         sys.exit(1)  # code shouldn't run any further if this error occurs
     return path1, path2
 
+
 @wrap(entering, exiting)
 def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
@@ -62,7 +54,8 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
         # get the raster path (STR) from the list_rasterpaths (LIST)
         filenames1, filenames2 = get_path_from_list(list_rasterpaths1[i], list_rasterpaths2[i])
         # create date string (YY/mm)
-        month_year = create_date_string(filenames1)
+        data_manager = DataManagement(path=r'' + os.path.abspath('../Results'), filename=filenames1)
+        month_year = data_manager.create_date_string()
         # use raster2array method to get the arrays from the raster files
         datatype, raster_arrays1, geotransform = gu.raster2array(
             filenames1)

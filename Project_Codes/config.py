@@ -2,15 +2,18 @@ try:
     import gdal
     import glob
     import logging
+    import matplotlib.pyplot as plt
     import numpy as np
     import os
+    import pandas as pd
     import rasterstats as rs
     import scipy
     import sys
     import time
 
 except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, numpy, os, scipy, sys, time).')
+    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, numpy, os, pandas, scipy, sys, '
+          'time).')
     print(e)
 
 try:
