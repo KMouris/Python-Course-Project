@@ -1,7 +1,8 @@
 from data_management import *
 from log import *
 
-class CheckInputData:
+
+class CompareData:
     def __init__(self, array_one, array_two, raster_one_path, raster_two_path):
         self.array_one = array_one
         self.array_two = array_two
@@ -15,9 +16,9 @@ class CheckInputData:
         try:
             if not self.array_one.shape == self.array_two.shape:
                 if not self.array_one.shape[0] == self.array_two.shape[0]:
-                    print("Unequal number of rows.")
+                    logger.warning("Unequal number of rows.")
                 else:
-                    print("Unequal number of columns.")
+                    logger.warning("Unequal number of columns.")
         except AttributeError:
             logger.error("Attribute Error: Input arguments have to be arrays.")
 
@@ -28,9 +29,9 @@ class CheckInputData:
         try:
             if not len(object_one) == len(object_two):
                 if len(object_one) < len(object_two):
-                    print("More items in object_two.")
+                    logger.warning("More items in object_two.")
                 else:
-                    print("More items in object_one.")
+                    logger.warning("More items in object_one.")
         except TypeError:
             logger.error("TypeError: Type of provided object has no len().")
 
@@ -48,9 +49,7 @@ class CheckInputData:
             logger.error("FileNotFoundError: The raster path %s does not exist." % self.raster_two_path)
         for i in range(0, 6, 1):
             if not round(raster_one_gt[i], 4) == round(raster_two_gt[i], 4):
-                print("Geotransformation data at index " + str(i) + " differs from each other. ")
-                # if i == 0:
-                # print("Upper Left Corner is different.") usw.
+                logger.warning("Geotransformation data at index " + str(i) + " differs from each other. ")
 
     def compare_projection(self):
         """
@@ -65,7 +64,7 @@ class CheckInputData:
         except FileNotFoundError:
             logger.error("FileNotFoundError: The raster path %s does not exist." % self.raster_two_path)
         if not raster_one_proj == raster_two_proj:
-            print("Raster have different Projections.")
+            logger.error("Raster have different Projections.")
 
 
 

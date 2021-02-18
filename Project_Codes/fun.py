@@ -1,4 +1,3 @@
-from raster_calculations import *
 from data_management import *
 from check_functions import *
 from log import *
@@ -29,7 +28,7 @@ def get_path_from_list(list1_object, list2_object):
         path1 = list1_object
         path2 = list2_object
     except IndexError as e:  # better to do it with a check function and not in the main code
-        print('IndexError: Check the number of files in the input folders')
+        logger.error('IndexError: Check the number of files in the input folders')
         print(e)
         sys.exit(1)  # code shouldn't run any further if this error occurs
     return path1, path2
@@ -92,72 +91,33 @@ def calc_snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
 
 
 @wrap(entering, exiting)
-def calculate_snowmelt(initial_snow, list_measured_snow, list_satellite_data):
+def check_data(array_one, array_two, path_raster_one, path_raster_two, object_one, object_two):
     """
-    Calculate snow depth transferred into next month and snow depth which melts by looping through lists of snow data
-    :param initial_snow: ARRAY of starting value of snow depth
-    :param list_measured_snow: LIST of arrays of measured snow depth
-    :param list_satellite_data: LIST of arrays of snow cover
-    :return: LIST with arrays of transferred snow depth
-             LIST with arrays of melting snow depth
+    Compare size of arrays, geotransformation and projection of rasters and number of items in an object
+    :param array_one: ARRAY one
+    :param array_two: ARRAY two
+    :param path_raster_one: STR of raster path one
+    :param path_raster_two: STR of raster path two
+    :param object_one: object one where len() can be applied, e.g. LIST, TUPLE, STR, etc.
+    :param object_two: object two where len() can be applied, e.g. LIST, TUPLE, STR, etc.
     """
-    # Creating result lists
-    snow_end_month = []
-    snowmelt = []
-    snow_start_month = [initial_snow]
-    # loop through monthly entry of lists respecting dependency of monthly start value on values of previous month
-    k = 0
-    m = 1
-    try:
-        for i in list_measured_snow:
-            if k == 0:
-                # for the first time step starting value of snow depth has to be set
-                calculations_snow = RasterCalculations(snow_start_of_period=initial_snow,
-                                                       snow_cover=list_satellite_data[k],
-                                                       snow_measured=list_measured_snow[m])
-            else:
-                # for following time steps snow depth at beginning of month is calculated
-                calculations_snow = RasterCalculations(snow_start_of_period=snow_start_month[k],
-                                                       snow_cover=list_satellite_data[k],
-                                                       snow_measured=list_measured_snow[m])
-
-            snow_end_month_array = calculations_snow.snow_at_end()
-            snow_melt_array = calculations_snow.snowmelt(snow_end_of_period=snow_end_month_array)
-            snow_end_month.append(snow_end_month_array)
-            snowmelt.append(snow_melt_array)
-            if k < len(list_measured_snow) - 1:
-                snow_start_of_month_array = calculations_snow.snow_at_start(snow_end_of_period=snow_end_month_array)
-                snow_start_month.append(snow_start_of_month_array)
-            k += 1
-            if m < len(list_measured_snow) - 1:
-                m += 1
-        return snow_end_month, snowmelt
-    except IndexError:
-        logger.error("IndexError: Check number of entries in provided lists.")
-
-
-@wrap(entering, exiting)
-def check_input(array_one, array_two, path_raster_one, path_raster_two, object_one, object_two):
-    """
-    Compares size of arrays, geotransformation and projection of rasters and number of items in an object
-    :param array_one: ARRAY
-    :param array_two: ARRAY
-    :param path_raster_one: STR of raster path
-    :param path_raster_two: STR of raster path
-    :param object_one: object where len() can be applied, e.g. LIST, TUPLE, STR, etc.
-    :param object_two: object where len() can be applied, e.g. LIST, TUPLE, STR, etc.
-    :return:
-    """
-    check_data = CheckInputData(array_one=array_one, array_two=array_two, raster_one_path=path_raster_one,
-                                raster_two_path=path_raster_two)
-    check_data.compare_shape()
-    check_data.compare_projection()
-    check_data.compare_geotransform()
-    check_data.number_of_items(object_one, object_two)
+    check = CompareData(array_one=array_one, array_two=array_two, raster_one_path=path_raster_one,
+                        raster_two_path=path_raster_two)
+    check.compare_shape()
+    check.compare_projection()
+    check.compare_geotransform()
+    check.number_of_items(object_one, object_two)
 
 
 def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
+    """
+    Extract the date from the filename of two rasters and compare them.
+    :param path_raster_one: STR of raster path one
+    :param path_raster_two: STR of raster path two
+    :param filename_one: STR of filename one
+    :param filename_two: STR of filename two
+    """
     manage_raster_one = DataManagement(path=path_raster_one, filename=filename_one)
     manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
-        print("Rasters have different dates.")
+        logger.warning("Rasters have different dates.")
