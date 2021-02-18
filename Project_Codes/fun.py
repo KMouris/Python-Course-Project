@@ -27,11 +27,27 @@ def append2list(list1, list2, list3, object1, object2, object3):
     return list1, list2, list3
 
 
+def get_path_from_list(list1_object, list2_object):
+    """
+
+    :param list1_object: Indexed STR Object from LIST
+    :param list2_object: Indexed STR Object from LIST
+    :return:
+    """
+    try:
+        path1 = list1_object
+        path2 = list2_object
+    except IndexError as e:  # better to do it with a check function and not in the main code
+        print('IndexError: Check the number of files in the input folders')
+        print(e)
+        sys.exit(1)  # code shouldn't run any further if this error occurs
+    return path1, path2
+
 @wrap(entering, exiting)
 def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
     Functions reads an arbitrary number of raster files from 2 different folders.
-    Extracts the date and the corresponding raster arrays and saves them into nested lists for further calculations.
+    Extracts the date and the corresponding raster arrays and saves them into lists for further calculations.
     :param list_rasterpaths1: LIST of paths to raster files
     :param list_rasterpaths2: LIST of paths to raster files
     :return:    date_list: LIST which contains the year and month of input raster files
@@ -40,17 +56,11 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
     # create empty lists
     date_list, array_list1, array_list2 = create_lists()
-    # loop trough every file to get the dates and raster arrays  # maybe loop in main?
+    # loop trough every file to get the dates and raster arrays  # maybe loop in main? But I'm not sure if better rather ineffective
     i = 0
     for file in list_rasterpaths1:
         # get the raster path (STR) from the list_rasterpaths (LIST)
-        try:
-            filenames1 = list_rasterpaths1[i]
-            filenames2 = list_rasterpaths2[i]
-        except IndexError as i:  # better to do it with a check function and not in the main code
-            print('IndexError: Check the number of files in the input folders')
-            print(i)
-            sys.exit(1)  # code shouldn't run any further if this error occurs
+        filenames1, filenames2 = get_path_from_list(list_rasterpaths1[i], list_rasterpaths2[i])
         # create date string (YY/mm)
         month_year = create_date_string(filenames1)
         # use raster2array method to get the arrays from the raster files

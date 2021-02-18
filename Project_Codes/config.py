@@ -29,3 +29,6 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 # Folder for the results
 path_results = r'' + os.path.abspath('../Results')
 
+# Input for statistics
+raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_3.tif')
+shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
