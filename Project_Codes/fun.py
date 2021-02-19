@@ -1,4 +1,5 @@
 from data_management import *
+from raster_calculations import *
 from check_functions import *
 from log import *
 
@@ -35,7 +36,7 @@ def get_path_from_list(list1_object, list2_object):
 
 
 @wrap(entering, exiting)
-def calc_snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
+def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
     """
     Calculate snow depth which melts, snow depth at the start and at the end of a period
     :param snow_at_start: ARRAY of actual snow depth at the beginning of a period

@@ -3,7 +3,7 @@ from config import logging
 
 log_file = "./logfile.log"
 # filemode has to be adjusted
-logging.basicConfig(level=logging.DEBUG, filename=log_file, filemode="w",
+logging.basicConfig(level=logging.DEBUG, filename=log_file, filemode="a",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 logger = logging.getLogger("logger")
 

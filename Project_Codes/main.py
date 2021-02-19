@@ -39,26 +39,26 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
 
 
 @wrap(entering, exiting)
-def calc_snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
-    """
-    Calculate snow depth which melts, snow depth at the start and at the end of a period
-    :param snow_at_start: ARRAY of actual snow depth at the beginning of a period
-    :param measured_snow_next_period: ARRAY of measured snow depths
-    :param satellite_data: ARRAY of snow cover
-    :return: ARRAY of actual snow depth at the end of a period
-             ARRAY of melting snow depth
-             ARRAY of actual snow depth at the beginning of the following period
-    """
+def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
+    snow_end_month, snow_melt, snow_start_month = create_lists()
+    snow_start_month.append(initial_snow)
+    k = 0
+    m = 1
     try:
-        calc_snow = RasterCalculations(snow_start_of_period=snow_at_start,
-                                       snow_cover=satellite_data,
-                                       snow_measured=measured_snow_next_period)
-        snow_at_end_array = calc_snow.snow_at_end()
-        snowmelt_array = calc_snow.snowmelt(snow_end_of_period=snow_at_end_array)
-        snow_start_array = calc_snow.snow_at_start(snow_end_of_period=snow_at_end_array)
-        return snow_at_end_array, snowmelt_array, snow_start_array
-    except TypeError:
-        logger.error("Input arguments have to be ARRAYS.")
+        for i in measured_snow_next_period:
+            snow_end_array, snowmelt_array, snow_start_array = snowdepth(snow_start_month[k],
+                                                                         measured_snow_next_period[m],
+                                                                         satellite_data[k])
+            snow_end_month.append(snow_end_array)
+            snow_melt.append(snowmelt_array)
+            if k < len(measured_snow_next_period) -1:
+                snow_start_month.append(snow_start_array)
+            k += 1
+            if m < len(measured_snow_next_period) -1:
+                m += 1
+    except IndexError:
+        logger.error("IndexError: Check number of items in list.")
+    return snow_end_month, snow_melt
 
 
 @wrap(entering, exiting)
@@ -90,35 +90,14 @@ def main(): # maybe we should modularize it further? shift whole loops? Then we 
         j += 1
 
     # Calculations
-    snow_end_month, snow_melt, snow_start_month = create_lists()
-    # initial snow is defined at index 0 of list
-    snow_start_month.append(snow_mm[0])
-    k = 0
-    m = 1
-    try:
-        for i in snow_mm:
-            snow_end_array, snowmelt_array, snow_start_array = calc_snowdepth(snow_start_month[k],
-                                                                              snow_mm[m],
-                                                                              snow_cover[k])
-            snow_end_month.append(snow_end_array)
-            snow_melt.append(snowmelt_array)
-            # avoids appending wrong snow_start value of last loop to list
-            if k < len(snow_mm) - 1:
-                snow_start_month.append(snow_start_array)
-            k += 1
-            if m < len(snow_mm) - 1:
-                m += 1
-    except IndexError:
-        logger.error("Check number of items in list.")
+    snow_end_month, snow_melt = snowcalc_over_list(snow_mm[0], snow_cover, snow_mm)
 
     # Saving arrays as raster
     k = 0
     for entry in snow_melt:
-        save_path = r'' + os.path.abspath('../Results/Snow_end_month') + "/snow_end_month" + str(
-            date[k][0]) + ".tif"
+        save_path = r'' + os.path.abspath('../Results/Snow_end_month') + "/snow_end_month" + str(date[k][0]) + ".tif"
         DataManagement.save_raster(save_path, snow_end_month[k], gt, proj)
-        save_path = r'' + os.path.abspath('../Results/Snowmelt') + "/snowmelt" + str(
-            date[k][0]) + ".tif"
+        save_path = r'' + os.path.abspath('../Results/Snowmelt') + "/snowmelt" + str(date[k][0]) + ".tif"
         DataManagement.save_raster(save_path, snow_melt[k], gt, proj)
         k += 1
 
