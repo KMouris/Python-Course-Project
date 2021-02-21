@@ -51,10 +51,10 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
                                                                          satellite_data[k])
             snow_end_month.append(snow_end_array)
             snow_melt.append(snowmelt_array)
-            if k < len(measured_snow_next_period) -1:
+            if k < len(measured_snow_next_period) - 1:
                 snow_start_month.append(snow_start_array)
             k += 1
-            if m < len(measured_snow_next_period) -1:
+            if m < len(measured_snow_next_period) - 1:
                 m += 1
     except IndexError:
         logger.error("IndexError: Check number of items in list.")
@@ -62,7 +62,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
 
 
 @wrap(entering, exiting)
-def main(): # maybe we should modularize it further? shift whole loops? Then we will have no big functions anymore
+def main():  # maybe we should modularize it further? shift whole loops? Then we will have no big functions anymore
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
@@ -102,7 +102,7 @@ def main(): # maybe we should modularize it further? shift whole loops? Then we 
         k += 1
 
     # Plot Snow Coverage
-    df_stat = get_statistic_df(path_results,shape_zone)
+    df_stat = get_statistic_df(snow_result_paths, shape_zone, date)
     plot_statistics(df_stat)
     print('Total time: ', time.time() - start_time, 'seconds')
 

@@ -33,5 +33,5 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 path_results = r'' + os.path.abspath('../Results')
 
 # Input for statistics
-raster_file = r'' + os.path.abspath('../Results/Snow_end_month/snow_end_month18_3.tif')
+snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
 shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
