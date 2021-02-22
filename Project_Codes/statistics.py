@@ -29,8 +29,11 @@ Function which creates a dataframe with the need information to plot the results
 
 def plot_statistics(df_to_plot):
     ax = plt.gca()
-    ax.set_ylabel("Snow Coverage [%]")
     df_to_plot.plot(y="Snow Coverage", x="Date", kind='line', marker='o', color='grey', ax=ax)
+    ax.set_xlabel("Date [YY_mm]")
+    ax.set_ylabel("Snow Coverage [%]")
+    plt_name = 'statistic_plot'
+    plt.savefig(path_results + r'//' + plt_name, dpi=300, bbox_inches='tight')
     plt.show()
 
 
