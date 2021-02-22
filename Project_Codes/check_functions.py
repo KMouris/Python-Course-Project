@@ -1,4 +1,4 @@
-from data_management import *
+from config import *
 from log import *
 
 
@@ -37,7 +37,7 @@ class CompareData:
 
     def compare_geotransform(self):
         """
-        Round geotransformation of two Raster off to four decimal places and compare them
+        Round geotransformation of two raster off to four decimal places and compare them
         """
         try:
             raster_one_gt = gdal.Open(self.raster_one_path).GetGeoTransform()
@@ -53,7 +53,7 @@ class CompareData:
 
     def compare_projection(self):
         """
-        Compare projection of two Raster
+        Compare projection of two raster
         """
         try:
             raster_one_proj = gdal.Open(self.raster_one_path).GetProjection()

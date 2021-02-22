@@ -1,5 +1,4 @@
 from config import *
-from fun import *
 
 
 def get_statistic_df(path, shape, datelist):

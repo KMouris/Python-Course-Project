@@ -1,6 +1,5 @@
 from statistics import *
 from fun import *
-from raster_calculations import *
 
 start_time = time.time()
 
@@ -40,6 +39,13 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
 
 @wrap(entering, exiting)
 def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
+    """
+
+    :param initial_snow: ARRAY
+    :param satellite_data: LIST
+    :param measured_snow_next_period: LIST
+    :return:
+    """
     snow_end_month, snow_melt, snow_start_month = create_lists()
     snow_start_month.append(initial_snow)
     k = 0

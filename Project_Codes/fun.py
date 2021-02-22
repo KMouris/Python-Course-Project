@@ -39,7 +39,7 @@ def get_path_from_list(list1_object, list2_object):
 def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
     """
     Calculate snow depth which melts, snow depth at the start and at the end of a period
-    :param snow_at_start: ARRAY of actual snow depth at the beginning of a period
+    :param snow_at_start: ARRAY of snow depth at the beginning of a period
     :param measured_snow_next_period: ARRAY of measured snow depths
     :param satellite_data: ARRAY of snow cover
     :return: ARRAY of actual snow depth at the end of a period
