@@ -22,6 +22,9 @@ class DataManagement:
             if not os.path.exists(self.path + "\\Snow_end_month"):
                 logger.info("Creating folder: %s " % self.path + "\\Snow_end_month")
                 os.makedirs(self.path + "\\Snow_end_month")
+            if not os.path.exists(self.path + "\\Plots"):
+                logger.info("Creating folder: %s " % self.path + "\\Plots")
+                os.makedirs(self.path + "\\Plots")
             else:
                 logger.info("The folder already exists and is not created")
             return 0

@@ -107,11 +107,11 @@ def main():  # maybe we should modularize it further? shift whole loops? Then we
         DataManagement.save_raster(save_path, snow_melt[k], gt, proj)
         k += 1
 
-    # Plot Snow Coverage
-    df_stat = get_statistic_df(snow_result_paths, shape_zone, date)
-    plot_statistics(df_stat)
+    # Calculate and plot zonal statistics
+    zonal_statistics = ZonStatistics(path_raster=snow_result_paths, shape=shape_zone, datelist=date)
+    zonal_statistics.get_zon_statistic()
+    zonal_statistics.plot_zon_statistics()
     print('Total time: ', time.time() - start_time, 'seconds')
-
     logging.shutdown()
 
 
