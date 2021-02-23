@@ -108,7 +108,7 @@ def main():
         k += 1
 
     # Calculate and plot zonal statistics
-    zonal_statistics = ZonStatistics(path_raster=snow_result_paths, shape=shape_zone, datelist=date)
+    zonal_statistics = ZonStatistics(path_raster=snow_result_paths, shape=shape_zone, datelist=date, parameter=statistical_param)
     zonal_statistics.get_zon_statistic()
     if plot_statistic:
         logger.info("Plot statistic is enabled")

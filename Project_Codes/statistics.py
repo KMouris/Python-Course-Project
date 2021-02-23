@@ -2,7 +2,7 @@ from config import *
 
 
 class ZonStatistics:
-    def __init__(self, path_raster, shape, datelist):
+    def __init__(self, path_raster, shape, datelist, parameter):
         """
 
         :param path_raster:
@@ -12,6 +12,7 @@ class ZonStatistics:
         self.path_raster = path_raster
         self.shape = shape
         self.datelist = datelist
+        self.parameter = parameter
 
     def get_zon_statistic(self):
         """
@@ -26,12 +27,12 @@ class ZonStatistics:
             # get the statistical values for each raster file
             statistical_values = self.calc_zon_statistics(i)
             # get the desired statistic value to plot (here: coverage)
-            value_to_plot = ([d['coverage'] for d in statistical_values])
+            value_to_plot = ([d[self.parameter] for d in statistical_values])
             # append values to the list
             list_statistics.append(value_to_plot)
             i += 1
         # create and merge dataframes
-        df_statistics = pd.DataFrame(list_statistics, columns=['Snow Coverage'])
+        df_statistics = pd.DataFrame(list_statistics, columns=[self.parameter])
         df_date = pd.DataFrame(self.datelist, columns=['Date'])
         df_statistics = df_statistics.join(df_date)
         return df_statistics
@@ -55,7 +56,7 @@ class ZonStatistics:
         :return:
         """
         ax = plt.gca()
-        self.get_zon_statistic().plot(y="Snow Coverage", x="Date", kind='line', marker='o', color='grey',
+        self.get_zon_statistic().plot(y=self.parameter, x="Date", kind='line', marker='o', color='grey',
                                          grid='major', ax=ax)
         ax.set_xlabel("Date [YY_mm]")
         ax.set_ylabel("Snow Coverage [%]")
