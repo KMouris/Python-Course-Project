@@ -35,7 +35,8 @@ path_results = r'' + os.path.abspath('../Results')
 # Input for statistics
 snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
 shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
-
+# disable (False) or enable (True) plot
+plot_statistic = True
 
 # Output folder for plots
 plot_result = path_results + '\\Plots'

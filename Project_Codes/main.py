@@ -110,7 +110,11 @@ def main():
     # Calculate and plot zonal statistics
     zonal_statistics = ZonStatistics(path_raster=snow_result_paths, shape=shape_zone, datelist=date)
     zonal_statistics.get_zon_statistic()
-    zonal_statistics.plot_zon_statistics()
+    if plot_statistic:
+        logger.info("Plot statistic is enabled")
+        zonal_statistics.plot_zon_statistics()
+    else:
+        logger.info("Plot statistic is disabled")
     print('Total time: ', time.time() - start_time, 'seconds')
     logging.shutdown()
 
