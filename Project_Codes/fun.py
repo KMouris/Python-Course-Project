@@ -5,6 +5,12 @@ from log import *
 
 
 def create_lists():
+    """
+    Function which creates three empty lists
+    :return:    list1: empty LIST
+                list2: empty LIST
+                list3: empty LIST
+    """
     list1 = []
     list2 = []
     list3 = []
@@ -12,6 +18,18 @@ def create_lists():
 
 
 def append2list(list1, list2, list3, object1, object2, object3):
+    """
+    Simple functions which appends objects to lists
+    :param list1: LIST before next object is appended
+    :param list2: LIST before next object is appended
+    :param list3: LIST before next object is appended
+    :param object1: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :param object2: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :param object3: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :return:    list1: LIST after object is appended
+                list2: LIST after object is appended
+                list3: LIST after object is appended
+    """
     list1.append(object1)
     list2.append(object2)
     list3.append(object3)
@@ -20,18 +38,17 @@ def append2list(list1, list2, list3, object1, object2, object3):
 
 def get_path_from_list(list1_object, list2_object):
     """
-
+    Function receives 2 list objects and returns two file paths
     :param list1_object: Indexed STR Object from LIST
     :param list2_object: Indexed STR Object from LIST
-    :return:
+    :return:    path1: STR of file path
+                path2: STR of file path
     """
     try:
         path1 = list1_object
         path2 = list2_object
-    except IndexError as e:  # better to do it with a check function and not in the main code
+    except IndexError:
         logger.error('IndexError: Check the number of files in the input folders')
-        print(e)
-        sys.exit(1)  # code shouldn't run any further if this error occurs
     return path1, path2
 
 

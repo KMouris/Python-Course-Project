@@ -17,7 +17,7 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
     # create empty lists
     date_list, array_list1, array_list2 = create_lists()
-    # loop trough every file to get the dates and raster arrays  # maybe loop in main? But I'm not sure if better rather ineffective
+    # loop trough every file to get the dates and raster arrays
     i = 0
     for file in list_rasterpaths1:
         # get the raster path (STR) from the list_rasterpaths (LIST)
@@ -68,7 +68,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
 
 
 @wrap(entering, exiting)
-def main():  # maybe we should modularize it further? shift whole loops? Then we will have no big functions anymore
+def main():
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
