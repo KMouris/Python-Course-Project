@@ -4,54 +4,6 @@ from check_functions import *
 from log import *
 
 
-def create_lists():
-    """
-    Function which creates three empty lists
-    :return:    list1: empty LIST
-                list2: empty LIST
-                list3: empty LIST
-    """
-    list1 = []
-    list2 = []
-    list3 = []
-    return list1, list2, list3
-
-
-def append2list(list1, list2, list3, object1, object2, object3):
-    """
-    Simple functions which appends objects to lists
-    :param list1: LIST before next object is appended
-    :param list2: LIST before next object is appended
-    :param list3: LIST before next object is appended
-    :param object1: LIST, STR, INT, ARRAY... (object which can be appended to a list)
-    :param object2: LIST, STR, INT, ARRAY... (object which can be appended to a list)
-    :param object3: LIST, STR, INT, ARRAY... (object which can be appended to a list)
-    :return:    list1: LIST after object is appended
-                list2: LIST after object is appended
-                list3: LIST after object is appended
-    """
-    list1.append(object1)
-    list2.append(object2)
-    list3.append(object3)
-    return list1, list2, list3
-
-
-def get_path_from_list(list1_object, list2_object):
-    """
-    Function receives 2 list objects and returns two file paths
-    :param list1_object: Indexed STR Object from LIST
-    :param list2_object: Indexed STR Object from LIST
-    :return:    path1: STR of file path
-                path2: STR of file path
-    """
-    try:
-        path1 = list1_object
-        path2 = list2_object
-    except IndexError:
-        logger.error('IndexError: Check the number of files in the input folders')
-    return path1, path2
-
-
 @wrap(entering, exiting)
 def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
     """
@@ -106,3 +58,51 @@ def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
     manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
         logger.warning("Rasters have different dates.")
+
+
+def create_lists():
+    """
+    Function which creates three empty lists
+    :return:    list1: empty LIST
+                list2: empty LIST
+                list3: empty LIST
+    """
+    list1 = []
+    list2 = []
+    list3 = []
+    return list1, list2, list3
+
+
+def append2list(list1, list2, list3, object1, object2, object3):
+    """
+    Simple functions which appends objects to lists
+    :param list1: LIST before next object is appended
+    :param list2: LIST before next object is appended
+    :param list3: LIST before next object is appended
+    :param object1: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :param object2: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :param object3: LIST, STR, INT, ARRAY... (object which can be appended to a list)
+    :return:    list1: LIST after object is appended
+                list2: LIST after object is appended
+                list3: LIST after object is appended
+    """
+    list1.append(object1)
+    list2.append(object2)
+    list3.append(object3)
+    return list1, list2, list3
+
+
+def get_path_from_list(list1_object, list2_object):
+    """
+    Function receives 2 list objects and returns two file paths
+    :param list1_object: Indexed STR Object from LIST
+    :param list2_object: Indexed STR Object from LIST
+    :return:    path1: STR of file path
+                path2: STR of file path
+    """
+    try:
+        path1 = list1_object
+        path2 = list2_object
+    except IndexError:
+        logger.error('IndexError: Check the number of files in the input folders')
+    return path1, path2
