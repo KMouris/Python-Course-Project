@@ -4,10 +4,10 @@ from config import *
 class ZonStatistics:
     def __init__(self, path_raster, shape, datelist, parameter):
         """
-
-        :param path_raster:
-        :param shape:
-        :param datelist:
+        :param path_raster: LIST of paths to raster files
+        :param shape: STR of path to Shapefile defining the zone for calculating the statistics
+        :param datelist: LIST containing datestrings [YY_mm]
+        :param parameter: STR defining the the statistical parameter to be plotted
         """
         self.path_raster = path_raster
         self.shape = shape

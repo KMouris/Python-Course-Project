@@ -4,6 +4,12 @@ from log import *
 
 class DataManagement:
     def __init__(self, path, filename):
+        """
+        Class with useful & robust methods for managing output folders, extracting information from raster files and
+        writing raster files using the previously extracted information.
+        :param path: STR of path needed to manage output folders
+        :param filename: STR of filename
+        """
         self.path = path
         self.filename = filename
 
@@ -40,6 +46,7 @@ class DataManagement:
                     sm_year:   INT specifying the month
         """
         try:
+            print(type(self.filename))
             sm_year = int((self.filename[-9]) + (self.filename[-8]))
             sm_month = int((self.filename[-6]) + (self.filename[-5]))
             return sm_month, sm_year
