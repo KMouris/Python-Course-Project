@@ -1,4 +1,4 @@
-from statistics import *
+from zon_statistics import *
 from fun import *
 
 start_time = time.time()
