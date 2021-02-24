@@ -4,7 +4,7 @@ from check_functions import *
 from log import *
 
 
-@wrap(entering, exiting)
+@wrapper(entering, exiting)
 def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
     """
     Calculate snow depth which melts, snow depth at the start and at the end of a period
@@ -27,7 +27,7 @@ def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
         print("Input arguments have to be ARRAYS.")
 
 
-@wrap(entering, exiting)
+@wrapper(entering, exiting)
 def check_data(array_one, array_two, path_raster_one, path_raster_two, object_one, object_two):
     """
     Compare size of arrays, geotransformation and projection of rasters and number of items in an object

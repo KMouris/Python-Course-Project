@@ -4,6 +4,9 @@ from config import *
 class ZonStatistics:
     def __init__(self, path_raster, shape, datelist, parameter):
         """
+        Class from Kilian
+        Class with useful methods to calculate and plot zonal statistics, including a custom
+        statistic to calculate the (snow) coverage of a zone in an raster array
         :param path_raster: LIST of paths to raster files
         :param shape: STR of path to Shapefile defining the zone for calculating the statistics
         :param datelist: LIST containing datestrings [YY_mm]

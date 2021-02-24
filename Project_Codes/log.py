@@ -14,11 +14,19 @@ stream_handler.setFormatter(logging.Formatter("%(asctime)-15s %(levelname)-8s %(
 logger.addHandler(stream_handler)
 
 
-def wrap(pre, post):
+def wrapper(pre, post):
+    """
+    Simple wrap function, Wrapper decorator @ is to be placed right on top of function to be wrapped
+    :param pre: Function that is called before the function that is being wrapped
+    :param post: Function that is called after the function that is being wrapped
+    """
     def decorator(function):
         def inner(*args, **kwargs):
+            # function that is called before executing wrapped function
             pre(function)
+            # execute wrapped function
             result = function(*args, **kwargs)
+            # function that is called after executing wrapped function
             post(function)
             return result
         return inner
@@ -26,10 +34,18 @@ def wrap(pre, post):
 
 
 def entering(function):
-    """ Entering function """
+    """
+    Function that logs when a wrapped function is called / entered
+    :param function:
+    :return:
+    """
     logger.debug("Entered %s", function.__name__)
 
 
 def exiting(function):
-    """ Leaving function """
+    """
+    Function that logs when a wrapped function is exited
+    :param function:
+    :return:
+    """
     logger.debug("Exited  %s", function.__name__)

@@ -5,6 +5,7 @@ from log import *
 class DataManagement:
     def __init__(self, path, filename):
         """
+        Class from Kilian
         Class with useful & robust methods for managing output folders, extracting information from raster files and
         writing raster files using the previously extracted information.
         :param path: STR of path needed to manage output folders
@@ -19,6 +20,7 @@ class DataManagement:
         :return: None
         """
         try:
+            #
             if not os.path.exists(self.path):
                 logger.info("Creating folder: %s " % self.path)
                 os.makedirs(self.path)

@@ -4,7 +4,7 @@ from fun import *
 start_time = time.time()
 
 
-@wrap(entering, exiting)
+@wrapper(entering, exiting)
 def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
     Functions reads an arbitrary number of raster files from 2 different folders.
@@ -37,7 +37,7 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
     return date_list, array_list1, array_list2
 
 
-@wrap(entering, exiting)
+@wrapper(entering, exiting)
 def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
     """
 
@@ -67,7 +67,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
     return snow_end_month, snow_melt
 
 
-@wrap(entering, exiting)
+@wrapper(entering, exiting)
 def main():
     # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
