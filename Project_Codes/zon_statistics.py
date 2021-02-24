@@ -53,15 +53,19 @@ class ZonStatistics:
     def plot_zon_statistics(self):
         """
         Method which plots the desired statistical value over time and writes a .png-image
+        Method can be disabled in config.py (plot_statistic=False)
         :return:
         """
         ax = plt.gca()
         self.get_zon_statistic().plot(y=self.parameter, x="Date", kind='line', marker='o', color='grey',
-                                         grid='major', ax=ax)
+                                      grid='major', ax=ax)
+        # set x and y label and name
         ax.set_xlabel("Date [YY_mm]")
         ax.set_ylabel("Snow Coverage [%]")
         plt_name = 'statistic_plot'
+        # save figure
         plt.savefig(plot_result + r'//' + plt_name, dpi=300, bbox_inches='tight')
+        # show plot
         plt.show()
 
     @staticmethod
@@ -71,8 +75,10 @@ class ZonStatistics:
         :param raster_array: NUMPY.MASKEDARRAY containing the values of a raster (raster array)
         :return: INT which equals the percentage of values above zero
         """
+        # count number of all cells in raster array
         rows = len(raster_array)
         columns = len(raster_array[0])
         total_len = rows * columns
+        # count nan-values of raster array (since zonal statistics uses masked array)
         nan_count = np.count_nonzero(np.isnan(raster_array))
         return ((np.count_nonzero(raster_array) - nan_count) / (total_len - nan_count)) * 100
