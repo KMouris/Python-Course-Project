@@ -12,8 +12,8 @@ try:
     import time
 
 except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, numpy, os, pandas, scipy, sys, '
-          'time).')
+    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, logging, maptlotlib.pyplot, '
+          'numpy, os, pandas, rasterstats scipy, sys, time')
     print(e)
 
 try:
@@ -33,10 +33,13 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 path_results = r'' + os.path.abspath('../Results')
 
 # Input for statistics
+# Folder which contains the snow depth at start of period
 snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
+# Location of shapefile used for zonal statistics
 shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
+# Definition of statistical parameter to be plotted ('min', 'mean', 'max', 'range', 'sum', 'coverage')
 statistical_param = 'coverage'
-# disable (False) or enable (True) plot
+# Disable (False) or enable (True) plot
 plot_statistic = True
 
 # Output folder for plots

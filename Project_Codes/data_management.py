@@ -46,7 +46,6 @@ class DataManagement:
                     sm_year:   INT specifying the month
         """
         try:
-            print(type(self.filename))
             sm_year = int((self.filename[-9]) + (self.filename[-8]))
             sm_month = int((self.filename[-6]) + (self.filename[-5]))
             return sm_month, sm_year
