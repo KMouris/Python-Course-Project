@@ -16,7 +16,7 @@ class DataManagement:
 
     def folder_creation(self):
         """
-        Functions creates folder to instantiated path if it does not already exists
+        Method creates folder at instantiated path if it does not already exists
         :return: None
         """
         try:
@@ -43,9 +43,9 @@ class DataManagement:
 
     def get_date(self):
         """
-        Gets the month and the year from the instantiated filenames
+        Method gets the month and the year from the instantiated filenames
         :return:    sm_month:  INT specifying the month
-                    sm_year:   INT specifying the month
+                    sm_year:   INT specifying the year
         """
         try:
             sm_year = int((self.filename[-9]) + (self.filename[-8]))
@@ -58,7 +58,7 @@ class DataManagement:
 
     def create_date_string(self):
         """
-        Returns a date string ) by calling get_date method
+        Method which returns a date string by calling the get_date method.
         :return: datestring: STR in the format (YY_mm)
         """
         # get month and year from get_date() method
@@ -69,7 +69,7 @@ class DataManagement:
 
     def get_proj_data(self):
         """
-        Function which get the Projection and Geotransformation from a raster file (osgeo.gdal.Dataset)
+        Method which get the projection and geotransformation from a raster file (osgeo.gdal.Dataset)
         :return: gt: TUPLE defining a gdal.DataSet.GetGeoTransform object
                  proj: STR defining a gdal.DataSet.GetProjection object
         """
@@ -84,10 +84,11 @@ class DataManagement:
         return gt, proj  # Return both variables
 
     @staticmethod
-    def save_raster(path, array, gt, proj):
+    def save_raster(res_path, array, gt, proj):
         """
-        Create and save raster-file (.tif) from an existing array using a defined projection and geotransformation data
-        :param path: STR of path and result filename
+        Static Method which creates and saves raster-file (.tif) from an existing array using a defined projection
+        and geotransformation data
+        :param res_path: STR of path and result filename
         :param array: NUMPY.NDARRAY of values to rasterize
         :param gt: TUPLE defining a gdal.DataSet.GetGeoTransform object
         :param proj: STR defining a gdal.DataSet.GetProjection object
@@ -98,7 +99,7 @@ class DataManagement:
         driver.Register()
 
         # Instantiate the raster files to save, providing all needed information
-        outrs = driver.Create(path, xsize=array.shape[1], ysize=array.shape[0], bands=1, eType=gdal.GDT_Float32)
+        outrs = driver.Create(res_path, xsize=array.shape[1], ysize=array.shape[0], bands=1, eType=gdal.GDT_Float32)
 
         # Assign raster data and assign the array to the raster
         outrs.SetGeoTransform(gt)  # Set geo transform data
@@ -111,5 +112,5 @@ class DataManagement:
         # Release raster band
         outband.FlushCache()
 
-        logger.info("Saved raster: %s " % os.path.basename(path))
+        logger.info("Saved raster: %s " % os.path.basename(res_path))
         return 0

@@ -56,6 +56,52 @@ File where logger is set up.
 ## data_management.py
 File where `DataManagement` class is stored which provides following methods:
 
+### `__init__()`
+Class with useful & robust methods for managing output folders, extracting information from raster files and writing raster files using the previously extracted information.
+Assigns values to class attributes when new instance is initiated. 
+
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`path`| STRING | Path needed to manage output folders |
+|`filename`| STRING | Filename |
+
+### `folder_creation()`
+
+Method creates folder at instantiated path if it does not already exists.
+
+**return:** None
+
+###  `get_date()`
+
+Method gets the month and the year from the instantiated filenames.
+
+**return:** INTEGERs ´sm_year´,´sm_month´
+
+### `create_date_string()`
+
+Method which returns a date string by calling the get_date method.
+
+**return:** STRING ´datestring´
+
+### ´get_proj_data()´
+
+Method which get the projection and geotransformation from a raster file (osgeo.gdal.Dataset)
+
+**return:** TUPLE ´gt´, STRING ´proj´
+
+### ´save_raster()´
+
+Static Method which creates and saves raster-file (.tif) from an existing array using a defined projection and geotransformation data
+
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`res_path`| STRING | Path and result filename |
+|`array`| ARRAY | Values to rasterize |
+|`gt`| TUPLE | gdal.DataSet.GetGeoTransform object |
+|`proj`| STRING | gdal.DataSet.GetProjection object |
+
+**return:** None
+
 ## raster_calculations.py
 File where `RasterCalculations` class is stored which provides following methods:
 
