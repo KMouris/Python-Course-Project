@@ -69,7 +69,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
 
 @wrapper(entering, exiting)
 def main():
-    # Get all file paths into a list: All rasters must be .tif files. if not, the type of file must also be changed.
+    # Get all file paths into a list: All raster files must be .tif format
     snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
     snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
 
@@ -83,7 +83,7 @@ def main():
         compare_date(Snow_mm_path, SnowCover_path, snow_mm_paths[i], snow_cover_paths[i])
         i += 1
 
-    # loop trough input rasters, write raster arrays and corresponding dates in lists
+    # loop trough input raster files, write raster arrays and corresponding dates in lists
     date, snow_mm, snow_cover = raster2list(snow_mm_paths, snow_cover_paths)
 
     # get projection and geotransformation of input raster
