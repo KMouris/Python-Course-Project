@@ -1,3 +1,6 @@
+"""config.py contains the required user input (e.g. input and output folder paths, settings for the statistical
+calculation) and the handling of packages """
+# import all needed packages to run the code
 try:
     import gdal
     import glob

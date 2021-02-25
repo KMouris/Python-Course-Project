@@ -20,7 +20,7 @@ class DataManagement:
         :return: None
         """
         try:
-            #
+            # check if folder exists, if not create folder
             if not os.path.exists(self.path):
                 logger.info("Creating folder: %s " % self.path)
                 os.makedirs(self.path)
@@ -53,15 +53,15 @@ class DataManagement:
             return sm_month, sm_year
         except ValueError as v:
             logger.error('ValueError: Invalid file name. Please make sure that the file name consists of 14 characters '
-                         'and contains the month and year.')
+                         'and contains month and year (YY_mm)')
             print(v)
-            sys.exit(1)  # code shouldn't run any further if this error occurs
 
     def create_date_string(self):
         """
         Returns a date string ) by calling get_date method
         :return: datestring: STR in the format (YY_mm)
         """
+        # get month and year from get_date() method
         sm_month, sm_year = self.get_date()
         # create date string (Format: YY/mm)
         datestring = (str(sm_year) + '_' + str(sm_month))
@@ -86,7 +86,7 @@ class DataManagement:
     @staticmethod
     def save_raster(path, array, gt, proj):
         """
-        Create and save raster-file (.tif) from an existing array
+        Create and save raster-file (.tif) from an existing array using a defined projection and geotransformation data
         :param path: STR of path and result filename
         :param array: NUMPY.NDARRAY of values to rasterize
         :param gt: TUPLE defining a gdal.DataSet.GetGeoTransform object
@@ -94,22 +94,21 @@ class DataManagement:
         :return: saves raster file in the selected dir (path) : osgeo.gdal.Dataset (uses GTiff driver)
         """
         # Get drivers to save outputs as raster .tif files
-        driver = gdal.GetDriverByName("GTiff")  # Get Driver
-        driver.Register()  # Register driver variable
+        driver = gdal.GetDriverByName("GTiff")
+        driver.Register()
 
-        # Create the raster files to save, providing all needed information (folder + name, number of columns (x),
-        # number of rows (y), No. of bands, output data type)
+        # Instantiate the raster files to save, providing all needed information
         outrs = driver.Create(path, xsize=array.shape[1], ysize=array.shape[0], bands=1, eType=gdal.GDT_Float32)
 
         # Assign raster data and assign the array to the raster
-        outrs.SetGeoTransform(gt)  # Assign geo transform data from input raster (same size)
-        outrs.SetProjection(proj)  # Assign projection input raster (same projection)
+        outrs.SetGeoTransform(gt)  # Set geo transform data
+        outrs.SetProjection(proj)  # Set projection
         outband = outrs.GetRasterBand(1)  # Create a band in which the array will be written
         outband.WriteArray(array)  # Write array into band
-        outband.SetNoDataValue(np.nan)  # Set no data value as Numpy nan
-        outband.ComputeStatistics(0)  # Set the raster statistics to the output raster
+        outband.SetNoDataValue(np.nan)  # Set no data value as np.nan
+        outband.ComputeStatistics(0)  # Compute and include standard raster statistics
 
-        # Save raster to folder
+        # Release raster band
         outband.FlushCache()
 
         logger.info("Saved raster: %s " % os.path.basename(path))

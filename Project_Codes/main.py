@@ -79,7 +79,7 @@ def main():
 
     # Check dates at same index
     i = 0
-    for file in snow_cover_paths:
+    for _ in snow_cover_paths:
         compare_date(Snow_mm_path, SnowCover_path, snow_mm_paths[i], snow_cover_paths[i])
         i += 1
 

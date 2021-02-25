@@ -20,7 +20,7 @@ class ZonStatistics:
     def get_zon_statistic(self):
         """
         Method which creates a dataframe containing necessary information to plot the results
-        User defines the statistical value which should be plotted (here: Coverage)
+        User defines the statistical value which should be plotted in config.py (here: Coverage)
         :return: df_statistics: pd.DataFrame which contains date and statistical values
         """
         # instantiate list to store the statistic values
