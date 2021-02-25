@@ -75,7 +75,7 @@ Method creates folder at instantiated path if it does not already exists.
 
 Method gets the month and the year from the instantiated filenames.
 
-**return:** INTEGERs ´sm_year´,´sm_month´
+**return:** INTEGERs `sm_year`,`sm_month`
 
 ### `create_date_string()`
 
@@ -87,7 +87,7 @@ Method which returns a date string by calling the get_date method.
 
 Method which get the projection and geotransformation from a raster file (osgeo.gdal.Dataset)
 
-**return:** TUPLE ´gt´, STRING ´proj´
+**return:** TUPLE `gt`, STRING `proj`
 
 ### ´save_raster()´
 
