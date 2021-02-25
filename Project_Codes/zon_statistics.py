@@ -10,7 +10,7 @@ class ZonStatistics:
         :param path_raster: LIST of paths to raster files
         :param shape: STR of path to Shapefile defining the zone for calculating the statistics
         :param datelist: LIST containing datestrings [YY_mm]
-        :param parameter: STR defining the the statistical parameter to be plotted
+        :param parameter: STR defining the statistical parameter to be plotted
         """
         self.path_raster = path_raster
         self.shape = shape
@@ -19,7 +19,7 @@ class ZonStatistics:
 
     def get_zon_statistic(self):
         """
-        Method which creates a dataframe containing necessary information to plot the results
+        Method which creates a dataframe containing necessary information to plot the results.
         User defines the statistical value which should be plotted in config.py (here: Coverage)
         :return: df_statistics: pd.DataFrame which contains date and statistical values
         """
@@ -76,7 +76,7 @@ class ZonStatistics:
         """
         Custom statistic to calculate the percentage of values above zero (e.g. snow coverage, or areas of snow melt)
         :param raster_array: NUMPY.MASKEDARRAY containing the values of a raster (raster array)
-        :return: INT which equals the percentage of values above zero
+        :return: calc_coverage: INT which equals the percentage of values above zero
         """
         # count number of all cells in raster array
         rows = len(raster_array)
@@ -84,4 +84,5 @@ class ZonStatistics:
         total_len = rows * columns
         # count nan-values of raster array (since zonal statistics uses masked array)
         nan_count = np.count_nonzero(np.isnan(raster_array))
-        return ((np.count_nonzero(raster_array) - nan_count) / (total_len - nan_count)) * 100
+        calc_coverage = ((np.count_nonzero(raster_array) - nan_count) / (total_len - nan_count)) * 100
+        return calc_coverage
