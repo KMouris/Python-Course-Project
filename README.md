@@ -30,6 +30,7 @@ The filenames of the input rasters have to include the date (**MM_YY**) in the f
 ***MM_YY**.*tif*
 
 # Code diagram
+![diagram](https://raw.githubusercontent.com/KMouris/Python-Course-Project/main/Code_diagram.jpg)
 
 # Code description
 
