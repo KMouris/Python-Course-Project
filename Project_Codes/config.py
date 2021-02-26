@@ -1,22 +1,29 @@
 """config.py contains the required user input (e.g. input and output folder paths, settings for the statistical
 calculation) and the handling of packages """
-# import all needed packages to run the code
+# import all needed basic python libraries
 try:
-    import gdal
     import glob
     import logging
-    import matplotlib.pyplot as plt
-    import numpy as np
     import os
-    import pandas as pd
-    import rasterstats as rs
-    import scipy
     import sys
     import time
 
+except ModuleNotFoundError as b:
+    print('ModuleNotFoundError: Missing basic libraries (required: glob, logging, os, sys, time')
+    print(b)
+
+# import additional python libraries
+try:
+    import gdal
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pandas as pd
+    import rasterstats as rs
+    import scipy
+
 except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, logging, maptlotlib.pyplot, '
-          'numpy, os, pandas, rasterstats scipy, sys, time')
+    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, maptlotlib.pyplot, numpy, '
+          'pandas, rasterstats, scipy')
     print(e)
 
 try:

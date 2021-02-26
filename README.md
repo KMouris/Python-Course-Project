@@ -1,19 +1,21 @@
-# Python-Course-Project
+# Effect of snow on soil erosion - snowpack dynamics
 
 # Introduction
 The overall goal of the project is to extend the Revised Universal Soil Loss Equation RUSLE ([Renard, 1997](https://www.ars.usda.gov/arsuserfiles/64080530/rusle/ah_703.pdf))
- by including the effects of snowfall and snowmelt on soil erosion. 
+by including the effects of snowfall and snowmelt on soil erosion. 
 The first step is to distinguish between precipitation in the form of rain (erosive) or snow (non-erosive). 
 Additionally, snow-covered areas are detected at the end of each month using freely available satellite data (e.g. Sentinel-2). 
 These two steps precede the presented code and have already been automated. 
-The goal of the presented code is to calculate monthly snowpack dynamics and to identify monthly snowmelt to later incorporate its erosive forces.
+>  
+The aim of the presented code is to calculate monthly snowpack dynamics and to identify monthly snowmelt to later incorporate its erosive forces.
 The results are written as georeferenced raster files (.tif format) and can be accessed by all common GIS programs. 
 Optionally, the user can plot various statistical values (e.g. snow cover) over time. 
 If only a subarea is of interest, this can be defined by a shapefile. The previously calculated snowfall (mm) and the identified snow cover serve as input data. 
 The following figure provides a highly simplified overview. Details can be found in the code diagram and the code description.
 
 # Requirements
-*Python* libraries: *gdal*, *matplotlib.pyplot*, *numpy*, *pandas*, *rasterstats*, *scipy*
+*Python* libraries: *geo_utils*, *gdal*, *matplotlib.pyplot*, *numpy*, *pandas*, *rasterstats*, *scipy*
+>  
 *Standard* libraries: *glob*, *logging*, *os*, *sys*, *time*
 
 # Code diagram
