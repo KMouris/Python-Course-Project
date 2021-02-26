@@ -26,48 +26,36 @@ The following figure provides a highly simplified overview. Details can be found
 
 ## config.py
 File where all required libraries and global variables are loaded. 
-````python
-try:
-    import gdal
-    import glob
-    import logging
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import os
-    import pandas as pd
-    import rasterstats as rs
-    import scipy
-    import sys
-    import time
+The following input arguments can be defined by the user:
 
-except ModuleNotFoundError as e:
-    print('ModuleNotFoundError: Missing fundamental packages (required: gdal, glob, numpy, os, pandas, scipy, sys, '
-          'time).')
-    print(e)
-
-try:
-    sys.path.append(
-        r'' + os.path.abspath(
-            '../geo-utils/'))
-    import geo_utils as gu
-except ModuleNotFoundError:
-    print("ModuleNotFoundError: Cannot import geo_utils")
-
-# User Input
-# Folder with snow values
-Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
-# Folder with satellite data
-SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
-# Folder for the results
-path_results = r'' + os.path.abspath('../Results')
-
-# Input for statistics
-snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
-shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')
-````
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`Snow_mm_path`| STRING | Path of measured snow depth rasters |
+|`SnowCover_path`| STRING | Path of rasters of satellite data describing the snow cover|
+|`path_results`| STRING | Path of the results folders |
+|`snow_result_paths`| STRING | **??**|
+|`shape_zone`| STRING | Path of shapefile used for zonal statistics |
+|`statistical_param`| STRING | Statistical parameter which is/are plotted |
+|`plot_statistics`| BOOL | Dis- or enable plotting |
+|`plot_result`| STRING | Path of folder for the plotting result |
 
 ## log.py
-File where logger is set up. 
+File where the logger and its streamhandler are set up and the basic logging configurations can be changed.
+The following three functions are defined to record when an arbitrary function is entered and exited. 
+
+### `wrapper()`
+Wrapper function to define which functions are called before and after another function. 
+
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`pre`| STRING | Function which is called before the wrapped function |
+|`post`| STRING | Function which is callled after the wrapped function |
+
+### `entering()`
+Logs at what time a function is entered. 
+
+### `exiting()`
+Logs at what time a function is exited. 
 
 ## data_management.py
 File where `DataManagement` class is stored which provides following methods:
@@ -118,8 +106,9 @@ Static Method which creates and saves raster-file (.tif) from an existing array 
 
 **return:** None
 
-## raster_calculations.py
-File where `RasterCalculations` class is stored which provides following methods:
+## array_calculations.py
+File where `ArrayCalculations` class is stored. This class is for mathematical operations on arrays to calculate snow depths.
+It provides the following methods:
 
 ### `__init__()`
 
@@ -160,8 +149,9 @@ month and the measured snow depth.
 
 **return:** ARRAY `snow_start_of_period`
 
-## check_functions.py
-File where `CompareData` class is stored which provides following methods:
+## compare_data.py
+File where `CompareData` class is stored. This class is for comparing different properties of arrays, objects and rasters. 
+It provides the following methods:
 
 ### `__init__()`
 
@@ -180,7 +170,7 @@ Compares the number of columns and the number of rows of two arrays.
 
 ### `number_of_items()`
 
-Compares the number of items of two objects.
+Static method which compared the number of items of two objects.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -282,9 +272,6 @@ Extracts the dates from the filenames of two rasters and compares them by instan
 |----------------|------|-------------|
 |`path_raster_one`| STR | path of raster one |
 |`path_raster_two`| STR | path of raster two |
-|`filename_one`| STR | 
-
-*** ***filename wird nicht benutzt*** ****
 
 ### `create_lists()`
 
@@ -294,7 +281,7 @@ Function which creates three empty lists.
 
 ### `append2list()`
 
-Appends one object to one of a total of three lists.
+Appends objects to lists. 
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -319,4 +306,31 @@ Function receives 2 list objects and returns two file paths.
 **return:** STRINGs `path1`, `path2`
 
 ## main.py
+
+File where the most relevant functions are stored, including the `main()` function. 
+
+### `raster2list()`
+
+Reads an arbitrary number of raster files from 2 different folders, extracts the date and the corresponding raster arrays 
+and saves them into lists for further calculations.
+
+| Input argument | Type | Description |
+|----------------|------|-------------|
+|`list_rasterpaths1`| LIST | Paths to raster files |
+|`list_rasterpaths2'| LIST | Paths to raster files |
+
+**return:** LISTs `date_list`, `array_list1`, `array_list2`
+
+### `snowcalc_over_list()`
+
+Calculates snow depths for different time periods by iterating over arrays stored in lists. 
+
+| Input argument | Type | Description |
+|----------------|------|-------------|
+|`initial_snow`| ARRAY | Snow depth at start of first time period |
+|`satellite_data`| LIST | Arrays of snow cover data | 
+|`measured_snow_next_period`| LIST | Arrays of measured snow depths |
+
+**return:** LISTs `snow_end_month`, `snow_melt`
+
 

@@ -7,7 +7,7 @@ start_time = time.time()
 @wrapper(entering, exiting)
 def raster2list(list_rasterpaths1, list_rasterpaths2):
     """
-    Functions reads an arbitrary number of raster files from 2 different folders.
+    Function reads an arbitrary number of raster files from 2 different folders.
     Extracts the date and the corresponding raster arrays and saves them into lists for further calculations.
     :param list_rasterpaths1: LIST of paths to raster files
     :param list_rasterpaths2: LIST of paths to raster files
@@ -40,14 +40,17 @@ def raster2list(list_rasterpaths1, list_rasterpaths2):
 @wrapper(entering, exiting)
 def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
     """
-
-    :param initial_snow: ARRAY
-    :param satellite_data: LIST
-    :param measured_snow_next_period: LIST
-    :return:
+    Calculate snow depths for different time periods by iterating over arrays stored in lists.
+    :param initial_snow: ARRAY of snow depth at start of first time period
+    :param satellite_data: LIST of arrays of snow cover data
+    :param measured_snow_next_period: LIST of arrays of measured snow depths
+    :return: snow_end_month: LIST of arrays of actual snow depths at the end of each time period
+             snow_melt: LIST of arrays of snow depths acting as snowmelt of each time period
     """
+    # create empty result lists
     snow_end_month, snow_melt, snow_start_month = create_lists()
     snow_start_month.append(initial_snow)
+    # perform calculations for every time period by looping through list of arrays
     k = 0
     m = 1
     try:
@@ -57,6 +60,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
                                                                          satellite_data[k])
             snow_end_month.append(snow_end_array)
             snow_melt.append(snowmelt_array)
+            # avoids appending lastly calculated snow_start_array of time period without given input data to result list
             if k < len(measured_snow_next_period) - 1:
                 snow_start_month.append(snow_start_array)
             k += 1
@@ -116,7 +120,7 @@ def main():
         zonal_statistics.plot_zon_statistics()
     else:
         logger.info("Plot statistic is disabled")
-    print('Total time: ', time.time() - start_time, 'seconds')
+    print("Total time: ", time.time() - start_time, "seconds")
     # stop logging
     logging.shutdown()
 

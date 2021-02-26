@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.DEBUG, filename=log_file, filemode="a",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 logger = logging.getLogger("logger")
 
+# Configure streamhandler
 stream_handler = logging.StreamHandler()
 stream_handler.setLevel(logging.INFO)
 stream_handler.setFormatter(logging.Formatter("%(asctime)-15s %(levelname)-8s %(message)s"))
@@ -41,7 +42,6 @@ def entering(function):
     """
     Function that logs when a wrapped function is called / entered
     :param function:
-    :return:
     """
     logger.debug("Entered %s", function.__name__)
 
@@ -50,6 +50,5 @@ def exiting(function):
     """
     Function that logs when a wrapped function is exited
     :param function:
-    :return:
     """
     logger.debug("Exited  %s", function.__name__)

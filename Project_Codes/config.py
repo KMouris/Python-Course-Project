@@ -7,7 +7,6 @@ try:
     import os
     import sys
     import time
-
 except ModuleNotFoundError as b:
     print('ModuleNotFoundError: Missing basic libraries (required: glob, logging, os, sys, time')
     print(b)
@@ -20,7 +19,6 @@ try:
     import pandas as pd
     import rasterstats as rs
     import scipy
-
 except ModuleNotFoundError as e:
     print('ModuleNotFoundError: Missing fundamental packages (required: gdal, maptlotlib.pyplot, numpy, '
           'pandas, rasterstats, scipy')

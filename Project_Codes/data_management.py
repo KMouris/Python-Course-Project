@@ -37,7 +37,7 @@ class DataManagement:
                 logger.info("The folder already exists and is not created")
             return 0
         except OSError as o:
-            logger.error('OSError: Directory could not be created')
+            logger.error("OSError: Directory could not be created")
             print(o)
             pass
 
@@ -52,13 +52,13 @@ class DataManagement:
             sm_month = int((self.filename[-6]) + (self.filename[-5]))
             return sm_month, sm_year
         except ValueError as v:
-            logger.error('ValueError: Invalid file name. Please make sure that the file name consists of 14 characters '
-                         'and contains month and year (YY_mm)')
+            logger.error("ValueError: Invalid file name. Please make sure that the file name consists of 14 characters "
+                         "and contains month and year (YY_mm)")
             print(v)
 
     def create_date_string(self):
         """
-        Method which returns a date string by calling the get_date method.
+        Method which returns a date string by calling the get_date method
         :return: datestring: STR in the format (YY_mm)
         """
         # get month and year from get_date() method
