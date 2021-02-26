@@ -2,6 +2,7 @@ from config import logging
 
 # define name and location of logfile
 log_file = "./logfile.log"
+
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, filename=log_file, filemode="a",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")

@@ -179,6 +179,53 @@ Rounds geotransformation values of two rasters off to four decimal places and co
 
 Compares the projection of two rasters.
 
+## zon_statistics.py
+File where `ZonStatistics` class is stored which provides following methods:
+
+### `__init__()`
+
+Class with useful methods to calculate and plot zonal statistics, including a custom statistic to calculate the (snow) coverage of a zone in an raster array.
+Assigns values to class attributes when new instance is initiated. 
+
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`path_raster`| LIST | Paths to raster files |
+|`shape`| STRING | Path to shapefile defining the zone for calculating the statistics |
+|`datelist`| LIST | Datestrings, format yy_mm |
+|`parameter`| STRING | Definition of statistical parameter to be plotted |
+
+### `get_zon_statistics()`
+
+Method which creates a dataframe containing necessary information to plot the results.
+User defines the statistical value which should be plotted in config.py (here: Coverage).
+
+**return:** DATAFRAME `df_statistics`
+
+### `calc_zon_statistics()`
+
+Method which calculates several statistical values.
+
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`list_entry`| INTEGER | Identification of the raster to calculate the statistical values |
+
+**return:** LIST `stats`
+
+### `plot_zon_statistics()`
+
+ Method which plots the desired statistical value over time and writes a .png-image.
+ Method can be disabled in `config.py` (`plot_statistic=False`).
+ 
+ ### `coverage()`
+ 
+ Custom statistic to calculate the percentage of values above zero (e.g. snow coverage, or areas of snow melt).
+ 
+| Input argument | Type | Description |
+|-----------------|------|-------------|
+|`raster_array`| MASKED ARRAY | Contains raster array |
+
+**return:** INTEGER `calc_coverage`
+
 ## fun.py
 
 The following basic functions and functions wrapping up different class methods are stored in this file:
@@ -254,53 +301,6 @@ Function receives 2 list objects and returns two file paths.
 |`list2_object`| STRING | Indexed string object from list |
 
 **return:** STRINGs `path1`, `path2`
-
-## zon_statistics.py
-File where `ZonStatistics` class is stored which provides following methods:
-
-### `__init__()`
-
-Class with useful methods to calculate and plot zonal statistics, including a custom statistic to calculate the (snow) coverage of a zone in an raster array.
-Assigns values to class attributes when new instance is initiated. 
-
-| Input argument | Type | Description |
-|-----------------|------|-------------|
-|`path_raster`| LIST | Paths to raster files |
-|`shape`| STRING | Path to shapefile defining the zone for calculating the statistics |
-|`datelist`| LIST | Datestrings, format yy_mm |
-|`parameter`| STRING | Definition of statistical parameter to be plotted |
-
-### `get_zon_statistics()`
-
-Method which creates a dataframe containing necessary information to plot the results.
-User defines the statistical value which should be plotted in config.py (here: Coverage).
-
-**return:** DATAFRAME `df_statistics`
-
-### `calc_zon_statistics()`
-
-Method which calculates several statistical values.
-
-| Input argument | Type | Description |
-|-----------------|------|-------------|
-|`list_entry`| INTEGER | Identification of the raster to calculate the statistical values |
-
-**return:** LIST `stats`
-
-### `plot_zon_statistics()`
-
- Method which plots the desired statistical value over time and writes a .png-image.
- Method can be disabled in `config.py` (`plot_statistic=False`).
- 
- ### `coverage()`
- 
- Custom statistic to calculate the percentage of values above zero (e.g. snow coverage, or areas of snow melt).
- 
-| Input argument | Type | Description |
-|-----------------|------|-------------|
-|`raster_array`| MASKED ARRAY | Contains raster array |
-
-**return:** INTEGER `calc_coverage`
 
 ## main.py
 
