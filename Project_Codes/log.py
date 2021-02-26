@@ -21,6 +21,7 @@ def wrapper(pre, post):
     :param pre: Function that is called before the function that is being wrapped
     :param post: Function that is called after the function that is being wrapped
     """
+
     def decorator(function):
         def inner(*args, **kwargs):
             # function that is called before executing wrapped function
@@ -30,7 +31,9 @@ def wrapper(pre, post):
             # function that is called after executing wrapped function
             post(function)
             return result
+
         return inner
+
     return decorator
 
 

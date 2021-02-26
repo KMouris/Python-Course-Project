@@ -75,9 +75,9 @@ class DataManagement:
         """
         try:
             raster = gdal.Open(self.filename)  # Extract raster from path
-        except RuntimeError as e:
+        except RuntimeError as re:
             logger.error("RuntimeError: Raster can't be accessed")
-            print(e)
+            print(re)
             sys.exit(1)  # code shouldn't run any further if this error occurs
         gt = raster.GetGeoTransform()  # Get geotransformation data
         proj = raster.GetProjection()  # Get projection of raster
