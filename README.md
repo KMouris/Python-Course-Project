@@ -57,8 +57,8 @@ File where logger is set up.
 File where `DataManagement` class is stored which provides following methods:
 
 ### `__init__()`
-Class with useful & robust methods for managing output folders, extracting information from raster files and writing raster files using the previously extracted information.
-Assigns values to class attributes when new instance is initiated. 
+Class with useful and robust methods for managing output folders, extracting information from raster files and writing raster files using the previously extracted information.
+Assigns values to class attributes when a new instance is initiated. 
 
 | Input argument | Type | Description |
 |-----------------|------|-------------|
@@ -67,7 +67,7 @@ Assigns values to class attributes when new instance is initiated.
 
 ### `folder_creation()`
 
-Method creates folder at instantiated path if it does not already exists.
+Method creates folder at instantiated path, if it does not already exists.
 
 **return:** None
 
@@ -81,7 +81,7 @@ Method gets the month and the year from the instantiated filenames.
 
 Method which returns a date string by calling the get_date method.
 
-**return:** STRING ´datestring´
+**return:** STRING `datestring`
 
 ### `get_proj_data()`
 
@@ -91,7 +91,7 @@ Method which get the projection and geotransformation from a raster file (osgeo.
 
 ### `save_raster()`
 
-Static Method which creates and saves raster-file (.tif) from an existing array using a defined projection and geotransformation data
+Static Method which creates and saves raster-file (.tif) from an existing array using a defined projection and geotransformation data.
 
 | Input argument | Type | Description |
 |-----------------|------|-------------|
@@ -144,7 +144,6 @@ month and the measured snow depth.
 
 **return:** ARRAY `snow_start_of_period`
 
-
 ## check_functions.py
 File where `CompareData` class is stored which provides following methods:
 
@@ -184,29 +183,6 @@ Compares the projection of two rasters.
 
 The following basic functions and functions wrapping up different class methods are stored in this file:
 
-### `create_lists()`
-
-Creates three empty lists. 
-
-**return:** LISTs `list1`, `list2`, `list3`
-
-### `append2list()`
-
-Appends one object to one of a total of three lists.
-
-| Input argument | Type | Description |
-|----------------|------|-------------|
-|`list1`| LIST | Arbitrary list |
-|`list2`| LIST | Arbitrary list |
-|`list3`| LIST | Arbitrary list |
-|`object1`| ARRAY, INT, etc. | Object which is appendable to a list |
-|`object2`| ARRAY, INT, etc. | Object which is appendable to a list |
-|`object3`| ARRAY, INT, etc. | Object which is appendable to a list |
-
-**return:** LISTs `list1`, `list2`, `list3`
-
-### `get_path_from_list()`
-
 ### `snowdepth()`
 
 Calculates the snow depth acting as snowmelt, the snow depth at the end of a period and the snow depth at the beginning
@@ -236,7 +212,7 @@ objects by instanciating an object of the `CompareData` class.
 
 ### `compare_date()`
 
-Extracts the dates from the filenames of two rasters and compares them by instanciating an object of the
+Extracts the dates from the filenames of two rasters and compares them by instantiating an object of the
 `DataManagement` class.
 
 | Input argument | Type | Description |
@@ -247,6 +223,37 @@ Extracts the dates from the filenames of two rasters and compares them by instan
 
 *** ***filename wird nicht benutzt*** ****
 
+### `create_lists()`
+
+Function which creates three empty lists. 
+
+**return:** LISTs `list1`, `list2`, `list3`
+
+### `append2list()`
+
+Appends one object to one of a total of three lists.
+
+| Input argument | Type | Description |
+|----------------|------|-------------|
+|`list1`| LIST | Arbitrary list |
+|`list2`| LIST | Arbitrary list |
+|`list3`| LIST | Arbitrary list |
+|`object1`| ARRAY, INT, etc. | Object which is appendable to a list |
+|`object2`| ARRAY, INT, etc. | Object which is appendable to a list |
+|`object3`| ARRAY, INT, etc. | Object which is appendable to a list |
+
+**return:** LISTs `list1`, `list2`, `list3`
+
+### `get_path_from_list()`
+
+Function receives 2 list objects and returns two file paths.
+
+| Input argument | Type | Description |
+|----------------|------|-------------|
+|`list1_object`| STRING | Indexed string object from list|
+|`list2_object`| STRING | Indexed string object from list |
+
+**return:** STRINGs `path1`, `path2`
 
 ## zon_statistics.py
 File where `ZonStatistics` class is stored which provides following methods:
@@ -283,11 +290,11 @@ Method which calculates several statistical values.
 ### `plot_zon_statistics()`
 
  Method which plots the desired statistical value over time and writes a .png-image.
- Method can be disabled in `config.py` (`plot_statistic=False`)
+ Method can be disabled in `config.py` (`plot_statistic=False`).
  
  ### `coverage()`
  
- Custom statistic to calculate the percentage of values above zero (e.g. snow coverage, or areas of snow melt)
+ Custom statistic to calculate the percentage of values above zero (e.g. snow coverage, or areas of snow melt).
  
 | Input argument | Type | Description |
 |-----------------|------|-------------|
