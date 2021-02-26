@@ -117,6 +117,7 @@ def main():
     else:
         logger.info("Plot statistic is disabled")
     print('Total time: ', time.time() - start_time, 'seconds')
+    # stop logging
     logging.shutdown()
 
 
