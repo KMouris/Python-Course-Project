@@ -15,18 +15,26 @@ If only a subarea is of interest, this can be defined by a shapefile. The previo
 The following figure provides a highly simplified overview. Details can be found in the code diagram and the code description.
 
 # Requirements
+
+## Libraries
+
 *Python* libraries: *geo_utils*, *gdal*, *matplotlib.pyplot*, *numpy*, *pandas*, *rasterstats*, *scipy*
 
 
 *Standard* libraries: *glob*, *logging*, *os*, *sys*, *time*
+
+## Input Data
+
+The filenames of the input rasters have to include the date (**MM_YY**) in the following way:
+
+***MM_YY**.*tif*
 
 # Code diagram
 
 # Code description
 
 ## config.py
-File where all required libraries and global variables are loaded. 
-The following input arguments can be defined by the user:
+File where all required libraries and global variables are loaded. The following input arguments can be defined by the user:
 
 | Input argument | Type | Description |
 |-----------------|------|-------------|
@@ -40,8 +48,7 @@ The following input arguments can be defined by the user:
 |`plot_result`| STRING | Path of folder for the plotting result |
 
 ## log.py
-File where the logger and its streamhandler are set up and the basic logging configurations can be changed.
-The following three functions are defined to record when an arbitrary function is entered and exited. 
+File where the logger and its streamhandler are set up and the basic logging configurations can be changed. The following three functions are defined to record when an arbitrary function is entered and exited. 
 
 ### `wrapper()`
 Wrapper function to define which functions are called before and after another function. 
@@ -107,8 +114,7 @@ Static Method which creates and saves raster-file (.tif) from an existing array 
 **return:** None
 
 ## array_calculations.py
-File where `ArrayCalculations` class is stored. This class is for mathematical operations on arrays to calculate snow depths.
-It provides the following methods:
+File where `ArrayCalculations` class is stored. This class is for mathematical operations on arrays to calculate snow depths. It provides the following methods:
 
 ### `__init__()`
 
@@ -122,15 +128,13 @@ Assigns values to class attributes when a new instance is initiated.
 
 ### `snow_at_end()`
 
-Calculates snow depth at the end of the period by multiplying the snow depth at the start of the period with the 
-satellite data of the snow cover. 
+Calculates snow depth at the end of the period by multiplying the snow depth at the start of the period with the satellite data of the snow cover. 
 
 **return:** ARRAY `snow_end_of_period`
 
 ### `snowmelt()`
 
-Calculates snow depth acting as snowmelt by substracting the actual snow depth at the end of the period from the 
-calculated snowsum at the beginning of the period.
+Calculates snow depth acting as snowmelt by substracting the actual snow depth at the end of the period from the calculated snowsum at the beginning of the period.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -140,8 +144,7 @@ calculated snowsum at the beginning of the period.
 
 ### `snow_at_start()`
 
-Calculates snow depth at the beginning of a period by summing up the actual snow depth transferred from the previous 
-month and the measured snow depth.
+Calculates snow depth at the beginning of a period by summing up the actual snow depth transferred from the previous month and the measured snow depth.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -150,8 +153,7 @@ month and the measured snow depth.
 **return:** ARRAY `snow_start_of_period`
 
 ## compare_data.py
-File where `CompareData` class is stored. This class is for comparing different properties of arrays, objects and rasters. 
-It provides the following methods:
+File where `CompareData` class is stored. This class is for comparing different properties of arrays, objects and rasters. It provides the following methods:
 
 ### `__init__()`
 
@@ -238,8 +240,7 @@ The following basic functions and functions wrapping up different class methods 
 
 ### `snowdepth()`
 
-Calculates the snow depth acting as snowmelt, the snow depth at the end of a period and the snow depth at the beginning
-of the next period by instanciating an object of the `RasterCalculations` class.
+Calculates the snow depth acting as snowmelt, the snow depth at the end of a period and the snow depth at the beginning of the next period by instanciating an object of the `RasterCalculations` class.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -251,8 +252,7 @@ of the next period by instanciating an object of the `RasterCalculations` class.
 
 ### `check_data()`
 
-Compares the size of two arrays, the geotransformation and projections of two rasters and the number of items in two
-objects by instanciating an object of the `CompareData` class.
+Compares the size of two arrays, the geotransformation and projections of two rasters and the number of items in two objects by instanciating an object of the `CompareData` class.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -265,8 +265,7 @@ objects by instanciating an object of the `CompareData` class.
 
 ### `compare_date()`
 
-Extracts the dates from the filenames of two rasters and compares them by instantiating an object of the
-`DataManagement` class.
+Extracts the dates from the filenames of two rasters and compares them by instantiating an object of the `DataManagement` class.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
@@ -311,8 +310,7 @@ File where the most relevant functions are stored, including the `main()` functi
 
 ### `raster2list()`
 
-Reads an arbitrary number of raster files from 2 different folders, extracts the date and the corresponding raster arrays 
-and saves them into lists for further calculations.
+Reads an arbitrary number of raster files from 2 different folders, extracts the date and the corresponding raster arrays and saves them into lists for further calculations.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
