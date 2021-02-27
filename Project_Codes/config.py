@@ -25,17 +25,11 @@ except ModuleNotFoundError as e:
     print(e)
 
 try:
+    sys.path.append(
+        r'' + os.path.abspath('../geo-utils/'))
     import geo_utils as gu
 except ModuleNotFoundError:
     print("ModuleNotFoundError: Cannot import geo_utils")
-
-# try:
-#     sys.path.append(
-#         r'' + os.path.abspath(
-#             '../geo-utils/'))
-#     import geo_utils as gu
-# except ModuleNotFoundError:
-#     print("ModuleNotFoundError: Cannot import geo_utils")
 
 # User Input
 # Folder with snow values
