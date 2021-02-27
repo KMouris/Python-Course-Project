@@ -65,7 +65,7 @@ class ZonStatistics:
         # set x and y label and name
         ax.set_xlabel("Date [YY_mm]")
         ax.set_ylabel("Snow Coverage [%]")
-        plt_name = 'statistic_plot'
+        plt_name = self.parameter
         # save figure
         plt.savefig(plot_result + r'//' + plt_name, dpi=300, bbox_inches='tight')
         # show plot
