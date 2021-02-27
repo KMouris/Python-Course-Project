@@ -84,7 +84,7 @@ def main():
     # Check dates at same index
     i = 0
     for _ in snow_cover_paths:
-        compare_date(Snow_mm_path, SnowCover_path, snow_mm_paths[i], snow_cover_paths[i])
+        compare_date(snow_mm_paths[i], snow_cover_paths[i])
         i += 1
 
     # loop trough input raster files, write raster arrays and corresponding dates in lists

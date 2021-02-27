@@ -19,8 +19,8 @@ logger.addHandler(stream_handler)
 def wrapper(pre, post):
     """
     Simple wrap function, Wrapper decorator @ is to be placed right on top of function to be wrapped
-    :param pre: Function that is called before the function that is being wrapped
-    :param post: Function that is called after the function that is being wrapped
+    :param pre: Function called before the function that is being wrapped
+    :param post: Function called after the function that is being wrapped
     """
 
     def decorator(function):

@@ -41,7 +41,7 @@ SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 path_results = r'' + os.path.abspath('../Results')
 
 # Input for statistics
-# Folder which contains the snow depth at start of period
+# Folder with calculated results to be used for statistical calculations
 snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
 # Location of shapefile used for zonal statistics
 shape_zone = r'' + os.path.abspath('../Input_Data/Shape_files/catchment_kokel.shp')

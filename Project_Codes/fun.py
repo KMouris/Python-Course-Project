@@ -46,17 +46,15 @@ def check_data(array_one, array_two, path_raster_one, path_raster_two, object_on
     check.number_of_items(object_one, object_two)
 
 
-def compare_date(path_raster_one, path_raster_two, filename_one, filename_two):
+def compare_date(filename_one, filename_two):
     """
     Extract the date from the filename of two rasters and compare them.
     :param filename_one: STR of filename one
     :param filename_two: STR of filename two
-    :param path_raster_one: STR of raster path one
-    :param path_raster_two: STR of raster path two
     """
-    # filename attribute is not used and therefore set to a random value; It is needed to get date? please Check
-    manage_raster_one = DataManagement(path=path_raster_one, filename=filename_one)
-    manage_raster_two = DataManagement(path=path_raster_two, filename=filename_two)
+    # filename attribute is not used and therefore set to a random value; It is needed to get date? Actually path is not needed? Let's check
+    manage_raster_one = DataManagement(path=0, filename=filename_one)
+    manage_raster_two = DataManagement(path=0, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
         logger.warning("Rasters have different dates.")
 
