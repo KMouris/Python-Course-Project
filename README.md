@@ -145,7 +145,7 @@ Calculates snow depth acting as snowmelt by substracting the actual snow depth a
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`snow_end_of_period`| ARRAY | actual snow depth at end of a period |
+|`snow_end_of_period`| ARRAY | Actual snow depth at end of a period |
 
 **return:** ARRAY `snowmelt`
 
@@ -155,7 +155,7 @@ Calculates snow depth at the beginning of a period by summing up the actual snow
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`snow_end_of_period`| ARRAY | actual snow depth at end of a period |
+|`snow_end_of_period`| ARRAY | Actual snow depth at end of a period |
 
 **return:** ARRAY `snow_start_of_period`
 
@@ -168,10 +168,10 @@ Assigns values to class attributes when new instance is initiated.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`array_one`| ARRAY | arbitrary array to be compared |
-|`array_two`| ARRAY | arbitrary array to be compared |
-|`raster_one_path`| STRING | path of arbitrary raster to be compared |
-|`raster_two_path`| STRING | path of arbitrary raster to be compared |
+|`array_one`| ARRAY | Arbitrary array to be compared |
+|`array_two`| ARRAY | Abitrary array to be compared |
+|`raster_one_path`| STRING | Path of arbitrary raster to be compared |
+|`raster_two_path`| STRING | Path of arbitrary raster to be compared |
 
 ### `compare_shape()`
 
@@ -263,10 +263,10 @@ Compares the size of two arrays, the geotransformation and projections of two ra
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`array_one`| ARRAY | arbitrary array to be compared |
-|`array_two`| ARRAY | arbitrary array to be compared |
-|`raster_one_path`| STRING | path of arbitrary raster to be compared |
-|`raster_two_path`| STRING | path of arbitrary raster to be compared |
+|`array_one`| ARRAY | Arbitrary array to be compared |
+|`array_two`| ARRAY | Arbitrary array to be compared |
+|`raster_one_path`| STRING | Path of arbitrary raster to be compared |
+|`raster_two_path`| STRING | Path of arbitrary raster to be compared |
 |`object_one`| LIST, STRING, etc. | Object on which the `len()` function can be applied |
 |`object_two`| LIST, STRING, etc. | Object on which the `len()` function can be applied |
 
