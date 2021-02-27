@@ -42,7 +42,6 @@ File where all required libraries and global variables are loaded. The following
 |`Snow_mm_path`| STRING | Path of measured snow depth rasters |
 |`SnowCover_path`| STRING | Path of rasters of satellite data describing the snow cover|
 |`path_results`| STRING | Path of the results folders |
-|`snow_result_paths`| STRING | Path of calculated results used for statistical calculations|
 |`shape_zone`| STRING | Path of shapefile used for zonal statistics |
 |`statistical_param`| STRING | Statistical parameter which is/are plotted |
 |`plot_statistics`| BOOL | Dis- or enable plotting |

@@ -111,6 +111,9 @@ def main():
         DataManagement.save_raster(save_path, snow_melt[k], gt, proj)
         k += 1
 
+
+    # Path to calculated results to be used for statistical calculations
+    snow_result_paths = sorted(glob.glob(path_results + '\\Snow_end_month' + "\\*.tif"))
     # Calculate and plot zonal statistics
     zonal_statistics = ZonStatistics(path_raster=snow_result_paths, shape=shape_zone, datelist=date,
                                      parameter=statistical_param)
