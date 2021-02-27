@@ -60,7 +60,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
                                                                          satellite_data[k])
             snow_end_month.append(snow_end_array)
             snow_melt.append(snowmelt_array)
-            # avoids appending lastly calculated snow_start_array of time period without given input data to result list
+            # avoids appending lastly calculated snow_start_array which describes next period without given input data
             if k < len(measured_snow_next_period) - 1:
                 snow_start_month.append(snow_start_array)
             k += 1
