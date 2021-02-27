@@ -34,9 +34,9 @@ except ModuleNotFoundError:
 
 # User Input
 # Folder with snow values
-Snow_mm_path = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
+snow_path_mm = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
 # Folder with satellite data
-SnowCover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
+snow_cover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 # Folder for the results
 path_results = r'' + os.path.abspath('../Results')
 

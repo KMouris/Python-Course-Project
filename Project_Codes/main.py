@@ -74,8 +74,8 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
 @wrapper(entering, exiting)
 def main():
     # Get all file paths into a list: All raster files must be .tif format
-    snow_mm_paths = sorted(glob.glob(Snow_mm_path + "\\*.tif"))
-    snow_cover_paths = sorted(glob.glob(SnowCover_path + "\\*.tif"))
+    snow_mm_paths = sorted(glob.glob(snow_path_mm + "\\*.tif"))
+    snow_cover_paths = sorted(glob.glob(snow_cover_path + "\\*.tif"))
 
     # Create folder if it does not already exist
     data_manager = DataManagement(path=path_results, filename=snow_mm_paths[0])
