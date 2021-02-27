@@ -20,15 +20,20 @@ The following figure provides a highly simplified overview. Details can be found
 ## Libraries
 
 *Python* libraries: *geo_utils*, *gdal*, *matplotlib.pyplot*, *numpy*, *pandas*, *rasterstats*, *scipy*
-
+> The geo_utils package can be downloaded [here](https://geo-utils.readthedocs.io/en/latest/) and/or the path where the package is saved can be defined in the config.py file.
 
 *Standard* libraries: *glob*, *logging*, *os*, *sys*, *time*
 
 ## Input Data
 
-The filenames of the input rasters have to include the date (**MM_YY**) in the following way:
+The following rasters have to be provided to run the code:
+1. Raster of measured snow depth 
+2. Raster of satellite data of the snow cover with the values 0 and 1, describing if there is snow (1) or if there is not (0)
+3. Shapefile defining the zone for the statistical calculations 
 
-***MM_YY**.*tif*
+Both rasters listed in 1. and 2. have to be provided as `.tif` rasters and have to include the month and the year in the following way:
+
+>***yy_mm**.tif
 
 # Code diagram
 ![diagram](https://raw.githubusercontent.com/KMouris/Python-Course-Project/main/Code_diagram.jpg)
@@ -40,9 +45,10 @@ File where all required libraries and global variables are loaded. The following
 
 | Input argument | Type | Description |
 |-----------------|------|-------------|
-|`Snow_mm_path`| STRING | Path of measured snow depth rasters |
-|`SnowCover_path`| STRING | Path of rasters of satellite data describing the snow cover|
+|`snow_path_mm`| STRING | Path of measured snow depth rasters |
+|`snow_cover_path`| STRING | Path of rasters of satellite data describing the snow cover|
 |`path_results`| STRING | Path of the results folders |
+|`path_geo_utils`| STRING | Path where geo_utils package is stored |
 |`shape_zone`| STRING | Path of shapefile used for zonal statistics |
 |`statistical_param`| STRING | Statistical parameter which is/are plotted |
 |`plot_statistics`| BOOL | Dis- or enable plotting |
