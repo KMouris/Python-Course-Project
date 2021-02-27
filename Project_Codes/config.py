@@ -24,13 +24,6 @@ except ModuleNotFoundError as e:
           'pandas, rasterstats, scipy')
     print(e)
 
-try:
-    sys.path.append(
-        r'' + os.path.abspath('../geo-utils/'))
-    import geo_utils as gu
-except ModuleNotFoundError:
-    print("ModuleNotFoundError: Cannot import geo_utils")
-
 # User Input
 # Folder with snow values
 snow_path_mm = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
@@ -38,6 +31,9 @@ snow_path_mm = r'' + os.path.abspath('../Input_Data/Snow_per_month/')
 snow_cover_path = r'' + os.path.abspath('../Input_Data/SnowCover/')
 # Folder for the results
 path_results = r'' + os.path.abspath('../Results')
+
+# Folder where geo_utils is stored
+path_geo_utils = r'' + os.path.abspath('../geo-utils/')
 
 # Input for statistics
 # Location of shapefile used for zonal statistics
@@ -49,3 +45,12 @@ plot_statistic = True
 
 # Output folder for plots
 plot_result = path_results + '\\Plots'
+
+# import geo_utils
+try:
+    sys.path.append(path_geo_utils)
+    import geo_utils as gu
+except ModuleNotFoundError:
+    print("ModuleNotFoundError: Cannot import geo_utils")
+
+
