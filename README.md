@@ -14,6 +14,7 @@ Optionally, the user can plot various statistical values (e.g. snow cover) over 
 If only a subarea is of interest, this can be defined by a shapefile. The previously calculated snowfall (mm) and the identified snow cover serve as input data. 
 The following figure provides a highly simplified overview. Details can be found in the code diagram and the code description.
 
+![overview](https://raw.githubusercontent.com/KMouris/Python-Course-Project/main/Simple_Overview.jpg)
 # Requirements
 
 ## Libraries
