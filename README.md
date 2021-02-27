@@ -162,8 +162,8 @@ Assigns values to class attributes when new instance is initiated.
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`array_one`| ARRAY | arbitrary Array to be compared |
-|`array_two`| ARRAY | arbitrary Array to be compared |
+|`array_one`| ARRAY | arbitrary array to be compared |
+|`array_two`| ARRAY | arbitrary array to be compared |
 |`raster_one_path`| STRING | path of arbitrary raster to be compared |
 |`raster_two_path`| STRING | path of arbitrary raster to be compared |
 
@@ -247,7 +247,7 @@ Calculates the snow depth acting as snowmelt, the snow depth at the end of a per
 |----------------|------|-------------|
 |`snow_at_start`| ARRAY | Snow depth at beginning of the period |
 |`measured_snow_next_period`| ARRAY | Measured snow depth at the beginning of the next period |
-|`satellite_data`| ARRAY | Satellite Data of the snow cover |
+|`satellite_data`| ARRAY | Satellite data of the snow cover |
 
 **return:** ARRAYs `snow_at_end_array`, `snowmelt_array`, `snow_start_array`
 
@@ -257,8 +257,8 @@ Compares the size of two arrays, the geotransformation and projections of two ra
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`array_one`| ARRAY | arbitrary Array to be compared |
-|`array_two`| ARRAY | arbitrary Array to be compared |
+|`array_one`| ARRAY | arbitrary array to be compared |
+|`array_two`| ARRAY | arbitrary array to be compared |
 |`raster_one_path`| STRING | path of arbitrary raster to be compared |
 |`raster_two_path`| STRING | path of arbitrary raster to be compared |
 |`object_one`| LIST, STRING, etc. | Object on which the `len()` function can be applied |
@@ -270,8 +270,8 @@ Extracts the dates from the filenames of two rasters and compares them by instan
 
 | Input argument | Type | Description |
 |----------------|------|-------------|
-|`path_raster_one`| STR | path of raster one |
-|`path_raster_two`| STR | path of raster two |
+|`filename_one`| STR | Filename of raster one |
+|`filename_two`| STR | Filename of raster two |
 
 ### `create_lists()`
 
@@ -316,7 +316,7 @@ Reads an arbitrary number of raster files from 2 different folders, extracts the
 | Input argument | Type | Description |
 |----------------|------|-------------|
 |`list_rasterpaths1`| LIST | Paths to raster files |
-|`list_rasterpaths2'| LIST | Paths to raster files |
+|`list_rasterpaths2`| LIST | Paths to raster files |
 
 **return:** LISTs `date_list`, `array_list1`, `array_list2`
 

@@ -52,7 +52,7 @@ def compare_date(filename_one, filename_two):
     :param filename_one: STR of filename one
     :param filename_two: STR of filename two
     """
-    # filename attribute is not used and therefore set to a random value; It is needed to get date? Actually path is not needed? Let's check
+    # filename attribute is not used and therefore set to a random value
     manage_raster_one = DataManagement(path=0, filename=filename_one)
     manage_raster_two = DataManagement(path=0, filename=filename_two)
     if not manage_raster_one.get_date() == manage_raster_two.get_date():
