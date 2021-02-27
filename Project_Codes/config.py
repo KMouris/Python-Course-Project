@@ -24,7 +24,6 @@ except ModuleNotFoundError as e:
           'pandas, rasterstats, scipy')
     print(e)
 
-
 try:
     sys.path.append(
         r'' + os.path.abspath('../geo-utils/'))
