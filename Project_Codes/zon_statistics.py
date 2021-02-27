@@ -2,11 +2,28 @@ from config import *
 
 
 class ZonStatistics:
+    """
+    Class author: Kilian
+    Class with useful methods to calculate and plot zonal statistics, including a custom.
+    statistic to calculate the (snow) coverage of a zone in an raster array.
+
+    Attributes:
+        path_raster: LIST of paths to raster files
+        shape: STR of path to Shapefile defining the zone for calculating the statistics
+        datelist: LIST containing datestrings [YY_mm]
+        parameter: STR defining the statistical parameter to be plotted
+
+    Methods:
+        get_zon_statistic(): Method which creates a dataframe containing necessary information to plot the results.
+                             User defines the statistical value which should be plotted in config.py (here: 'coverage').
+        calc_zon_statistics(list_entry): Method which calculates several statistical values.
+        plot_zon_statistics(): Method which plots the desired statistical value over time and writes a .png-image.
+                               Method can be disabled in config.py (plot_statistic=False).
+        coverage(raster_array): Custom statistic to calculate the percentage of values above zero,
+    """
     def __init__(self, path_raster, shape, datelist, parameter):
         """
-        Class from Kilian
-        Class with useful methods to calculate and plot zonal statistics, including a custom
-        statistic to calculate the (snow) coverage of a zone in an raster array
+        Assign values to class attributes when a new instance is initiated.
         :param path_raster: LIST of paths to raster files
         :param shape: STR of path to Shapefile defining the zone for calculating the statistics
         :param datelist: LIST containing datestrings [YY_mm]

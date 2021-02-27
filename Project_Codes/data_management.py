@@ -3,11 +3,27 @@ from log import *
 
 
 class DataManagement:
+    """
+    Class author: Kilian
+    Class with useful and robust methods for managing output folders, extracting information from raster files and
+    writing raster files using the previously extracted information.
+
+    Attributes:
+        path: STR of path needed to manage output folders
+        filename: STR of filename
+
+    Methods:
+        folder_creation(): Method creates folder at instantiated path if it does not already exists.
+        get_date(): Method gets the month and the year from the instantiated filenames.
+        create_date_string(): Method which returns a date string by calling the get_date method.
+        get_proj_data(): Method which get the projection and geotransformation from a raster file (osgeo.gdal.Dataset).
+        save_raster(res_path, array, gt, proj): Static Method which creates and saves raster-file (.tif) from an
+                                                existing array using a defined projection.
+
+    """
     def __init__(self, path, filename):
         """
-        Class from Kilian
-        Class with useful & robust methods for managing output folders, extracting information from raster files and
-        writing raster files using the previously extracted information.
+        Assign values to class attributes when a new instance is initiated.
         :param path: STR of path needed to manage output folders
         :param filename: STR of filename
         """
