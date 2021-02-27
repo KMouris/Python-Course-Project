@@ -42,7 +42,7 @@ File where all required libraries and global variables are loaded. The following
 |`Snow_mm_path`| STRING | Path of measured snow depth rasters |
 |`SnowCover_path`| STRING | Path of rasters of satellite data describing the snow cover|
 |`path_results`| STRING | Path of the results folders |
-|`snow_result_paths`| STRING | **??**|
+|`snow_result_paths`| STRING | Path of calculated results used for statistical calculations|
 |`shape_zone`| STRING | Path of shapefile used for zonal statistics |
 |`statistical_param`| STRING | Statistical parameter which is/are plotted |
 |`plot_statistics`| BOOL | Dis- or enable plotting |
@@ -66,11 +66,11 @@ Logs at what time a function is entered.
 Logs at what time a function is exited. 
 
 ## data_management.py
-File where `DataManagement` class is stored which provides following methods:
+File where `DataManagement` class is stored. This class contains useful and robust methods for managing output folders, extracting information from raster files and writing raster files using the previously extracted information.
+The class provides the following methods:
 
 ### `__init__()`
-Class with useful and robust methods for managing output folders, extracting information from raster files and writing raster files using the previously extracted information.
-Assigns values to class attributes when a new instance is initiated. 
+Assigns values to class attributes when a new instance is initiated.
 
 | Input argument | Type | Description |
 |-----------------|------|-------------|
@@ -189,11 +189,11 @@ Rounds geotransformation values of two rasters off to four decimal places and co
 Compares the projection of two rasters.
 
 ## zon_statistics.py
-File where `ZonStatistics` class is stored which provides following methods:
+File where `ZonStatistics` class is stored. This Class contains useful methods to calculate and plot zonal statistics, including a custom statistic for calculating the (snow) cover of a user-defined zone.
+It provides following methods:
 
 ### `__init__()`
 
-Class with useful methods to calculate and plot zonal statistics, including a custom statistic to calculate the (snow) coverage of a zone in an raster array.
 Assigns values to class attributes when new instance is initiated. 
 
 | Input argument | Type | Description |
