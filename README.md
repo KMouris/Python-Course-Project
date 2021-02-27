@@ -33,7 +33,7 @@ The following rasters have to be provided to run the code:
 
 Both rasters listed in 1. and 2. have to be provided as `.tif` rasters and have to include the month and the year in the following way:
 
->***yy_mm**.tif
+    ***yy_mm**.tif
 
 # Code diagram
 ![diagram](https://raw.githubusercontent.com/KMouris/Python-Course-Project/main/Code_diagram.jpg)
