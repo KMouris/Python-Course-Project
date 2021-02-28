@@ -24,7 +24,7 @@ def snowdepth(snow_at_start, measured_snow_next_period, satellite_data):
         snow_start_array = calc_snow.snow_at_start(snow_end_of_period=snow_at_end_array)
         return snow_at_end_array, snowmelt_array, snow_start_array
     except TypeError:
-        print("Input arguments have to be ARRAYS.")
+        logger.error("TypeError: Input arguments have to be ARRAYS.")
 
 
 @wrapper(entering, exiting)
@@ -38,12 +38,15 @@ def check_data(array_one, array_two, path_raster_one, path_raster_two, object_on
     :param object_one: object one where len() can be applied, e.g. LIST, TUPLE, STR, etc.
     :param object_two: object two where len() can be applied, e.g. LIST, TUPLE, STR, etc.
     """
-    check = CompareData(array_one=array_one, array_two=array_two, raster_one_path=path_raster_one,
-                        raster_two_path=path_raster_two)
-    check.compare_shape()
-    check.compare_projection()
-    check.compare_geotransform()
-    check.number_of_items(object_one, object_two)
+    try:
+        check = CompareData(array_one=array_one, array_two=array_two, raster_one_path=path_raster_one,
+                            raster_two_path=path_raster_two)
+        check.compare_shape()
+        check.compare_projection()
+        check.compare_geotransform()
+        check.number_of_items(object_one, object_two)
+    except TypeError:
+        logger.error("TypeError: Check type of input arguments.")
 
 
 def compare_date(filename_one, filename_two):

@@ -50,7 +50,6 @@ class CompareData:
         Compare the number of items of two objects.
         :param object_one: Object on which the len() function can be applied
         :param object_two: Object on which the len() function can be applied
-        :return:
         """
         try:
             if not len(object_one) == len(object_two):

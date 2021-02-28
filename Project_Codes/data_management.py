@@ -16,7 +16,7 @@ class DataManagement:
         folder_creation(): Method creates folder at instantiated path if it does not already exists.
         get_date(): Method gets the month and the year from the instantiated filenames.
         create_date_string(): Method which returns a date string by calling the get_date method.
-        get_proj_data(): Method which get the projection and geotransformation from a raster file (osgeo.gdal.Dataset).
+        get_proj_data(): Method which gets the projection and geotransformation from a raster file (osgeo.gdal.Dataset).
         save_raster(res_path, array, gt, proj): Static Method which creates and saves raster-file (.tif) from an
                                                 existing array using a defined projection.
 

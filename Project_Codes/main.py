@@ -58,6 +58,7 @@ def snowcalc_over_list(initial_snow, satellite_data, measured_snow_next_period):
             snow_end_array, snowmelt_array, snow_start_array = snowdepth(snow_start_month[k],
                                                                          measured_snow_next_period[m],
                                                                          satellite_data[k])
+            # appending results to created result lists
             snow_end_month.append(snow_end_array)
             snow_melt.append(snowmelt_array)
             # avoids appending lastly calculated snow_start_array which describes next period without given input data

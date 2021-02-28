@@ -74,7 +74,6 @@ class ZonStatistics:
         """
         Method which plots the desired statistical value over time and writes a .png-image
         Method can be disabled in config.py (plot_statistic=False)
-        :return:
         """
         ax = plt.gca()
         self.get_zon_statistic().plot(y=self.parameter, x="Date", kind='line', marker='o', color='grey',
